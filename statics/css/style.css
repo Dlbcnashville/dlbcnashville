@@ -1,0 +1,65 @@
+
+:root{
+    --primary-red: #C12A2A;
+    --support-red: #FFBCBC;
+    --bg-red: #FFE8E8;
+    --primary-blue: #16365E;
+    --supp-blue: #C6E0FF;
+    --font-black: #1D1D1D;
+    --grey: #A3A3A3;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar-brand {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    height: fit-content !important;
+    width: fit-content !important;
+}
+.nav-item .nav-link{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white !important;
+}
+.hide{
+    display: none;
+}
+.navbar-brand img{
+    width: 80px;
+
+}
+.join-us-btn{
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    background-color: var(--primary-red);
+    color: white !important;
+}
+.navbar-nav{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+.btn{
+    width: fit-content !important;
+}
+.navbar{
+    padding-top: 20px;
+    padding-bottom: 0 !important;
+}
+.navbar .container-fluid{
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.hero-section{
+    height: 65vh;
+}
+@media (max-width: 992px) {
+    
+}
