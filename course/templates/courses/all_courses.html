@@ -1,0 +1,125 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>All Courses</title>{% endblock %}
+    <!-- <link rel="stylesheet" href="/courses/static/css/course.css"> -->
+</head>
+
+<body>
+
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+            <div class="course-main-content active-course-main-content all-courses-main-content">
+                <div>
+                    <div class="course-body">
+                        <div class="tab">
+                            <button class="tablinks" onclick="openCity(event, 'All')" id="defaultOpen">All Courses</button>
+                            <!-- <button class="tablinks" onclick="openCity(event, 'Active')">Active</button> -->
+                            <button class="tablinks" onclick="openCity(event, 'Completed')">Completed</button>
+                        </div>
+
+                        <!-- Tab content -->
+                        <div id="All" class="tabcontent">
+                            <div class="course-heading">
+                                <h1>All Courses</h1>
+                            </div>
+                            <div class="course-cards-container">
+                                {% if all_courses %} {% for course in all_courses %} {% if course.membership_category.membership_type == user.status %}
+                                <div class="course-card-vertical">
+                                    <div class="course-image"><img src="{{course.banner.url}}" alt=""></div>
+                                    <div class="course-content">
+                                        <h2 class="course-title">{{course.course_title|title}}</h2>
+                                        <p class="course-description">{{course.course_description|richtext|truncatewords:18}}</p>
+                                        <div class="start-resume-container">
+                                            <a href="{% pageurl course %}"><button class="start">Start Course</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %} {% endfor %} {% else %}
+                                <div>No Course Available</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- <div id="Active" class="tabcontent">
+                            <div class="course-heading">
+                                <h1>Active</h1>
+                            </div>
+                            <div class="course-cards-container course-cards-container-horizontal">
+                                <div class="course-card">
+                                    <div class="course-image"><img src="/static/images/jon-tyson--0o9dgxEu5Q-unsplash.jpg" alt=""></div>
+                                    <div class="course-content">
+                                        <h2 class="course-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                                        <p class="course-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga voluptate nam aliquid quisquam molestiae. Nemo sed soluta quae? Quis reprehenderit saepe possimus tempora quam minima labore totam repellendus quasi
+                                            quos.
+                                        </p>
+                                        <div class="start-resume-container">
+                                            <button class="resume">Resume</button>
+                                        </div>
+                                        <div class="course-progress">
+                                            <progress id="course_progress" max="100" value="45">45%</progress><span>45%</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="course-card">
+                                    <div class="course-image"><img src="/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg" alt=""></div>
+                                    <div class="course-content">
+                                        <h2 class="course-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                                        <p class="course-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga voluptate nam aliquid quisquam molestiae. Nemo sed soluta quae? Quis reprehenderit saepe possimus tempora quam minima labore totam repellendus quasi
+                                            quos.
+                                        </p>
+                                        <div class="start-resume-container">
+                                            <button class="start">Start</button>
+                                        </div>
+                                        <div class="course-progress">
+                                            <progress id="course_progress" max="100" value="0">0%</progress><span>0%</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div id="Completed" class="tabcontent">
+                            <div class="course-heading">
+                                <h1>Completed</h1>
+                            </div>
+                            <div class="course-cards-container course-cards-container-horizontal">
+                                {% if completed_courses %} {% for course in completed_courses %}
+                                <div class="course-card">
+                                    <div class="course-image"><img src="{{course.banner.url}}" alt=""></div>
+                                    <div class="course-content">
+                                        <h2 class="course-title">{{course.course_title|title}}</h2>
+                                        <p class="course-description">{{course.course_description|richtext|truncatewords:18}}
+                                        </p>
+
+                                        <div class="course-progress">
+                                            <progress id="course_progress" max="100" value="100">100%</progress><span>100%</span>
+                                        </div>
+                                        <div class="start-resume-container">
+                                            <a href="{% pageurl course %}"><button class="resume">Retake</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %} {% else %}
+                                <div>No Course Completed</div> {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+    <!-- <script src="/courses/static/js/course.js"></script> -->
+</body>
+
+</html>

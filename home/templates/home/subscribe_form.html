@@ -1,0 +1,11 @@
+{% load static wagtailcore_tags %} {% load static %} {% load subscribe_form %} {% get_subscribe_form as form %}
+<div class="section-title">
+    <h1>Subscribe <span>To Our </span>Newsletter</h1>
+</div>
+<form action="{% pageurl form.page %}" method="post">
+    {% csrf_token %}
+    <div class="form-wrapper">
+        <label for="email">Your Email</label> <br> <input class="form_input" type="email" name="email" id="id_email" placeholder="Enter Your Email">
+    </div>
+    <input class="subscribe-btn" type="submit" value="Subscribe">
+</form>

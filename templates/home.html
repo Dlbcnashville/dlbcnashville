@@ -140,14 +140,14 @@
         <div class="service-day-card">
           <div class="date">
             <h2 class="month">Jun</h2>
-            <h2 class="day">28</h2>
+            <h2 class="day" id="Monday">28</h2>
           </div>
           <div class="service-image"><img src="/statics/images/biblestudy.png" alt=""></div>
           <div class="service-day-info">
             <h2>Bible Study</h2>
             <p>Join us for uplifting worship and inspiring messages every Sunday.</p>
             <div class="week-day-time">
-              <div class="week-day">Sunday</div>
+              <div class="week-day">Monday</div>
               <div class="time">9:00Am</div>
             </div>
           </div>
@@ -155,7 +155,7 @@
         <div class="service-day-card">
           <div class="date">
             <h2 class="month">Jun</h2>
-            <h2 class="day">28</h2>
+            <h2 class="day" id="Sunday">28</h2>
           </div>
           <div class="service-image"><img src="/statics/images/sundayservice.png" alt=""></div>
           <div class="service-day-info">
@@ -170,7 +170,7 @@
         <div class="service-day-card service-day-card-last">
           <div class="date">
             <h2 class="month">Jun</h2>
-            <h2 class="day">28</h2>
+            <h2 class="day" id="Thursday">28</h2>
           </div>
           <div class="service-image"><img src="/statics/images/revivalservice.png" alt=""></div>
           <div class="service-day-info">
@@ -207,6 +207,39 @@
             <img src="/statics/images/dailymanna.jpg" alt=""><br>
             <a href="#">Daily Manna for Adults</a>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="scholarship-section" style="background: url('/statics/images/scholarshipsectionimage.jpg'); background-size: cover; background-repeat: no-repeat;">
+      <div class="about-header">
+        <div class="header-text">
+          <h1>scholarship programmes</h1>
+          <p>Inspiring Messages Just for You</p>
+        </div>
+        <button class="btn learn-more">See All</button>
+      </div>
+      <div class="scholarship-main-text">
+        <h2>We invite you to belong and join us any Sunday for our weekly worship gathering.</h2>
+        <p>Hello, dear friend! With immense joy, I extend a heartfelt welcome to you from the entire family at Deeper Life Bible Church, Washington DC. Your presence here is a source of great excitement for us.</p>
+        <button class="btn donate-btn">Participate</button>
+      </div>
+    </div>
+    <div class="outreach-section">
+      <div class="about-header">
+        <div class="header-text">
+          <h1>Charity/Community outreach</h1>
+          <p>Inspiring Messages Just for You</p>
+        </div>
+        <button class="btn learn-more">See All</button>
+      </div>
+      <div class="outreach-content-main">
+        <div class="outreach-image">
+          <img src="/statics/images/dailymanna.jpg" alt="">
+        </div>
+        <div class="outreach-text">
+          <h2>We invite you to belong and join us any Sunday for our weekly worship gathering.</h2>
+          <p>Hello, dear friend! With immense joy, I extend a heartfelt welcome to you from the entire family at Deeper Life Bible Church, Washington DC. Your presence here is a source of great excitement for us.</p>
+          <button class="btn donate-btn">Participate</button>
         </div>
       </div>
     </div>
@@ -261,8 +294,50 @@
         </div>
       </div>
     </div>
+    <div class="connect-section" style="background: url('/statics/images/connectwithus.jpg'); background-size: cover; background-repeat: no-repeat;">
+      <div class="donate-main-text">
+        connect with us
+      </div>
+      <div class="donate-sub-text">
+        <p>Have questions or just want to say hello? We'd love to hear from you! Reach out and let's journey together in faith and friendship.</p>
+        <button class="btn donate-btn">Reach out</button>
+      </div>
+    </div>
 
     <script src="/statics/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script>
+      
+      let sunday = dayjs().day(0).$D
+      let monday = dayjs().day(1).$D
+      let tuesday = dayjs().day(2).$D
+      let wednesday = dayjs().day(3).$D
+      let thursday = dayjs().day(4).$D
+      let friday = dayjs().day(5).$D
+      let saturday = dayjs().day(6).$D
+
+      const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const d = new Date();
+      let month_name = month[d.getMonth()];
+      let month_short = document.querySelectorAll('.month');
+      month_short.forEach((ele)=>{
+        ele.innerText = month_name
+      })
+      let monday_number = document.querySelector('#Monday');
+      monday_number.innerText = monday;
+      let thursday_number = document.querySelector('#Thursday');
+      thursday_number.innerText = thursday;
+      let sunday_number = document.querySelector('#Sunday');
+      sunday_number.innerText = sunday;
+      let tuesday_number = document.querySelector('#Tuesday');
+      tuesday_number.innerText = tuesday;
+      let wednesday_number = document.querySelector('#Wednesday');
+      wednesday_number.innerText = wednesday;
+      let friday_number = document.querySelector('#Friday');
+      friday_number.innerText = friday;
+      let saturday_number = document.querySelector('#Saturday');
+      saturday_number.innerText = saturday;
+    </script>
 </body>
 </html>

@@ -1,0 +1,92 @@
+.about-page * {
+    margin: 0;
+    padding: 0;
+}
+
+.about-page .main {
+    width: 100%;
+}
+
+.about-page .wallet {
+    width: 100% !important;
+    min-height: 450px;
+    margin-top: 10px;
+    /* position: relative; */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page .about {
+    height: fit-content;
+}
+
+.about-page .about a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 70px;
+    text-align: center;
+    font-family: Roboto;
+}
+
+.accordion {
+    max-width: 100% !important;
+    margin-top: 75px;
+}
+
+.accordion button {
+    height: 100px;
+    border: none;
+    border-bottom: 2px solid var(--primary-blue, #000468);
+    background: #FFF;
+    width: 100%;
+    padding: 0 59px;
+}
+
+.accordion-collapse {
+    padding: 27px 59px;
+    border-bottom: 2px solid var(--primary-blue, #000468);
+    background: rgba(0, 4, 104, 0.93);
+}
+
+.accordion-body * {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.accordion-body {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.accordion-header * {
+    color: var(--primary-blue);
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 500px) {
+    .accordion-header * {
+        font-size: 20px;
+    }
+    .about-page .about a {
+        font-size: 60px;
+    }
+    .accordion button {
+        padding: 0 20px;
+    }
+    .accordion-collapse {
+        padding: 27px 20px;
+    }
+}

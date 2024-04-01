@@ -1,0 +1,233 @@
+.i-am-new * {
+    margin: 0;
+    padding: 0;
+}
+
+.i-am-new {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 0px;
+}
+
+.i-am-new .pix {
+    background-image: url(/static/images/dark_ss.jpg);
+    min-height: 435px;
+    width: 100%;
+    /* margin-left: 40px;
+    margin-right: 20px; */
+    /* position: relative; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: -50px -50px; */
+}
+
+.i-am-new .dem {
+    margin-top: 120px;
+    font-weight: bold;
+    height: 72px;
+    width: 250px;
+    position: absolute;
+    margin-left: 100px;
+}
+
+.i-am-new .dem h3 {
+    color: white;
+    font-size: 50px;
+}
+
+.i-am-new .dem h3 * {
+    color: white;
+    font-size: 50px;
+}
+
+.i-am-new #me {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: arial;
+    color: #fff;
+}
+
+.i-am-new #me * {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: arial;
+    color: #fff;
+}
+
+.i-am-new .boy {
+    margin-top: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.i-am-new .boy img {
+    width: 100%;
+}
+
+.i-am-new .lam {
+    width: 100%;
+    Height: auto;
+    padding: 20px;
+}
+
+.i-am-new .rap {
+    color: rgba(0, 4, 104, 1);
+    font-weight: 350px;
+    font-size: 30px;
+}
+
+.i-am-new .rap * {
+    color: rgba(0, 4, 104, 1);
+    font-weight: 350px;
+    font-size: 30px;
+}
+
+.i-am-new #nop {
+    border: 1px solid rgba(0, 4, 104, 1);
+    height: 5px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: rgb(3, 3, 183);
+    margin-top: 15px;
+    /* margin-left: 10px; */
+}
+.i-am-new .dem p{
+    color: rgb(255, 255, 255) !important;
+}
+.i-am-new .hello {
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(41, 41, 41, 1);
+    margin-top: 20px;
+}
+
+.christ {
+    height: fit-content;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+    justify-content: space-around;
+}
+.section-text{
+    width: 55%;
+    max-width: 600px;
+}
+.christ h2{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.i-am-new .christ img {
+    /* ?float: right; */
+    /* margin-right: 40px; */
+    width: 100%;
+    min-width: 290px;
+}
+
+.i-am-new #sch {
+    color: rgba(0, 4, 104, 1);
+    /* margin-left: 50px;
+    margin-top: 50px;
+    margin-right: 80px; */
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.i-am-new #late {
+    /* margin-left: 50px; */
+    font-family: arial;
+    /* margin-top: 20px;
+    margin-right: 80px; */
+}
+
+.i-am-new .spiritual {
+    background-image: url('/static/images/spirit.png');
+    min-height: 400px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: fit-content;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.i-am-new .spiritual-text-container{
+    max-width: 475px;
+}
+.i-am-new #mens h2 {
+    font-weight: 500;
+    font-size: 55px;
+    /* padding: 20px; */
+    color: white;
+}
+
+.i-am-new #many {
+    /* width: 475px;
+    height: 166px; */
+    margin-top: 40px;
+    /* margin-left: 30px; */
+    /* border: 2px solid red; */
+    display: inline-block;
+}
+
+.i-am-new #many p {
+    color: white;
+    line-height: 20px;
+}
+
+.i-am-new #nepa {
+    float: right;
+    /* margin-right: 200px; */
+    border: 1px solid white;
+    border-radius: 40px;
+    height: 70px;
+    width: 221px;
+}
+
+.i-am-new #nepa p {
+    color: white;
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 500;
+}
+.i-am-new .boy p{
+    color: #000;
+}
+.i-am-new .christ p{
+    color: #000;
+}
+@media screen and (max-width: 500px) {
+    .i-am-new #mens h2 {
+        font-size: 30px;
+    }
+    .i-am-new #many p {
+        color: white;
+        line-height: 16px;
+    }
+    .i-am-new .spiritual-text-container{
+        max-width: 100%;
+    }
+    .i-am-new .spiritual {
+        flex-wrap: wrap;
+    }
+    
+    .section-text{
+        width: 100%;
+    }
+    .i-am-new .boy {
+        margin-top: 30px;
+        
+    }
+}

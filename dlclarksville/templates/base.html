@@ -1,0 +1,166 @@
+{% load static wagtailcore_tags %}{% load wagtailuserbar %} {% load static %}{% load wagtailimages_tags %}{% load static menus_tags %}{% get_menu "main" as menu %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% block site_utils %}
+    <link rel="shortcut icon" href="/static/images/dlbc.png" type="image/x-icon"> {% endblock %} {% block title %}
+    <title>DLBC Clarksville</title>{% endblock %} {% block styles %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick-theme.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/slick-1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/statics/css/style.css">
+    {% endblock %}{% block extra_styles %}{% endblock %}
+</head>
+
+<body>
+    {% block messages %} {% if messages %} {% for message in messages %}
+    <div class="message-alert">
+        {% if message.level_tag == 'error' %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> {% else %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> {% endif %}
+
+
+    </div>
+    {% endfor %} {% endif %} {% endblock messages %}{% block content %}{% endblock %} {% block footer %}
+    <footer>
+        <div class="bottom">
+            <div class="copy footer-container">
+                <img src="/static/images/dlbc.png" alt="deeperlife logo">
+                <div class="lorem">
+                    <p>
+                        “Take heed unto thyself, and unto the doctrine; continue in them: for in doing this thou shalt both save thyself, and them that hear thee”.
+                    </p>
+                </div>
+
+            </div>
+            <div class="get footer-container">
+                <div id="touch">
+                    <h4>Get In Touch</h4>
+                </div>
+                <div class="ohio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C15.87 2 19 5.13 19 9C19 14.25 12 22 12 22C12 22 5 14.25 5 9C5 5.13 8.13 2 12 2ZM7 9C7 11.85 9.92 16.21 12 18.88C14.12 16.19 17 11.88 17 9C17 6.24 14.76 4 12 4C9.24 4 7
+                6.24 7 9ZM12 11.5C10.6193 11.5 9.5 10.3807 9.5 9C9.5 7.61929 10.6193 6.5 12 6.5C13.3807 6.5 14.5 7.61929 14.5 9C14.5 10.3807 13.3807 11.5 12 11.5Z " fill="#000468 "/>
+                      </svg>
+                    <address><p>{{ settings.home.SiteContact.address }}</p> </address>
+                </div>
+                <div id="our">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd " clip-rule="evenodd " d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z " fill="#000468 "/>
+                      </svg>
+                    <a href="mailto:{{ settings.home.SiteContact.email1 }}">{{ settings.home.SiteContact.email1 }}</a>
+                </div>
+                <div id="message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.54 5C6.6 5.89 6.75 6.76 6.99 7.59L5.79 8.79C5.38 7.59 5.12 6.32 5.03 5H6.54ZM16.4 17.02C17.25 17.26 18.12 17.41 19 17.47V18.96C17.68 18.87 16.41 18.61 15.2 18.21L16.4 17.02ZM7.5
+                3H4C3.45 3 3 3.45 3 4C3 13.39 10.61 21 20 21C20.55 21 21 20.55 21 20V16.51C21 15.96 20.55 15.51 20 15.51C18.76 15.51 17.55 15.31 16.43 14.94C16.33 14.9 16.22 14.89 16.12 14.89C15.86 14.89 15.61 14.99 15.41 15.18L13.21 17.38C10.38 15.93 8.06
+                13.62 6.62 10.79L8.82 8.59C9.1 8.31 9.18 7.92 9.07 7.57C8.7 6.45 8.5 5.25 8.5 4C8.5 3.45 8.05 3 7.5 3Z " fill="#000468 "/>
+                      </svg>
+                    <a href="tel:{{ settings.home.SiteContact.phone2 }}">{{ settings.home.SiteContact.phone2 }}</a>
+                </div>
+
+            </div>
+            <div class="in footer-container">
+                <div class="dolor">
+                    <div class="socials">
+                        <div class="social">
+                            <a href="{{ settings.home.SiteSocial.facebook }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 18 32" fill="none">
+                                    <path d="M11.734 7.77172V12.0505H17.112L16.2604 17.8143H11.734V31.0937C10.8265 31.2176 9.89802 31.2823 8.95554 31.2823C7.86764 31.2823 6.79931 31.197 5.75896 31.0318V17.8143H0.799072V12.0505H5.75896V6.81522C5.75896 3.56726 8.43396 0.933105 11.7354 0.933105V0.935861C11.7452 0.935861 11.7536 0.933105 11.7634 0.933105H17.1134V5.91791H13.6176C12.5786 5.91791 11.7354 6.74779 11.7354 7.77035L11.734 7.77172Z" fill="white"/>
+                                  </svg></a>
+                        </div>
+                        <div class="social">
+                            <a href="{{ settings.home.SiteSocial.instagram }}"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" viewBox="0 0 26 24" fill="none">
+                                <path d="M18.857 -0.00805664H6.50695C3.09502 -0.00805664 0.319336 2.72381 0.319336 6.08187V17.202C0.319336 20.5601 3.09502 23.2919 6.50695 23.2919H18.857C22.269 23.2919 25.0446 20.5601 25.0446 17.202V6.08187C25.0446 2.72381 22.269 -0.00805664 18.857 -0.00805664ZM2.50213 6.08187C2.50213 3.90876 4.29899 2.14027 6.50695 2.14027H18.857C21.065 2.14027 22.8618 3.90876 22.8618 6.08187V17.202C22.8618 19.3751 21.065 21.1436 18.857 21.1436H6.50695C4.29899 21.1436 2.50213 19.3751 2.50213 17.202V6.08187Z" fill="white"/>
+                                <path d="M12.6818 17.3054C15.8546 17.3054 18.4373 14.7648 18.4373 11.6407C18.4373 8.51664 15.856 5.97607 12.6818 5.97607C9.50759 5.97607 6.92627 8.51664 6.92627 11.6407C6.92627 14.7648 9.50759 17.3054 12.6818 17.3054ZM12.6818 8.12578C14.6521 8.12578 16.2545 9.70298 16.2545 11.6421C16.2545 13.5813 14.6521 15.1584 12.6818 15.1584C10.7116 15.1584 9.10907 13.5813 9.10907 11.6421C9.10907 9.70298 10.7116 8.12578 12.6818 8.12578Z" fill="white"/>
+                                <path d="M18.9702 6.89116C19.8246 6.89116 20.5209 6.20717 20.5209 5.3649C20.5209 4.52263 19.826 3.83862 18.9702 3.83862C18.1144 3.83862 17.4194 4.52263 17.4194 5.3649C17.4194 6.20717 18.1144 6.89116 18.9702 6.89116Z" fill="white"/>
+                              </svg></a>
+                        </div>
+                        <div class="social">
+                            <a href="{{ settings.home.SiteSocial.tiktok }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: ;msFilter:;"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path></svg>
+                            </a>
+                        </div>
+                        <div class="social">
+                            <a href="{{ settings.home.SiteSocial.twitter }}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="19" viewBox="0 0 24 19" fill="none">
+                                <path d="M23.9731 2.53064C23.4263 3.07426 22.6684 3.41144 21.828 3.41144C21.7204 3.41144 21.6155 3.40594 21.5106 3.39493C22.3874 2.87746 23.0641 2.06684 23.4011 1.10071C23.4011 1.10071 23.4025 1.10071 23.4025 1.09933C23.4501 0.969962 23.4892 0.839219 23.52 0.704346C22.8264 1.43376 21.8784 1.92784 20.8142 2.04619C20.6506 2.06546 20.4842 2.07511 20.3178 2.07511C20.2647 2.07511 20.2129 2.07373 20.1626 2.07097C19.8032 1.69939 19.374 1.39109 18.8985 1.16539C18.3686 0.910781 17.7757 0.760775 17.1506 0.741507C17.0989 0.738755 17.0485 0.737374 16.9954 0.737374C16.4654 0.737374 15.9564 0.829588 15.4866 1.00024C15.3663 1.04291 15.2489 1.09108 15.1342 1.14613C13.645 1.83289 12.6144 3.32337 12.6144 5.04919C12.6144 5.40289 12.6578 5.74832 12.7403 6.07725C12.2844 6.05936 11.8327 6.01669 11.3895 5.95063C11.2468 5.92861 11.1056 5.90385 10.9644 5.8777C9.83452 5.67126 8.75642 5.31617 7.75521 4.83173C6.85888 4.40096 6.02408 3.86835 5.26339 3.24904C4.62435 2.73019 4.03985 2.15217 3.51688 1.51909C3.4945 1.49295 3.47211 1.46405 3.44974 1.4379C3.41898 1.48332 3.39101 1.5301 3.36584 1.57826C3.00088 2.20721 2.79393 2.93389 2.79393 3.7101C2.79393 3.73349 2.79393 3.75963 2.79533 3.78303C2.80372 4.36381 2.92956 4.91706 3.1533 5.42077C3.24838 5.64373 3.36446 5.85429 3.4973 6.05522C3.88883 6.64839 4.42299 7.14247 5.05504 7.48378C5.08441 7.50167 5.11236 7.5168 5.14312 7.53057C5.09837 7.53882 5.05083 7.54708 5.00469 7.55121C4.87464 7.56773 4.7418 7.57599 4.60756 7.57599C3.93497 7.57599 3.30992 7.36955 2.79813 7.01723C2.79533 7.05438 2.79533 7.09155 2.79533 7.13009C2.79533 8.36184 3.31971 9.47247 4.1601 10.2556C4.81452 10.8694 5.66051 11.2836 6.60019 11.4033C6.26179 11.5258 5.89682 11.5905 5.51508 11.5905C5.10257 11.5905 4.70825 11.5135 4.34748 11.3717C4.88583 13.0934 6.48972 14.3554 8.40264 14.4132C7.23503 15.6078 5.5934 16.3496 3.77836 16.3496C2.64991 16.3496 1.58856 16.062 0.668457 15.5596C2.87922 17.4424 5.76119 18.5791 8.91443 18.5791C15.8823 18.5791 21.5302 13.0205 21.5302 6.16258C21.5302 5.78548 21.5134 5.41114 21.4784 5.0423C22.6307 4.59502 23.5452 3.67843 23.9773 2.53064H23.9731Z" fill="white"/>
+                              </svg></a>
+                        </div>
+                        <div class="social">
+                            <a href="{{ settings.home.SiteSocial.youtube }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: ;msFilter:;"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"></path></svg>
+                            </a>
+                        </div>
+                        <!-- <div class="social">
+
+                            <a href="{{ settings.home.SiteSocial.threads }}"><svg xmlns="http://www.w3.org/2000/svg " enable-background="new 0 0 1668.56 1221.19 " viewBox="0 0 1668.56 1221.19 " id="twitter-x "><path d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99
+                                    h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z " transform="translate(52.39 -25.059) "></path></svg>
+                                </a>
+
+                        </div> -->
+                        <!-- <div class="social">
+                            <a href="{{ settings.home.SiteSocial.linkedin }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="23" viewBox="0 0 24 23" fill="none">
+                                    <path d="M1.60585 5.0561C1.08008 4.57578 0.818604 3.98125 0.818604 3.27385C0.818604 2.56646 1.08147 1.94577 1.60585 1.46408C2.13162 0.983763 2.80842 0.74292 3.63763 0.74292C4.46684 0.74292 5.11707 0.983763 5.64145 1.46408C6.16722 1.94439 6.42869 2.54857 6.42869 3.27385C6.42869 3.99914 6.16582 4.57578 5.64145 5.0561C5.11568 5.53641 4.44866 5.77725 3.63763 5.77725C2.8266 5.77725 2.13162 5.53641 1.60585 5.0561ZM5.98683 7.81136V22.5373H1.25906V7.81136H5.98683Z" fill="#FEFFFC"/>
+                                    <path d="M21.7251 9.26625C22.7557 10.3673 23.2703 11.8784 23.2703 13.8024V22.2774H18.7802V14.3997C18.7802 13.4294 18.5243 12.6752 18.014 12.1385C17.5036 11.6018 16.8156 11.332 15.9542 11.332C15.0928 11.332 14.4048 11.6004 13.8944 12.1385C13.384 12.6752 13.1282 13.4294 13.1282 14.3997V22.2774H8.61157V7.77026H13.1282V9.69428C13.5854 9.05295 14.2021 8.54648 14.9768 8.17351C15.7515 7.80055 16.6226 7.61475 17.5917 7.61475C19.3172 7.61475 20.6959 8.16525 21.7251 9.26487V9.26625Z" fill="#FEFFFC"/>
+                                </svg>
+                            </a>
+                        </div> -->
+                    </div>
+                    <p>
+                        God loves a cheerful giver. Your donations are used exclusively for the propagation of the gospel.
+                    </p>
+                </div>
+                <div class="us">
+                    <a href="{{ settings.home.ImportantPages.page_url.donate }}">
+                        <button class="us-a">DONATE TO US</button>
+                    </a>
+                </div>
+            </div>
+            <div class="news footer-container">
+                <h4>Join a Newsletter</h4>
+                {% include 'home/subscribe_form.html' %}
+            </div>
+        </div>
+        <!-- <div class="right ">
+            <p>
+                Copyright Deeper life bible church
+            </p>
+        </div> -->
+    </footer>
+    {% endblock %}{% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+    <script src="/static/js/slider.js "></script>
+    <script type="text/javascript " src="/static/js/main.js "></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/65a6597c8d261e1b5f53deed/1hk8sr3u6';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    {% endblock %} {% block extra_script %} {% endblock %}
+</body>
+
+</html>

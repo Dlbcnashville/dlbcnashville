@@ -1,0 +1,11 @@
+venv
+../venv/
+/venv/
+db.sqlite3
+venv/
+.../venv/
+.env
+/.env
+daniel
+/daniel
+daniel/

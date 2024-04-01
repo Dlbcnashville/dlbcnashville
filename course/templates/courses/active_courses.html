@@ -1,0 +1,129 @@
+{% extends 'course/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>Active Courses</title>{% endblock %}
+    <!-- <link rel="stylesheet" href="/courses/static/css/course.css"> -->
+</head>
+
+<body>
+
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+            <div class="collapse-menu" onclick="toggleSidebar()">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5312 26.7313C14.9063 27.3562 13.8933 27.3562 13.2684 26.7313L3.66843 17.1313C3.04359 16.5065 3.04359 15.4934 3.66843 14.8686L13.2684 5.26858C13.8933 4.64374 14.9063 4.64374 15.5312 5.26858C16.156 5.89342 16.156 6.90648 15.5312 7.53132L8.66254 14.4L27.1998 14.3999C28.0835 14.4 28.7998 15.1163 28.7998 16C28.7998 16.8836 28.0835 17.6 27.1998 17.6L8.66254 17.6L15.5312 24.4686C16.156 25.0934 16.156 26.1065 15.5312 26.7313Z" fill="#7479FF"/>
+                </svg>
+            </div>
+            <div class="course-main-content active-course-main-content">
+                <div>
+                    <div class="course-heading">
+                        <h1>My Courses</h1>
+                        <a href="#">See All &raquo;</a>
+                    </div>
+                    <div class="course-body">
+                        <ul class="course-categories">
+                            <li>
+                                <a href="#">All Courses</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">Active</a>
+                            </li>
+                            <li>
+                                <a href="#">Completed</a>
+                            </li>
+
+                        </ul>
+                        <div class="course-cards-container">
+                            <div class="course-card">
+                                <div class="course-image"><img src="/static/images/jon-tyson--0o9dgxEu5Q-unsplash.jpg" alt=""></div>
+                                <div class="course-content">
+                                    <h2 class="course-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                                    <p class="course-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga voluptate nam aliquid quisquam molestiae. Nemo sed soluta quae? Quis reprehenderit saepe possimus tempora quam minima labore totam repellendus quasi quos.</p>
+                                    <div class="start-resume-container">
+                                        <button class="resume">Resume</button>
+                                    </div>
+                                    <div class="course-progress">
+                                        <progress id="course_progress" max="100" value="45">45%</progress><span>45%</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-image"><img src="/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg" alt=""></div>
+                                <div class="course-content">
+                                    <h2 class="course-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+                                    <p class="course-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga voluptate nam aliquid quisquam molestiae. Nemo sed soluta quae? Quis reprehenderit saepe possimus tempora quam minima labore totam repellendus quasi quos.</p>
+                                    <div class="start-resume-container">
+                                        <button class="start">Start</button>
+                                    </div>
+                                    <div class="course-progress">
+                                        <progress id="course_progress" max="100" value="0">0%</progress><span>0%</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resources-download">
+                    <div>
+                        <h2>Resources</h2>
+                    </div>
+                    <div class="resources-container">
+                        <div class="resources-card">
+                            <button><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 20.9C3.59961 20.2373 4.13687 19.7 4.79961 19.7H19.1996C19.8624 19.7 20.3996 20.2373 20.3996 20.9C20.3996 21.5627 19.8624 22.1 19.1996 22.1H4.79961C4.13687 22.1 3.59961 21.5627 3.59961 20.9ZM7.55108 11.6515C8.01971 11.1828 8.77951 11.1828 9.24814 11.6515L10.7996 13.2029L10.7996 4.09999C10.7996 3.43725 11.3369 2.89999 11.9996 2.89999C12.6623 2.89999 13.1996 3.43725 13.1996 4.09999L13.1996 13.2029L14.7511 11.6515C15.2197 11.1828 15.9795 11.1828 16.4481 11.6515C16.9168 12.1201 16.9168 12.8799 16.4481 13.3485L12.8481 16.9485C12.6231 17.1736 12.3179 17.3 11.9996 17.3C11.6813 17.3 11.3761 17.1736 11.1511 16.9485L7.55108 13.3485C7.08245 12.8799 7.08245 12.1201 7.55108 11.6515Z" fill="#111827"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Summary of Life</h3>
+                                <span>click here to download</span>
+                            </div>
+                        </div>
+                        <div class="resources-card">
+                            <button><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 20.9C3.59961 20.2373 4.13687 19.7 4.79961 19.7H19.1996C19.8624 19.7 20.3996 20.2373 20.3996 20.9C20.3996 21.5627 19.8624 22.1 19.1996 22.1H4.79961C4.13687 22.1 3.59961 21.5627 3.59961 20.9ZM7.55108 11.6515C8.01971 11.1828 8.77951 11.1828 9.24814 11.6515L10.7996 13.2029L10.7996 4.09999C10.7996 3.43725 11.3369 2.89999 11.9996 2.89999C12.6623 2.89999 13.1996 3.43725 13.1996 4.09999L13.1996 13.2029L14.7511 11.6515C15.2197 11.1828 15.9795 11.1828 16.4481 11.6515C16.9168 12.1201 16.9168 12.8799 16.4481 13.3485L12.8481 16.9485C12.6231 17.1736 12.3179 17.3 11.9996 17.3C11.6813 17.3 11.3761 17.1736 11.1511 16.9485L7.55108 13.3485C7.08245 12.8799 7.08245 12.1201 7.55108 11.6515Z" fill="#111827"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Summary of Life</h3>
+                                <span>click here to download</span>
+                            </div>
+                        </div>
+                        <div class="resources-card">
+                            <button><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 20.9C3.59961 20.2373 4.13687 19.7 4.79961 19.7H19.1996C19.8624 19.7 20.3996 20.2373 20.3996 20.9C20.3996 21.5627 19.8624 22.1 19.1996 22.1H4.79961C4.13687 22.1 3.59961 21.5627 3.59961 20.9ZM7.55108 11.6515C8.01971 11.1828 8.77951 11.1828 9.24814 11.6515L10.7996 13.2029L10.7996 4.09999C10.7996 3.43725 11.3369 2.89999 11.9996 2.89999C12.6623 2.89999 13.1996 3.43725 13.1996 4.09999L13.1996 13.2029L14.7511 11.6515C15.2197 11.1828 15.9795 11.1828 16.4481 11.6515C16.9168 12.1201 16.9168 12.8799 16.4481 13.3485L12.8481 16.9485C12.6231 17.1736 12.3179 17.3 11.9996 17.3C11.6813 17.3 11.3761 17.1736 11.1511 16.9485L7.55108 13.3485C7.08245 12.8799 7.08245 12.1201 7.55108 11.6515Z" fill="#111827"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Summary of Life</h3>
+                                <span>click here to download</span>
+                            </div>
+                        </div>
+                        <div class="resources-card">
+                            <button><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 20.9C3.59961 20.2373 4.13687 19.7 4.79961 19.7H19.1996C19.8624 19.7 20.3996 20.2373 20.3996 20.9C20.3996 21.5627 19.8624 22.1 19.1996 22.1H4.79961C4.13687 22.1 3.59961 21.5627 3.59961 20.9ZM7.55108 11.6515C8.01971 11.1828 8.77951 11.1828 9.24814 11.6515L10.7996 13.2029L10.7996 4.09999C10.7996 3.43725 11.3369 2.89999 11.9996 2.89999C12.6623 2.89999 13.1996 3.43725 13.1996 4.09999L13.1996 13.2029L14.7511 11.6515C15.2197 11.1828 15.9795 11.1828 16.4481 11.6515C16.9168 12.1201 16.9168 12.8799 16.4481 13.3485L12.8481 16.9485C12.6231 17.1736 12.3179 17.3 11.9996 17.3C11.6813 17.3 11.3761 17.1736 11.1511 16.9485L7.55108 13.3485C7.08245 12.8799 7.08245 12.1201 7.55108 11.6515Z" fill="#111827"/>
+                                </svg>
+                            </button>
+                            <div class="resource-detail">
+                                <h3>Summary of Life</h3>
+                                <span>click here to download</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        {% endblock %}
+    </div>
+    <!-- <script src="/courses/static/js/course.js"></script> -->
+</body>
+
+</html>

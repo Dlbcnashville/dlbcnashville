@@ -1,0 +1,47 @@
+{% extends 'course/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>Course Objectives</title>{% endblock %}
+</head>
+
+<body>
+
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+            <div class="collapse-menu" onclick="toggleSidebar()">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5312 26.7313C14.9063 27.3562 13.8933 27.3562 13.2684 26.7313L3.66843 17.1313C3.04359 16.5065 3.04359 15.4934 3.66843 14.8686L13.2684 5.26858C13.8933 4.64374 14.9063 4.64374 15.5312 5.26858C16.156 5.89342 16.156 6.90648 15.5312 7.53132L8.66254 14.4L27.1998 14.3999C28.0835 14.4 28.7998 15.1163 28.7998 16C28.7998 16.8836 28.0835 17.6 27.1998 17.6L8.66254 17.6L15.5312 24.4686C16.156 25.0934 16.156 26.1065 15.5312 26.7313Z" fill="#7479FF"/>
+                </svg>
+            </div>
+            <div class="course-main-content">
+                <h1>Culture and Cultural Inteligence</h1>
+                <p>Here's what you'll learn in this lesson</p>
+                <div class="course-body">
+                    <ol class="course-objectives">
+                        <li>Consider this an invitation to join us in any of our</li>
+                        <li>Consider this an invitation to join us in any of our</li>
+                        <li>Consider this an invitation to join us in any of our</li>
+                        <li>Consider this an invitation to join us in any of our</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="next-previous-container">
+                <div class="next-previous-card">
+                    <button class="next"><p>Next</p> <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.1 6.75043C21.9006 5.94985 23.1986 5.94985 23.9992 6.75042L36.2992 19.0504C37.0998 19.851 37.0998 21.149 36.2992 21.9496L23.9992 34.2496C23.1986 35.0501 21.9006 35.0501 21.1 34.2496C20.2995 33.449 20.2995 32.151 21.1 31.3504L29.9005 22.55L6.14961 22.55C5.01743 22.55 4.09961 21.6322 4.09961 20.5C4.09961 19.3678 5.01743 18.45 6.14961 18.45H29.9005L21.1 9.64956C20.2995 8.84899 20.2995 7.551 21.1 6.75043Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+
+</body>
+
+</html>

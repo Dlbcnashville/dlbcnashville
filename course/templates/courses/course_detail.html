@@ -1,0 +1,119 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>Course</title>{% endblock %}
+    <!-- <link rel="stylesheet" href="/courses/static/css/course.css"> -->
+</head>
+
+<body>
+
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+            <div class="course-main-content active-course-main-content">
+                <div>
+                    <div class="course-detail-progress">
+                        <progress id="course_progress" max="100" value="{{lesson_percent_complete}}">{{lesson_percent_complete}}%</progress><span>{{lesson_percent_complete}}% Complete</span>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-cards-detail-container">
+                            <div class="course-detail-card-1">
+                                <div class="course-detail-heading">
+                                    <div class="course-detail-image">
+                                        <img src="{{page.banner.url}}" alt="">
+                                    </div>
+                                    <div class="course-detail-title">
+                                        <h1>{{page.course_title}}</h1>
+                                    </div>
+                                </div>
+                                <div class="course-detail-description">
+                                    <p>{{page.course_description|richtext}}</p>
+                                </div>
+                                <div class="start-resume-container">
+                                    {% if lesson_percent_complete == 0 %}
+                                    <a href="{% if resume_page %}{% pageurl resume_page %}{% else %}#{% endif %}"><button class="start">Start Course</button></a> {% else %}
+                                    <a href="{% if resume_page %}{% pageurl resume_page %}{% else %}#{% endif %}">
+                                        <button class="start">Start</button>
+                                    </a> {% endif %}
+                                </div>
+                            </div>
+                            <div class="course-chapter-container">
+                                <div class="course-chapter-heading">
+                                    <h2>Course Outline</h2>
+                                </div>
+
+                                <div class="chapter-container">
+                                    {% for lesson in completed_lessons %} {% if lesson %}
+                                    <div class="chapter-card">
+                                        <div class="chapter-status-image completed">
+                                            <svg width="75" height="75" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M62.6516 19.8483C64.1161 21.3128 64.1161 23.6872 62.6516 25.1517L32.6516 55.1516C31.1872 56.6161 28.8128 56.6161 27.3484 55.1516L12.3483 40.1516C10.8839 38.6872 10.8839 36.3128 12.3483 34.8484C13.8128 33.3839 16.1872 33.3839 17.6517 34.8484L30 47.1967L57.3484 19.8483C58.8128 18.3839 61.1872 18.3839 62.6516 19.8483Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chapter-content-detail">
+                                            <div class="chapter-content-detail-heading">
+                                                <h3>{{lesson.title|title}}</h3>
+                                                <a href="{% pageurl lesson %}"><span class="lesson-red-text-border">Retake</span></a>
+                                            </div>
+                                            <div class="chapter-content-detail-description">
+                                                <p>Consider this an invitation to join us in any of our </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div>No Lesson Completed</div>
+                                    {% endif %}{% endfor %} {% for lesson in member_course_uncompleted_lessons %} {% if lesson %}
+                                    <div class="chapter-card">
+                                        <div class="chapter-status-image locked">
+                                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 27V21C15 12.7157 21.7157 6 30 6C38.2843 6 45 12.7157 45 21V27C48.3137 27 51 29.6863 51 33V48C51 51.3137 48.3137 54 45 54H15C11.6863 54 9 51.3137 9 48V33C9 29.6863 11.6863 27 15 27ZM39 21V27H21V21C21 16.0294 25.0294 12 30 12C34.9706 12 39 16.0294 39 21Z" fill="white"/>
+                                            </svg>
+                                        </div>
+                                        <div class="chapter-content-detail">
+                                            <div class="chapter-content-detail-heading">
+                                                <h3>{{lesson.title|title}}</h3>
+                                                <a href="{% pageurl lesson %}"><span class="lesson-red-text-border">Start</span></a>
+                                            </div>
+                                            <div class="chapter-content-detail-description">
+                                                <p>Consider this an invitation to join us in any of our </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% else %}
+                                    <div>No Lesson Available</div>
+                                    {% endif %}{% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resources-download">
+                    <div>
+                        <h2>Course Resources</h2>
+                    </div>
+                    <div class="resources-container course-outline-container">
+                        {% if resources %} {% for doc in resources %}
+                        <div class="resources-card">
+                            <a href="{{doc.upload_resource}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59961 20.9C3.59961 20.2373 4.13687 19.7 4.79961 19.7H19.1996C19.8624 19.7 20.3996 20.2373 20.3996 20.9C20.3996 21.5627 19.8624 22.1 19.1996 22.1H4.79961C4.13687 22.1 3.59961 21.5627 3.59961 20.9ZM7.55108 11.6515C8.01971 11.1828 8.77951 11.1828 9.24814 11.6515L10.7996 13.2029L10.7996 4.09999C10.7996 3.43725 11.3369 2.89999 11.9996 2.89999C12.6623 2.89999 13.1996 3.43725 13.1996 4.09999L13.1996 13.2029L14.7511 11.6515C15.2197 11.1828 15.9795 11.1828 16.4481 11.6515C16.9168 12.1201 16.9168 12.8799 16.4481 13.3485L12.8481 16.9485C12.6231 17.1736 12.3179 17.3 11.9996 17.3C11.6813 17.3 11.3761 17.1736 11.1511 16.9485L7.55108 13.3485C7.08245 12.8799 7.08245 12.1201 7.55108 11.6515Z" fill="#111827"/>
+                            </svg>
+                            </a>
+                            <div class="resource-detail">
+                                <h3>{{doc.resource_title}}</h3><br>
+                            </div>
+                        </div>
+                        {% endfor %}{% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>{% endblock %}
+    </div>
+    <!-- <script src="/courses/static/js/course.js"></script> -->
+</body>
+
+</html>

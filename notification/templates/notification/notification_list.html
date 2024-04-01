@@ -1,0 +1,60 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block title %}
+    <title>Notifications</title>{% endblock %}
+    <!-- <link rel="stylesheet" href="/courses/static/css/course.css"> -->
+</head>
+
+<body>
+
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+            <div class="notification-header">
+                <svg viewBox="0 0 32 37" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.9997 0.900024C8.70952 0.900024 2.79967 6.80987 2.79967 14.1V21.9888L1.24404 23.5444C0.614843 24.1736 0.42662 25.1198 0.767139 25.9419C1.10766 26.764 1.90986 27.3 2.79967 27.3H29.1997C30.0895 27.3 30.8917 26.764 31.2322 25.9419C31.5727 25.1198 31.3845 24.1736 30.7553 23.5444L29.1997 21.9888V14.1C29.1997 6.80987 23.2898 0.900024 15.9997 0.900024Z"/>
+                    <path d="M15.9996 36.1C12.3545 36.1 9.39961 33.1451 9.39961 29.5H22.5996C22.5996 33.1451 19.6447 36.1 15.9996 36.1Z"/>
+                </svg>
+                <h1>Notification</h1>
+            </div>
+            <div class="notification-container">
+                {% for notification in notifications %}
+                <div class="btn notification-card notification-card-read" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{notification.pk}}">
+                    <div>
+                        <h3>{{ notification.title }}</h3>
+                        <span>{{notification.date}}</span>
+                    </div>
+                    <div class="notification-status notification-read"></div>
+                </div>
+                <div class="modal fade" id="staticBackdrop{{notification.pk}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">{{ notification.title }}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{notification.message|richtext}}
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Mark as read</button>
+                            </div>
+                          </div>
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+    <!-- <script src="/courses/static/js/course.js"></script> -->
+</body>
+
+</html>

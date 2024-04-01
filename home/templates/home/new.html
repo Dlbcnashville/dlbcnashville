@@ -1,0 +1,60 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-width, initial-scale=1.0" /> {% block extra_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}" /> {% endblock %}
+</head>
+
+
+<body>
+    {% block content %}
+    <div class="main i-am-new">
+        <div class="pix">
+            <div class="dem">
+                <h3>{{page.caption_title|richtext}}</h3>
+                <p id="me">{{page.caption_text|richtext}}
+                </p>
+            </div>
+        </div>
+        <div class="boy new-section-container">
+            <div><img src="/static/images/boy.jpg" alt="small boy praying" /></div>
+            <div class="lam section-text">
+                <h3 class="rap">
+                    {{page.first_section_title|richtext}}
+                </h3>
+                <div id="nop"></div>
+                <div class="hello">
+                    <p>
+                        {{page.first_section_body|richtext}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="christ new-section-container">
+            <div><img src="/static/images/christ.jpg" alt="man alone"></div>
+            <div class="section-text">
+                <h2 id="sch">{{page.second_section_title|richtext}}</h2>
+                <p id="late">{{page.second_section_body|richtext}}</p>
+            </div>
+        </div>
+        <div class="spiritual">
+            <div class="spiritual-text-container">
+                <div id="mens">
+                    <h2>{{page.third_section_title|richtext}}</h2>
+                </div>
+                <div id="many">
+                    <p>{{page.third_section_body|richtext}}</p>
+                </div>
+            </div>
+            <a href="{% url 'authentication:signup' %}">
+                <div id="nepa"><p>Join Us</p></div>
+            </a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

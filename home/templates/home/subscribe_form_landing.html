@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %} {% load i18n %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-widt, initial-scale=1.0" /> {% block extra_styles%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/thanks.css' %}">{% endblock %}
+
+</head> {% block content %}
+<div class="display-sign-container batch-container login-container" style="z-index: 1000;">
+    <div class="card text-center">
+        <div class="card-header">
+            Submission Successful
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">You have Successfully subscribe to our newsletter.</h5>
+            <p class="card-text">{{page.thank_you_text|richtext}}.</p>
+            <a href="/" class="btn btn-primary">Home</a>
+        </div>
+        <div class="card-footer text-muted">
+            Check your email inbox or spam for a confirmation email.
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,90 @@
+{% load static wagtailcore_tags %}{% load wagtailuserbar %} {% load static %}{% load wagtailimages_tags %}{% load static menus_tags %}{% get_menu "course-menu" as menu %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% block site_utils %}
+    <link rel="shortcut icon" href="/static/images/dlbc.png" type="image/x-icon"> {% endblock %} {% block title %}
+    <title>DLBC Clarksville Courses</title>{% endblock title %} {% block styles %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/course.css' %}">{% endblock styles %}
+</head>
+
+<body>
+    {% block sidemenu %}
+    <div class="sidebar-menu disappear">
+        <div class="sidebar-hamburger" onclick="toggleMenu()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></div>
+        <div class="navigation-menu">
+            {% for item in menu.menu_items.all %} {% if item.link_text == user.status %}
+            <div class="menu-card">
+                <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.556 1.04439C18.6969 0.185236 17.3039 0.185236 16.4448 1.04439L1.04476 16.4444C0.185602 17.3035 0.185602 18.6965 1.04476 19.5557C1.90391 20.4148 3.29687 20.4148 4.15603 19.5557L4.80039 18.9113V33.4C4.80039 34.615 5.78536 35.6 7.00039 35.6H11.4004C12.6154 35.6 13.6004 34.615 13.6004 33.4V29C13.6004 27.785 14.5854 26.8 15.8004 26.8H20.2004C21.4154 26.8 22.4004 27.785 22.4004 29V33.4C22.4004 34.615 23.3854 35.6 24.6004 35.6H29.0004C30.2154 35.6 31.2004 34.615 31.2004 33.4V18.9113L31.8448 19.5557C32.7039 20.4148 34.0969 20.4148 34.956 19.5557C35.8152 18.6965 35.8152 17.3035 34.956 16.4444L19.556 1.04439Z" fill="#FAFAFF"/>
+                </svg>
+                <a href="{{item.link}}" title="{{item.title}}" {% if item.open_in_new_tab %} target="_blank" {% endif %}>Home</a>
+            </div>
+            {% endif %} {% endfor %}
+            <div class="menu-card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#FAFAFF" ;transform: ;msFilter:; "><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86
+                    0-7 3.141-7 7v1h17z "></path></svg>                {% if request.user.is_authenticated %}
+                <a href="{% url 'authentication:member_profile' request.user.pk %}">Profile</a>{% else %}
+                <a href="/ ">Profile</a>{% endif %}
+            </div>
+            <div class="menu-card ">
+                <svg viewBox="0 0 44 44 " xmlns="http://www.w3.org/2000/svg ">
+                    <path d="M21.9997 4.40002C14.7095 4.40002 8.79967 10.3099 8.79967 17.6V25.4888L7.24404 27.0444C6.61484 27.6736 6.42662 28.6198 6.76714 29.4419C7.10766 30.264 7.90986 30.8 8.79967 30.8H35.1997C36.0895 30.8 36.8917 30.264 37.2322 29.4419C37.5727
+                    28.6198 37.3845 27.6736 36.7553 27.0444L35.1997 25.4888V17.6C35.1997 10.3099 29.2898 4.40002 21.9997 4.40002Z " fill="#FAFAFF "/>
+                    <path d="M21.9996 39.6C18.3545 39.6 15.3996 36.6451 15.3996 33H28.5996C28.5996 36.6451 25.6447 39.6 21.9996 39.6Z " fill="#FAFAFF "/>
+                </svg>
+                <a href="{% url 'notifications:notification_list' %}">Notification</a>
+            </div>
+            <div class="menu-card ">
+                <svg viewBox="0 0 44 44 " xmlns="http://www.w3.org/2000/svg ">
+                    <path d="M24.2004 13.2C24.2004 16.8451 21.2455 19.8 17.6004 19.8C13.9553 19.8 11.0004 16.8451 11.0004 13.2C11.0004 9.5549 13.9553 6.59998 17.6004 6.59998C21.2455 6.59998 24.2004 9.5549 24.2004 13.2Z " fill="#FAFAFF "/>
+                    <path d="M30.8004 37.4C30.8004 30.1098 24.8905 24.2 17.6004 24.2C10.3102 24.2 4.40039 30.1098 4.40039 37.4H30.8004Z " fill="#FAFAFF "/>
+                    <path d="M28.6004 17.6C27.3854 17.6 26.4004 18.5849 26.4004 19.8C26.4004 21.015 27.3854 22 28.6004 22H37.4004C38.6154 22 39.6004 21.015 39.6004 19.8C39.6004 18.5849 38.6154 17.6 37.4004 17.6H28.6004Z " fill="#FAFAFF "/>
+                </svg>
+
+                <form method="post " action="{% url 'authentication:logout' %} ">
+                    {% csrf_token %}
+                    <button type="submit "><a>Log out</a></button>
+                </form>
+                <!-- <a href="{% url 'authentication:logout' %} ">Log out</a> -->
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <div class="body-container ">
+        {% block header %}
+        <div class="course-section-header ">
+            <div class="welcome-greeting "><span>Hello {% if user.first_name %} {{request.user.first_name}} {{request.user.last_name}}{% else %}{{user.username}}{% endif %}</span> <img src="{% static 'images/🦆 emoji _waving hand_.png' %} " alt=" "></div>
+            {% if user.avatar %}
+            <div class="avatar "><img src="{% if user.avatar %}{{user.avatar.url}}{% else %}#{% endif %} " alt=" "></div>
+            {% else %}
+            <div class="user-first-letter ">
+                <h2>{% if user.first_name %}{{user.first_name|make_list|first}}{% else %}{{user.username|make_list|first}}{% endif %}</h2>
+            </div> {% endif %}
+        </div>
+        {% endblock %}
+        <div class="main-content ">
+            {% block collapse %}
+            <div class="collapse-menu " onclick="toggleSidebar() ">
+                <svg width="32 " height="32 " viewBox="0 0 32 32 " fill="none " xmlns="http://www.w3.org/2000/svg ">
+                    <path fill-rule="evenodd " clip-rule="evenodd " d="M15.5312 26.7313C14.9063 27.3562 13.8933 27.3562 13.2684 26.7313L3.66843 17.1313C3.04359 16.5065 3.04359 15.4934 3.66843 14.8686L13.2684 5.26858C13.8933 4.64374 14.9063 4.64374 15.5312
+                    5.26858C16.156 5.89342 16.156 6.90648 15.5312 7.53132L8.66254 14.4L27.1998 14.3999C28.0835 14.4 28.7998 15.1163 28.7998 16C28.7998 16.8836 28.0835 17.6 27.1998 17.6L8.66254 17.6L15.5312 24.4686C16.156 25.0934 16.156 26.1065 15.5312 26.7313Z
+                    " fill="#7479FF "/>
+                </svg>
+            </div>
+            {% endblock %} {% block content %} {% endblock %}
+
+        </div>
+    </div>
+    {% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
+    <script src="{% static 'js/course.js' %} "></script>
+    {% endblock %}
+</body>
+
+</html>
+
+</html>

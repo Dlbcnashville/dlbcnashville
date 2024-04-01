@@ -1,0 +1,141 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% block title %}
+    <title>Member Profile</title>{% endblock %}
+</head>
+
+<body>
+    <div class="body-container">
+        {% block content %}
+        <div class="main-content">
+
+            <div class="course-main-content">
+                <div class="personal-profile-header">
+                    {% if user.avatar %}
+                    <div class="proile-image"><img src="{% if user.avatar %}{{user.avatar.url}}{% else %}#{% endif %}" alt=""></div>
+                    {% else %}
+                    <div class="user-first-letter-profile">
+                        <h2>{% if user.first_name %}{{user.first_name|make_list|first}}{% else %}{{user.username|make_list|first}}{% endif %}</h2>
+                    </div> {% endif %}
+
+                    <div class="person-name-status">
+                        {% if request.user.first_name %}
+                        <h1>{{user.first_name}} {{user.last_name}}</h1>
+                        {% else %}
+                        <h1>{{user.username}}</h1> {% endif %}
+                        <p>Status: <span> {{user.status}}</span></p>
+                    </div>
+                </div>
+                <div class="active-course-main-content personal-info-address-container">
+                    <div class="personal-info-card">
+                        <div class="personal-info-header">
+                            <div class="personal-info-header-1">
+                                <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5 17.5C31.5 25.232 25.232 31.5 17.5 31.5C9.76801 31.5 3.5 25.232 3.5 17.5C3.5 9.76801 9.76801 3.5 17.5 3.5C25.232 3.5 31.5 9.76801 31.5 17.5ZM21 12.25C21 14.183 19.433 15.75 17.5 15.75C15.567 15.75 14 14.183 14 12.25C14 10.317 15.567 8.75 17.5 8.75C19.433 8.75 21 10.317 21 12.25ZM17.4999 19.25C13.9692 19.25 10.9269 21.3412 9.54404 24.3525C11.4696 26.5861 14.3196 28 17.5 28C20.6802 28 23.5303 26.5861 25.4558 24.3526C24.0729 21.3412 21.0306 19.25 17.4999 19.25Z" fill="#111827"/>
+                                </svg>
+                                <h2>Personal Info</h2>
+                            </div>
+                            <div class="personal-info-header-2">
+                                <a href="{% url 'authentication:user_update' user.pk %}">
+                                    <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M32.2165 4.78366C30.7715 3.33872 28.4288 3.33872 26.9839 4.78366L12.9502 18.8174V24.05H18.1828L32.2165 10.0162C33.6614 8.57131 33.6614 6.2286 32.2165 4.78366Z" fill="#111827"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.7002 11.1C3.7002 9.0565 5.35674 7.39995 7.4002 7.39995H14.8002C15.8219 7.39995 16.6502 8.22822 16.6502 9.24995C16.6502 10.2717 15.8219 11.1 14.8002 11.1H7.4002V29.5999H25.9002V22.2C25.9002 21.1782 26.7285 20.35 27.7502 20.35C28.7719 20.35 29.6002 21.1782 29.6002 22.2V29.5999C29.6002 31.6434 27.9436 33.2999 25.9002 33.2999H7.4002C5.35674 33.2999 3.7002 31.6434 3.7002 29.5999V11.1Z" fill="#111827"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="person-info-details">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="attribute">Name:</td>
+                                        <td class="value">{{user.first_name}} {{user.last_name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Phone Number:</td>
+                                        <td class="value">
+                                            <a href="tel:{{user.phone_number}}">{{user.phone_number}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Email:</td>
+                                        <td class="value email">
+                                            <a href="mailto:{{user.email}}">{{user.email}}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Gender:</td>
+                                        <td class="value">
+                                            {{user.gender}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">D.O.B:</td>
+                                        <td class="value">
+                                            {{user.date_of_birth}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="personal-info-card personal-address-card">
+                        <div class="personal-info-header">
+                            <div class="personal-info-header-1">
+                                <h2>Address</h2>
+                            </div>
+                            <div class="personal-info-header-2">
+                                <a href="{% url 'authentication:user_update' user.pk %}">
+                                    <svg viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M32.2165 4.78366C30.7715 3.33872 28.4288 3.33872 26.9839 4.78366L12.9502 18.8174V24.05H18.1828L32.2165 10.0162C33.6614 8.57131 33.6614 6.2286 32.2165 4.78366Z" fill="#111827"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.7002 11.1C3.7002 9.0565 5.35674 7.39995 7.4002 7.39995H14.8002C15.8219 7.39995 16.6502 8.22822 16.6502 9.24995C16.6502 10.2717 15.8219 11.1 14.8002 11.1H7.4002V29.5999H25.9002V22.2C25.9002 21.1782 26.7285 20.35 27.7502 20.35C28.7719 20.35 29.6002 21.1782 29.6002 22.2V29.5999C29.6002 31.6434 27.9436 33.2999 25.9002 33.2999H7.4002C5.35674 33.2999 3.7002 31.6434 3.7002 29.5999V11.1Z" fill="#111827"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="person-info-details">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="attribute">Nationality:</td>
+                                        <td class="value">{{user.country}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">State:</td>
+                                        <td class="value">
+                                            {{user.region}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="attribute">Residential Address:</td>
+                                        <td class="value">
+                                            {{user.residential_address}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="upcoming-event">
+                    <h1>Upcoming Events</h1>
+                    <div class="upcoming-events-container">
+                        <div class="upcoming-event-card"><img src="/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg" alt=""></div>
+                        <div class="upcoming-event-card"><img src="/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg" alt=""></div>
+                        <div class="upcoming-event-card"><img src="/static/images/edward-cisneros-QSa-uv4WJ0k-unsplash.jpg" alt=""></div>
+                    </div>
+                </div> -->
+                <div class="take-a-course">
+                    {% for item in menu.menu_items.all %} {% if item.link_text == user.status %}
+                    <a href="{{item.link}}" title="{{item.title}}" {% if item.open_in_new_tab %} target="_blank" {% endif %}><button>Take Course</button></a> {% endif %} {% endfor %}
+                </div>
+            </div>
+        </div>{% endblock %}
+    </div>
+</body>
+
+</html>

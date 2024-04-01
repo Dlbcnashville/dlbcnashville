@@ -1,0 +1,1182 @@
+:root {
+    --primary-value: #000468;
+    --red: #FF2E00;
+    --black: #000000;
+    --textblack: #292929;
+    --accentlight: #7479FF;
+}
+
+
+/* Defining fonts */
+
+@font-face {
+    font-family: Poppins;
+    src: url("/static/font/Poppins-Regular.093ee89be9ed.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/font/static/RobotoSerif/RobotoSerif-Regular.2fde5a4a0cef.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: none;
+}
+
+.sidebar-menu {
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 30px 20px;
+    background-color: var(--primary-value);
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: left;
+    height: 100%;
+    min-height: 100vh;
+    margin-right: 20px;
+    transition: all 1s;
+    z-index: 100;
+}
+
+.sidebar-hamburger {
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.sidebar-hamburger svg {
+    width: 36px;
+    height: 25.2px;
+}
+
+.navigation-menu {
+    /* margin-top: 50%; */
+    height: fit-content;
+    position: relative;
+    margin-top: 100px;
+}
+
+.menu-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-card svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    margin-right: 5px;
+}
+
+.menu-card a {
+    color: #fff;
+    font-size: 24px;
+    font-family: Poppins;
+}
+
+.menu-card button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    font-family: Poppins;
+}
+
+.disappear {
+    display: none;
+}
+
+.main-content {
+    z-index: 10;
+}
+
+.body-container {
+    padding: 20px 20px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    transition: all 1s;
+}
+
+.course-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course-section-header .welcome-greeting {
+    display: flex;
+    align-items: center;
+}
+
+.course-section-header .welcome-greeting span {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Poppins;
+    margin-right: 5px;
+}
+
+.course-section-header .welcome-greeting img {
+    width: 42px;
+    height: 43.02px;
+}
+
+.course-section-header .avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-first-letter {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7479FF;
+}
+
+.user-first-letter h2 {
+    color: #fff;
+    font-family: Poppins;
+    margin-top: 8px;
+}
+
+.collapse-menu {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    box-shadow: 20px 30px 50px 0px #00000040;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+.course-main-content h1 {
+    color: var(--textblack);
+    font-size: 44px;
+    text-align: center;
+    font-weight: 900;
+    font-family: Poppins;
+}
+
+.course-main-content p {
+    color: var(--textblack);
+    font-size: 18px;
+    text-align: center;
+    font: 400;
+    opacity: 90%;
+    font-family: Poppins;
+}
+
+.course-main-content .course-body {
+    margin-top: 50px;
+}
+
+.course-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.course-body ol {
+    counter-reset: count;
+    position: relative;
+}
+
+.course-body .course-objectives li {
+    color: var(--textblack);
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 400;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #00000052;
+    padding-bottom: 20px;
+    list-style-type: none;
+}
+
+.course-body .course-objectives li:before {
+    padding: 10px 10px;
+    border-radius: 50%;
+    background: var(--accentlight);
+    color: #fff;
+    display: inline-block;
+    counter-increment: count;
+    content: counter(count)" ";
+    margin-right: 10px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.next-previous-container {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-previous-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.next-previous-card p {
+    color: #fff;
+    opacity: 1;
+}
+
+.next-previous-container button {
+    box-shadow: 10px 20px 44px 0px #00000040;
+    border-radius: 10px;
+    background-color: var(--accentlight);
+    padding: 8px 20px;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+.next-previous-container button svg {
+    fill: #fff;
+    margin-left: 5px;
+}
+
+.next-previous-container .next {
+    float: right;
+}
+
+.next-previous-container .previous {
+    float: left;
+}
+
+.next-previous-container .previous svg {
+    transform: rotate(180deg);
+}
+
+
+/* STYLING ACTIVE COURSES */
+
+.active-course-main-content {
+    display: flex;
+}
+
+.active-course-main-content .course-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.active-course-main-content .course-categories {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.active-course-main-content .course-categories li {
+    list-style: none;
+    margin-right: 20px;
+    color: #aaaaaa;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Poppins;
+}
+
+.active-course-main-content .course-categories li a {
+    color: #aaaaaa;
+}
+
+.active-course-main-content .course-categories .active a {
+    color: var(--primary-value);
+}
+
+.active-course-main-content .course-heading a {
+    color: var(--black);
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.course-card {
+    box-shadow: 20px 30px 50px 0px #0000001A;
+    border-radius: 10px;
+    background: linear-gradient(79.7deg, #F5F5F5 34.64%, #D9DAFF 97.99%);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.course-cards-container .course-title {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--black);
+    font-family: Poppins;
+}
+
+.course-cards-container .course-description {
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    font-family: Poppins;
+    text-align: left;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    opacity: 1;
+}
+
+.start-resume-container button {
+    padding: 15px 30px 15px 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    float: right;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.start-resume-container .resume {
+    background: var(--red);
+}
+
+.start-resume-container .start {
+    background: var(--accentlight);
+}
+
+.course-cards-container .course-image {
+    max-height: 247px;
+    max-width: 275px;
+    margin-right: 10px;
+}
+
+.course-cards-container .course-image img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    min-width: 250px;
+}
+
+.course-cards-container .course-content {
+    padding: 10px;
+}
+
+.course-cards-container .course-progress {
+    margin-top: 10px;
+}
+
+.course-cards-container .course-progress span {
+    color: #999999;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.course-cards-container progress {
+    height: 20px;
+    min-width: 250px;
+    max-width: 365px;
+}
+
+.course-cards-container progress[value] {
+    background: var(--accentlight);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 40px;
+    background: #F5F5FF;
+}
+
+.course-cards-container progress[value]::-webkit-progress-value {
+    background: var(--accentlight);
+    border-radius: 50px;
+}
+
+.course-cards-container progress[value]::-webkit-progress-bar {
+    background: #F5F5FF;
+    border-radius: 50px;
+}
+
+.resource-container {
+    background: #FAFAFF;
+    border-radius: 10px;
+}
+
+.resources-card {
+    display: flex;
+    align-items: center;
+    padding: 25px 10px;
+    border-bottom: 1px solid #0000002c;
+}
+
+.resources-card button {
+    border-radius: 50%;
+    background: #FFE5E5;
+    border: none;
+    width: 46px;
+    height: 46px;
+    margin-right: 20px;
+}
+
+.resources-card .resource-detail h3 {
+    font-size: 18px;
+    color: var(--black);
+    font-weight: 500;
+    font-family: Poppins;
+}
+
+.resources-card .resource-detail span {
+    color: #202020;
+    opacity: 50%;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Poppins;
+}
+
+.resources-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    margin-top: 120px;
+    margin-left: 30px;
+    width: fit-content;
+}
+
+.resources-download h2 {
+    font-weight: 500;
+    font-size: 24px;
+    font-family: Poppins;
+    margin-bottom: 30px;
+}
+
+
+/* STYLING ALL COURSES PAGE */
+
+.course-card-vertical {
+    box-shadow: 20px 30px 50px 0px #0000001A;
+    border-radius: 10px;
+    background: linear-gradient(79.7deg, #F5F5F5 34.64%, #D9DAFF 97.99%);
+    /* display: flex;
+align-items: center; */
+    margin: 20px;
+    max-width: 355px;
+    height: 500px;
+    padding: 10px;
+    min-width: 270px;
+    position: relative;
+}
+
+.course-cards-container .course-card-vertical .course-image {
+    width: 100% !important;
+    margin-right: 10px;
+    max-width: 100%;
+    height: 200px;
+}
+
+.course-cards-container .course-card-vertical .course-image img {
+    height: 100% !important;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.all-courses-main-content .course-heading h1 {
+    font-size: 34px;
+    font-weight: 600;
+    font-family: Poppins;
+    color: var(--primary-value);
+    text-align: left;
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+
+.course-cards-container {
+    display: flex;
+}
+
+.course-cards-container-horizontal {
+    display: block;
+}
+
+.start-resume-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* STYLING COURSE DETAIL */
+
+
+/* .course-detail-progress {
+margin-top: 10px;
+} */
+
+.course-detail-progress span {
+    color: #999999;
+    font-size: 16px;
+    font-family: Poppins;
+    font-weight: 400;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.course-detail-progress {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.course-detail-progress progress {
+    height: 20px;
+    min-width: 250px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.course-detail-progress progress[value] {
+    background: var(--accentlight);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 40px;
+    background: #F5F5FF;
+}
+
+.course-detail-progress progress[value]::-webkit-progress-value {
+    background: var(--accentlight);
+    border-radius: 50px;
+}
+
+.course-detail-progress progress[value]::-webkit-progress-bar {
+    background: #F5F5FF;
+    border-radius: 50px;
+}
+
+.course-detail-card-1 {
+    background: #F5F5FF;
+    padding: 20px;
+    max-height: fit-content;
+    position: relative;
+    min-height: 400px;
+    height: 100%;
+}
+
+.course-detail-image {
+    width: 138px;
+    height: 138px;
+    margin-right: 10px;
+}
+
+.course-detail-heading {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.course-detail-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.course-detail-title h1 {
+    font-weight: 600;
+    font-family: Poppins;
+    font-size: 44px;
+    color: var(--textblack);
+}
+
+.course-detail-description p {
+    font-weight: 400;
+    font-family: Poppins;
+    font-size: 24px;
+    color: var(--textblack);
+    opacity: 1;
+}
+
+.course-chapter-container {
+    margin-top: 100px;
+}
+
+.course-chapter-heading {
+    height: 68px;
+    padding: 10px 10px 10px 30px;
+    width: 100%;
+    background-color: var(--primary-value);
+    margin-bottom: 30px;
+}
+
+.course-chapter-heading h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 34px;
+    font-family: Poppins;
+}
+
+.chapter-status-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.completed {
+    background: #A6FFB4;
+}
+
+.locked {
+    background: var(--accentlight);
+}
+
+.chapter-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.chapter-content-detail-heading {
+    display: flex;
+    align-items: center;
+}
+
+.chapter-content-detail-heading h3 {
+    color: var(--textblack);
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.chapter-content-detail-description p {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--textblack);
+    opacity: 1;
+}
+
+.course-outline-container {
+    background: #F5F5FF;
+    padding: 20px;
+}
+
+.course-outline-container button {
+    background: var(--accentlight);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-outline-container button svg {
+    width: 41px;
+    height: 41px;
+}
+
+.lesson-red-text-border {
+    color: var(--red) !important;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    border: 1px solid var(--red);
+    padding: 3px 5px;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.course-outline-container .lesson-red-text-border {
+    margin-top: 15px !important;
+    opacity: 1;
+}
+
+
+/* STYLING LESSON DETAIL */
+
+.lesson-progress {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 50px;
+    border: 1px solid #C4C5DD;
+}
+
+.lesson-completed {
+    background: var(--accentlight);
+}
+
+.lesson-progress .lesson-completed svg {
+    width: 29.4px;
+    height: 21px;
+}
+
+.lesson-not-completed {
+    background: #C4C5DD;
+}
+
+.lesson-title {
+    font-size: 44px;
+    font-family: Poppins;
+    font-weight: 600;
+    color: var(--textblack);
+    text-align: left;
+}
+
+.lesson-content {
+    margin-top: 30px;
+}
+
+.lesson-content p {
+    text-align: left;
+    color: var(--textblack) !important;
+    font-size: 24px;
+    font-family: Poppins;
+    opacity: 1;
+}
+
+.lesson-detail-progress {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lesson-complete-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 205px;
+    height: 205px;
+    border-radius: 50%;
+    background: #ABFFB3;
+}
+
+.lesson-complete-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F5F5FF;
+    padding: 20px;
+}
+
+.lesson-complete-check svg {
+    width: 112px;
+    height: 112px;
+}
+
+.lesson-complete-card p {
+    text-align: center;
+    opacity: 0.75;
+    max-width: 733px;
+    margin-top: 30px;
+}
+
+
+/* STYLING PROILE DETAIL */
+
+.personal-info-address-container {
+    margin-top: 30px;
+}
+
+.personal-info-card {
+    border: 2px solid #7479FF;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 482px;
+    width: 100%;
+    min-width: 290px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.personal-info-card svg {
+    width: 35px;
+    height: 35px;
+}
+
+.personal-profile-header {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.personal-profile-header .proile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 113px;
+    height: 113px;
+    border-radius: 50%;
+    margin-right: 30px;
+    max-width: 113px;
+    max-height: 113px;
+    min-width: 113px;
+    min-height: 113px;
+}
+
+.user-first-letter-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 113px;
+    height: 113px;
+    border-radius: 50%;
+    margin-right: 30px;
+    background-color: #7479FF;
+    max-width: 113px;
+    max-height: 113px;
+    min-width: 113px;
+    min-height: 113px;
+}
+
+.user-first-letter-profile h2 {
+    color: #fff;
+    font-size: 54px;
+}
+
+.personal-profile-header .proile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.personal-profile-header .person-name-status h1 {
+    font-size: 44px;
+    font-family: Poppins;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.personal-profile-header .person-name-status p {
+    font-size: 20px;
+    font-family: Poppins;
+    color: var(--black);
+    font-weight: 600;
+    opacity: 1;
+    text-align: left;
+}
+
+.personal-profile-header .person-name-status span {
+    font-size: 20px;
+    font-family: Poppins;
+    color: var(--black);
+    font-weight: 400;
+}
+
+.personal-info-header-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.personal-info-header-1 h2 {
+    font-size: 34px;
+    font-family: Poppins;
+    color: var(--black);
+    font-weight: 600;
+    opacity: 1;
+}
+
+.personal-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.person-info-details table {
+    border-collapse: collapse;
+    max-width: 100%;
+}
+
+.person-info-details table td {
+    padding: 10px 10px 10px 0;
+    max-width: 100%;
+}
+
+.person-info-details table email {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.person-info-details table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+.person-info-details table .attribute {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.person-info-details table .value {
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.personal-address-card {
+    border-radius: 10px;
+    background: #F5F5FF;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 482px;
+    width: 100%;
+    min-width: 290px;
+}
+
+.upcoming-event-card {
+    min-width: 400px;
+    max-width: 571px;
+    height: 302px;
+    margin-right: 20px;
+}
+
+.upcoming-events-container {
+    display: flex;
+    align-items: center;
+}
+
+.upcoming-event-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.upcoming-event {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 900px;
+    overflow-x: scroll;
+    /* margin-left: auto;
+margin-right: auto; */
+    overflow-y: hidden;
+}
+
+.upcoming-event h1 {
+    color: #000;
+    font-family: Poppins;
+    font-size: 34px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.take-a-course button {
+    background: none;
+    border: none;
+    color: var(--accentlight);
+    font-family: Poppins;
+    font-size: 34px;
+    font-weight: 500;
+    text-transform: capitalize;
+    float: right;
+    box-shadow: 20px 30px 50px 0px #00000040;
+    cursor: pointer;
+    padding: 15px 20px;
+    /* background-color: #cad8ff; */
+    border-radius: 10px;
+}
+
+.take-a-course {
+    max-width: 900px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+
+/* Style the tab */
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+
+/* Style the buttons that are used to open the tab content */
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+/* Change background color of buttons on hover */
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+
+/* Create an active/current tablink class */
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    animation: fadeEffect 1s;
+    width: 100%;
+}
+
+
+/* Go from zero to full opacity */
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .hero-text-cta h1 {
+        font-size: calc(1.2rem + 2vw);
+    }
+    .hero-text-cta p {
+        font-size: 12px;
+    }
+    .active-course-main-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .start-resume-container {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .course-cards-container {
+        flex-direction: column;
+    }
+    .personal-profile-header .person-name-status h1 {
+        font-size: 34px;
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .course-cards-container {
+        flex-direction: column;
+    }
+    .active-course-main-content .course-categories li {
+        font-size: 18px;
+    }
+    .next-previous-card p {
+        display: none;
+    }
+    .personal-profile-header .person-name-status h1 {
+        font-size: 16px;
+        text-align: left;
+    }
+    .personal-profile-header .person-name-status p {
+        font-size: 14px;
+    }
+    .person-info-details table .attribute {
+        font-size: 14px;
+    }
+    .person-info-details table .value {
+        font-size: 14px;
+    }
+    .personal-info-card {
+        width: 100%;
+        margin-right: 5px;
+    }
+    .course-section-header .welcome-greeting span {
+        font-size: 16px;
+    }
+    .course-section-header .welcome-greeting img {
+        width: 22px;
+        height: 23.02px;
+    }
+    .course-cards-container-horizontal .course-card {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .course-cards-container-horizontal .course-card .course-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    .course-cards-container-horizontal .course-card .course-image img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .course-cards-container-horizontal .course-title {
+        font-size: 20px !important;
+    }
+    .personal-info-header-1 h2 {
+        font-size: 20px;
+    }
+}

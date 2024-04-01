@@ -1,0 +1,830 @@
+:root {
+    --primary-value: #000468;
+    --red: #FF2E00;
+    --black: #000000;
+}
+
+
+/* Defining fonts */
+
+@font-face {
+    font-family: Poppins;
+    src: url("/static/font/Poppins-Regular.093ee89be9ed.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("/static/font/static/RobotoSerif/RobotoSerif-Regular.2fde5a4a0cef.ttf");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Header CSS */
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #fff;
+}
+
+.logo-container {
+    width: 86px;
+    height: 78px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.navigation-container nav ul {
+    display: flex;
+}
+
+.navigation-container nav ul li {
+    font-family: Poppins;
+    color: var(--primary-value);
+    list-style: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navigation-container nav ul li a {
+    font-family: Poppins;
+    color: var(--primary-value);
+    list-style: none;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.donate-join-container button {
+    box-shadow: 10px 20px 40px 0px #00000026;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: 700;
+    /* display: flex;
+align-items: center; */
+}
+
+.donate {
+    border: 1px solid var(--primary-value);
+    color: var(--primary-value);
+    font-family: Poppins;
+    margin-right: 20px;
+    font-weight: 700;
+}
+
+.donate:hover {
+    background: var(--primary-value);
+    color: #ffffff;
+}
+
+.join {
+    border: 1px solid var(--primary-value);
+    background: var(--primary-value);
+    color: #ffffff;
+    font-family: Poppins;
+}
+
+.join:hover {
+    background: #fff;
+    color: var(--primary-value);
+}
+
+
+/* Hamburger Menu STYLING */
+
+.hamburger {
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger .ham {
+    border: 0.5px solid #000000;
+    width: 20px;
+    margin-bottom: 4px;
+}
+
+.ham-side-nav-bar {
+    height: fit-content;
+    width: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    transition: all 0.2s;
+    transform: translateX(0);
+    z-index: 100000000000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    max-width: 200px;
+}
+
+.ham-side-nav-bar * {
+    color: #1C1C1C;
+}
+
+.ham-side-nav-bar p {
+    text-transform: uppercase;
+}
+
+.ham-side-nav-bar ul a {
+    color: #1C1C1C;
+    text-align: center;
+}
+
+.ham-side-nav-bar ul li {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ham-side-main-menu {
+    padding: 5px;
+    cursor: pointer;
+    /* border-bottom: thin dashed white; */
+}
+
+.ham-side-main-menu:hover {
+    background-color: var(--blue-ocean);
+}
+
+.ham-side-dropdown-menus {
+    transition: all 0.5s;
+    padding: 5px;
+    height: fit-content;
+}
+
+.ham-side-dropdown-menus li {
+    background-color: #fff;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.ham-side-dropdown-menus li:hover {
+    background-color: var(--grey);
+}
+
+.ham-side-dropdown-menus a {
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+}
+
+.ham-side-dropdown-menus svg {
+    width: 30px;
+    height: 20px;
+}
+
+.display-none {
+    display: none;
+    transition: all 0.5s;
+}
+
+.translate-left-right {
+    transform: translateX(-120vw);
+}
+
+.ham-side-main-menu {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ------------------------------------- */
+
+
+/* Hero Section CSS */
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text-cta {
+    max-width: 421px;
+    min-width: 280px;
+    padding-left: 40px;
+    margin-right: 15px;
+}
+
+.hero-text-cta h1 {
+    font-size: calc(1.5rem + 2.5vw);
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: Roboto;
+    color: var(--primary-value);
+    margin-bottom: 15px;
+}
+
+.hero-text-cta p {
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.hero-text-cta span {
+    font-weight: 400;
+}
+
+.join-special-button {
+    max-width: 269px;
+    max-height: 74px;
+    background-color: #fff;
+    box-shadow: 10px 20px 40px 0px #00000026;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px 8px 25px;
+    border-radius: 35px;
+    margin-top: 20px;
+}
+
+.join-special-button p {
+    color: var(--primary-value);
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.join-special-button .join-arrow {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--primary-value);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-special-button .join-arrow svg {
+    width: 50px;
+    fill: #fff;
+}
+
+.slideshow {
+    width: 60%;
+    height: 500px;
+    max-height: 604px;
+}
+
+.slideshow div {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+}
+
+
+/* STYLING HOME PAGE ABOUT SECTION */
+
+#about-church {
+    width: 100%;
+    min-height: 80vh;
+    margin-top: 50px;
+}
+
+.section-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-title-container .know-more a {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+#about-church .section-title {
+    width: fit-content;
+    max-width: 397px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.section-title h1 {
+    font-weight: 900;
+    font-family: Roboto;
+    font-size: calc(1.5rem + 2.5vw);
+    color: #fff;
+    line-height: 1.3;
+}
+
+.section-title span {
+    font-weight: 400 !important;
+}
+
+#about-church .know-more {
+    margin-right: 30px;
+}
+
+.know-more {
+    min-width: 150px;
+    /* border: #fff solid; */
+}
+
+.know-more a {
+    color: #fff;
+}
+
+#about-church .know-more a {
+    color: #fff;
+    font-weight: 400;
+    font-size: calc(1.0625rem + 1.325vw);
+    text-decoration: underline;
+}
+
+.about-section-main-container {
+    margin-top: 50px;
+}
+
+.about-card-container {
+    display: flex;
+    align-items: center;
+    height: 384px;
+}
+
+.about-card-container .about-card-1 {
+    width: 60%;
+    padding: 40px 10px;
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+}
+
+.about-card-container .about-card-2 {
+    width: 40%;
+    padding: 40px 10px;
+    height: 100% !important;
+}
+
+.about-card-container .about-card-1 img {
+    max-width: 228px;
+    border-radius: 25px;
+    max-height: 272px;
+    margin-right: 15px;
+}
+
+.about-card-container .about-text * {
+    color: #fff;
+}
+
+.about-card-container .about-text h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: calc(1.0625rem + 1.325vw);
+    line-height: 1.3;
+    font-family: Roboto, serif;
+    margin-bottom: 15px;
+}
+
+.about-card-container .about-text p {
+    color: #fff;
+    font-weight: 400;
+    font-size: calc(0.625rem + 0.78vw);
+    line-height: 1.2;
+    font-family: Poppins;
+}
+
+.about-card-11 {
+    background: #4d53ff;
+    opacity: 0.8;
+}
+
+.about-card-12 {
+    background: #fd5f5f;
+    opacity: 0.8;
+}
+
+.about-card-21 {
+    background: #000000;
+    opacity: 0.8;
+}
+
+.about-card-22 {
+    background: #026838;
+    opacity: 0.8;
+}
+
+
+/* STYLING REDEMPTION SECTION */
+
+#redemption-section {
+    width: 100%;
+    max-height: 788px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redemption-section-container .section-title {
+    max-width: 596.38px;
+}
+
+.redemption-section-body-text {
+    margin-top: 40px;
+    max-width: 366.11px;
+}
+
+.redemption-section-body-text p {
+    font-size: calc(0.625rem + 0.78vw);
+    font-family: Poppins;
+    color: #fff;
+}
+
+.redemption-section-container {
+    background: #000468C4;
+    padding: 50px 20px 15px 10%;
+    width: 100%;
+}
+
+.redemption-section-container .union-image {
+    margin-top: -300px;
+    max-width: 100%;
+    height: auto;
+}
+
+.redemption-section-container .union-image img {
+    width: 100% !important;
+}
+
+
+/* SUBSCRIBE TO NEWSLETTER STYLING */
+
+.subscribe-to-newsletter label {
+    font-size: calc(0.5rem + 0.625vw);
+    color: #77808B;
+    margin-bottom: 15px;
+}
+
+.subscribe-to-newsletter .form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.subscribe-to-newsletter {
+    padding: 50px 40px;
+    background: #fff;
+}
+
+.subscribe-to-newsletter .form_input {
+    border: 1px solid #11156E;
+    padding: 15px 15px;
+    border-radius: 10px;
+    min-width: 296px;
+}
+
+.subscribe-to-newsletter .section-title {
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+.subscribe-to-newsletter .section-title h1 {
+    color: var(--primary-value);
+}
+
+.subscribe-to-newsletter .subscribe-btn {
+    padding: 16px 48px 16px 48px;
+    background: #11156E;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+input[type='submit'] {
+    cursor: pointer;
+}
+
+
+/* STYLING DAILY DEVOTION SECTION */
+
+.daily-devotion {
+    padding: 50px 40px;
+}
+
+.section-title-container button {
+    box-shadow: 10px 20px 40px 0px #00000026;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.daily-devotion .section-title h1 {
+    color: var(--primary-value);
+}
+
+.daily-devotion .section-title p {
+    /* max-width: 296px; */
+    font-size: calc(0.5rem + 0.625vw);
+    font-family: Poppins;
+}
+
+.daily-devotion .section-title span {
+    font-weight: 600 !important;
+}
+
+.daily-devotion-container {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    /* flex-wrap: wrap; */
+}
+
+.daily-devotion-container h2 {
+    color: #fff;
+    font-family: Roboto;
+}
+
+.daily-devotion-container .daily-devotion-card {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 296px;
+}
+
+.daily-devotion-container a {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.gck-video {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 20px;
+}
+
+.donate svg {
+    width: 20px;
+    height: 25px;
+}
+
+
+/* STYLING SERVICE SECTION */
+
+
+/* .weekly-service-container div {
+display: block;
+} */
+
+.worship-service-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.worship-service-container h3 {
+    font-size: calc(0.625rem + 0.78vw);
+    font-family: Roboto;
+}
+
+.worship-service-container .service-time {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.worship-service-container .service-time p {
+    text-transform: uppercase;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins;
+    font-size: calc(0.78125rem + 0.975vw) 1.95vw;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.worship-service-container .service-time .time-from {
+    background-color: #FFE5E5;
+    margin-right: 5px;
+}
+
+.worship-service-container .service-time .time-to {
+    background-color: #D5D7FF;
+    margin-left: 5px;
+}
+
+.disappear {
+    display: none;
+}
+
+.rotate45 {
+    transform: rotate(45deg);
+    transform-origin: 35.5%;
+}
+
+.rotateneg45 {
+    transform: rotate(-45deg);
+    transform-origin: 35.5%;
+}
+
+@media screen and (max-width: 1060px) {
+    .about-card-container .about-text h2 {
+        font-size: calc(0.8rem + 1.325vw);
+    }
+    .about-card-container .about-text p {
+        font-size: calc(0.4rem + 0.78vw);
+    }
+    .redemption-section-body-text p {
+        font-size: calc(0.4rem + 0.7vw);
+        font-family: Poppins;
+        color: #fff;
+    }
+    .section-title h1 {
+        font-size: calc(1.3rem + 2.0vw);
+        line-height: 1.2;
+    }
+    .redemption-section-container .union-image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .navigation-container {
+        display: none;
+    }
+    .donate-join-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    .hero-text-cta h1 {
+        font-size: calc(1.2rem + 2vw);
+    }
+    .hero-text-cta .hero-text {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 748px) {
+    .about-card-container .about-card-1 {
+        flex-direction: column;
+        width: 100%;
+    }
+    .about-card-container .about-card-1 img {
+        margin-bottom: 20px;
+        max-width: 100%;
+        width: 100%;
+        margin-right: 10px;
+    }
+    .hero-container {
+        flex-direction: column-reverse;
+    }
+    .slideshow {
+        width: 100%;
+        height: 400px;
+    }
+    .hero-text-cta {
+        max-width: 100%;
+        width: 100%;
+        margin-top: 20px;
+        padding-left: 20px;
+        margin-right: 20px;
+    }
+    .hamburger {
+        display: flex;
+        margin-top: 5px;
+    }
+    .daily-devotion-container div {
+        max-width: 100%;
+    }
+    #about-church .know-more a {
+        font-size: calc(0.7rem + 1vw);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .weekly-service .section-title-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .weekly-service .section-title-container .know-more {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-card-container {
+        height: fit-content;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .about-card-container .about-card-1 {
+        width: 100%;
+    }
+    .about-card-container .about-card-2 {
+        width: 100%;
+    }
+    .slideshow {
+        width: 100%;
+        height: 300px;
+    }
+    #about-church .section-title {
+        margin-left: 10px;
+    }
+    #about-church .know-more {
+        margin-right: 10px;
+        float: right;
+        display: flex;
+        justify-content: right;
+    }
+    .daily-devotion-container .daily-devotion-card {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .footer-container {
+        margin-top: 30px;
+    }
+    .daily-devotion {
+        padding: 50px 10px;
+    }
+    .worship-service-container {
+        margin-right: 0;
+        width: 100%;
+    }
+    footer .bottom {
+        width: 100%;
+        padding: 10px;
+    }
+    footer .bottom div {
+        max-width: 100%;
+    }
+    .about-card-container .about-text p {
+        font-size: 12px;
+    }
+    .daily-devotion-container {
+        flex-wrap: wrap;
+    }
+}
+
+.zoom-service {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: #2D8CFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: -5px;
+}
+
+.zoom-service svg {
+    fill: #ffffff;
+    width: 25px;
+    height: 22px;
+}
+
+.service-name-zoom {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}{% load contact_form %} {% get_contact_form as form %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-width, initial-scale=1.0" /> {% block extra_styles%}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">{% endblock %}
+    <!-- <link rel="stylesheet" type="text/css" href="connect.css" /> -->
+</head>
+
+<body>
+    {% block content %}
+    <div class="main registration-page">
+        <div class="new" style="background: url({% static 'images/regis.jpg' %}); backgroud-repeat: no-repeat; backgroud-cover: cover;">
+            <h1>Drop A Message</h1>
+            <!-- <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut al</p> -->
+        </div>
+        <div class="com">
+            <div class="won">
+                <div class="name">
+                    <h2>Send Us A Message</h2>
+                </div>
+                {{form.errors}}
+                <form action="{% pageurl form.page %}" method="post" class="authentication_form">
+                    {% csrf_token %}
+                    <div class="field_card">
+                        <label for="id_full_name">Full Name:</label>
+
+                        <input type="text" name="full_name" name="full_name" class="input100" placeholder="Enter you full name" maxlength="254" required aria-describedby="id_full_name_helptext" id="id_full_name">
+                    </div>
+                    <div class="field_card">
+                        <label for="id_email">Email:</label>
+                        <!-- <div class="helptext" id="id_email_helptext">Required. Input a valid email address.</div> -->
+                        <input type="email" name="email" name="email" class="input100" placeholder="Email" maxlength="254" required aria-describedby="id_email_helptext" id="id_email">
+                    </div>
+                    <div class="field_card">
+                        <label for="id_message">Message</label><br>
+                        <textarea name="message" id="id_message" placeholder="Type a message"></textarea>
+                    </div>
+                    <input id="next" class="sign-up-button" type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

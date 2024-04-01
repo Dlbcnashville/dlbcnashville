@@ -1,0 +1,233 @@
+footer {
+    margin-top: 50px;
+}
+
+footer .bottom {
+    width: 100%;
+    height: fit-content;
+    /* border: solid; */
+    max-width: 100%;
+    background: var(--White-White-20, #F8F9FA);
+    padding-left: auto;
+    padding-right: auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url('/static/font/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('/static/font/static/RobotoSerif/RobotoSerif-Regular.ttf');
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .copy {
+    display: inline-block;
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    /* margin-top: 60px; */
+    font-family: Roboto;
+    font-size: 14px;
+    padding: 20;
+    /* background-color: red; */
+}
+
+footer .copy>img {
+    height: 78px;
+    width: 86px;
+}
+
+footer .lorem p {
+    /* height: 10px; */
+    width: 100%;
+    color: #77808B;
+    font-family: Roboto;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+footer .right {
+    margin-top: 60px;
+    color: #283646;
+}
+
+a,
+p {
+    color: #77808B;
+    font-size: 16px;
+    font-family: Roboto;
+}
+
+footer .get {
+    /* position: absolute; */
+    display: inline-block;
+    /* height: 100px; */
+    width: fit-content;
+    /* background-color: blue; */
+    /* margin-top: 60px; */
+    /* margin-left: 1px; */
+    /* padding: 20px; */
+    height: fit-content;
+}
+
+footer #touch h4 {
+    color: #11156E;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+footer .ohio {
+    margin-top: 20px;
+    color: rgb(84, 71, 73);
+    display: flex;
+    align-items: sta;
+}
+
+footer #our {
+    /*    margin-top: 20px; */
+    color: rgb(84, 71, 73);
+    display: flex;
+    align-items: center;
+}
+
+footer #message {
+    margin-top: 20px;
+    color: rgb(84, 71, 73);
+    display: flex;
+    align-items: start;
+}
+
+footer .in {
+    /* position: absolute; */
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    /* margin-left: 190px; */
+    /* margin-top: 60px; */
+    padding: 0;
+}
+
+footer .dolor {
+    /* margin-top: 36px; */
+    color: rgb(84, 71, 73);
+}
+
+footer .us {
+    margin-top: 30px;
+}
+
+footer .us-a {
+    color: rgb(253, 248, 248);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10px;
+    text-align: center;
+}
+
+footer .news {
+    /* position: absolute; */
+    display: inline-block;
+    height: fit-content;
+    /* width: 190px; */
+    /* margin-left: 450px; */
+    /* margin-top: 60px; */
+    width: fit-content;
+}
+
+footer .news p {
+    margin-top: 10px;
+}
+
+footer .news h4 {
+    color: #11156E;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+footer .news h1 {
+    display: none;
+}
+
+footer .run {
+    width: 220px;
+    height: 35px;
+    padding-left: 15px;
+}
+
+footer .son {
+    background-color: rgb(17, 17, 58);
+    color: white;
+    border: 1px solid rgb(17, 17, 58);
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 20px;
+    /* font-weight: bold; */
+    font-style: arial;
+    font-weight: 20px;
+}
+
+footer .son-a {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: arial;
+}
+
+footer .bottom div {
+    max-width: 260px;
+    width: 100%;
+    /* border: solid; */
+}
+
+footer button {
+    border-radius: 8px;
+    background: #11156E;
+    color: white;
+    border: none;
+    padding: 16px 30px;
+}
+
+footer input {
+    border-radius: 10px;
+    border: 1px solid #11156E;
+    background: #FFF;
+    padding: 16px 20px;
+    /* height: 45px; */
+    width: 250px;
+}
+
+footer input[type='submit'] {
+    background: #11156E;
+    border-radius: 8px;
+    padding: 10px 30px;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+footer label {
+    margin-top: 10px;
+}
+
+margin-top: 10px;
+
+}
