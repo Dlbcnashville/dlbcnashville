@@ -103,7 +103,7 @@ body{
 }
 
 /* EVENT */
-.event-container{
+.event-card{
     display: flex;
     flex-basis: 100%;
     height: 375px;

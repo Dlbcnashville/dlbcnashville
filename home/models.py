@@ -44,7 +44,7 @@ class HomePage(Page):
 
         worship_services = WorshipService.objects.all()
         daily_devotions = DailyDevotion.objects.all()
-        
+        events = Event.objects.filter(display_on_home_page=True)
 
         # context["home_page"] = self.home_page
         context["worship_services"] = worship_services
@@ -85,6 +85,7 @@ class Event(models.Model):
     event_end_time =models.TimeField(null=True, blank=True)
     event_venue = models.CharField(max_length=500, null=True, blank=True)
     event_image = CloudinaryField("image", null=True, blank=True)
+    display_on_home_page = models.BooleanField(default=True)
     can_register = models.BooleanField(default=False)
     external_registration = models.BooleanField(default=False)
     external_registration_link = models.URLField(null=True, blank=True)
@@ -96,6 +97,7 @@ class Event(models.Model):
         FieldPanel('event_end_time'),
         FieldPanel('event_venue'),
         FieldPanel('event_image'),
+        FieldPanel('display_on_home_page'),
         FieldPanel('can_register'),
         FieldPanel('external_registration'),
         FieldPanel('external_registration'),

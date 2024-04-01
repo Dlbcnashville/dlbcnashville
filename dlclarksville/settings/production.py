@@ -20,15 +20,13 @@ env = environ.Env(
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["clarksville-production.up.railway.app", "dlbcclarksville.org"]
-
+ALLOWED_HOSTS = ["dlbcnashville-production.up.railway.app", "dlbcnashville.org"]
+          
 cloudinary.config( 
-  cloud_name = "dum5thngj", 
-  api_key = "649654183492732", 
-  api_secret = "DnhztD3mYzhHh33lb_rpJY8s7BE"
+  cloud_name = "ddlhu2ayf", 
+  api_key = "115566937972984", 
+  api_secret = "yacFCzoP_W-q9tvXaeIrex4CzvU" 
 )
-
-
 
 EMAIL_HOST = 'smtp.elasticemail.com'
 EMAIL_USE_TLS = True
@@ -39,6 +37,6 @@ EMAIL_PORT = 2525
 # EMAIL_HOST_USER = ""
 # EMAIL_HOST_PASSWORD = ""
 # DEFAULT_FROM_EMAIL = ""
-EMAIL_HOST_USER = 'clarksvilledlbc@gmail.com'
+EMAIL_HOST_USER = 'info@dlbcnashville.org'
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'clarksvilledlbc@gmail.com'
+DEFAULT_FROM_EMAIL = 'info@dlbcnashville.org'
