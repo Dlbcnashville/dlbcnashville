@@ -1,0 +1,276 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.heading-img{
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(headin.jpg);
+}
+.first-text{
+    padding-top: 15%;
+    padding-left: 5%;
+}
+.first-text>h2{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    width: 50%;
+    text-transform: uppercase;
+}
+.first-text>p{
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    padding-top: 15px;
+}
+.inquire{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+}
+.inquire > a{
+    color: white;
+    padding-top: 5%;
+}
+#time{
+    padding-top: 3%;
+    padding-right: 5%;
+}
+#time>h3{
+    color:#C12A2A;
+}
+#time>p{
+    color: white;
+    padding-top: 2%;
+}
+.post{
+    color: #C12A2A;
+    font-size: 30px;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.program-adverts{
+    display: flex;
+    padding-left: 4%;
+    padding-top: 3%;
+}
+.first{
+    background-image: url(first-pik.jpg);
+    width: 45%;
+    height: 350px;
+    border-radius: 15px;
+}
+.next-advert{
+    /* display: flex; */
+    padding-left: 4%;
+    padding-top: 0%;
+    width: 45%;
+}
+.second-add{
+    display: flex;
+    gap: 20px;
+}
+.second{
+    background-image: url(second-pik\ \(2\).jpg);
+    width: 95%;
+    height: 170px;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px rgba(217, 217, 217, 1);
+ }
+.text{
+    padding: 10px;
+}
+.text > P{
+    width:85%;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5%;
+}
+#date {
+    color: red;
+    font-size: 10px;
+    margin-top: 10%;
+}
+.third-add {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+}
+.third{
+    background-image: url(third-pik.jpg);
+    width: 95%;
+    height: 170px;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px rgba(217, 217, 217, 1);
+}
+.second-text{
+    padding-top: 10px;
+}
+.second-text >p{
+    width:85%;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 5%;
+}
+.bible-teaching{
+   
+}
+#topic{
+    color: blue;
+    width: 35%;
+    padding-left: 4.5%;
+    padding-top: 5%;
+    font-weight: bold;
+}
+.bible-teaching>p{
+    width: 45%;
+    padding-left: 4.5%;
+    padding-top: 2%;
+    font-family: arial;
+    font-size: larger;
+}
+#date1{
+    color: red;
+    font-size: 10px;
+    margin-top: 1%;
+    font-weight: bold;
+}
+.more-post{
+    color: #C12A2A;
+    font-weight: bold;
+    font-size:xx-large;
+    padding-left: 4.5%;
+    padding-top: 2%;
+}
+.last-down-post{
+    display: flex;
+    padding-top: 1%;
+}
+
+.last-adverts{
+    display: flex;
+    padding-left: 4.5%;
+    gap: 10px;
+}
+.topic {
+    width:100%;
+        
+}
+.topic>h2{
+    font-size: 32px;
+    padding-top: 2%;
+}
+.very-last-down-post {
+    display: flex;
+    padding-top: 1%;
+}
+.footer{
+    background-color: rgb(190, 190, 233);
+    width: 100%;
+    min-height: 200px;
+    max-height: 3000px;
+}
+.footer-outline{
+    display: flex;
+    padding: 30px;
+    gap: 50px;
+}
+.copy-right{
+    width: 20%;
+    padding-top: 30px;
+   
+}
+#deeperlife{
+    color: red;
+    font-size: 13px;
+    padding-top: 40px;
+    font-family: arial;
+    font-weight: bold;
+}
+.get-in-touch{
+    width: 20%;
+    
+}
+#get-in-touch{
+    color:  rgb(219, 91, 91);
+    font-family: arial;
+    font-weight: bold;
+}
+.get-in-touch > *{
+    padding:5px; 
+}
+address{
+    width: 70%;
+}
+.social-media{
+    width: 20%;  
+}
+svg{
+    height: 25px;
+    width: 25px;
+}
+.social-media > p{
+    width: 80%;
+    padding-top: 5%;
+}
+.donate{
+    padding-top: 30px;
+}
+.suscribe{
+    width: 20%;
+}
+.suscribe > h3{
+    color:  rgb(219, 91, 91);
+    font-family: arial;
+    font-weight: bold;
+    padding: 5px;
+}
+.suscribe > p{
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(35, 32, 32);
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:  rgb(219, 91, 91);
+    width: 90px;;
+    border-radius: 5px;
+}
+.e-mail{
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    border: 2px solid  rgb(219, 91, 91);
+    border-radius: 10px;
+}
+input:focus{
+    outline: none;
+}
+.subscrib-botton {
+    padding-top: 20px;
+}
+address{
+    display: flex;
+    gap: 4px;
+}
+#numer{
+    display: flex;
+    gap: 4px;
+}
+#message{
+    display: flex;
+    gap: 4px;
+}
+#address-icon{
+    width: 30px;
+    height:30px;
+}

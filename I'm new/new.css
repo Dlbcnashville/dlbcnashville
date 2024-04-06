@@ -1,0 +1,221 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+.main-header{
+    background-image: url(head.jpg);
+    width: 100%;
+    background-size: cover;
+    height: 500px;
+    background-repeat: no-repeat;
+}
+.im-new{
+    color: white;
+    text-align: center;
+    padding-top: 15%;
+}
+.im-new h2{
+    text-transform: uppercase;
+    font-size: xxx-large;
+
+}
+.im-new p{
+    width: 45%;
+    font-size: larger;
+    text-align: center;
+    padding-left: 25%;
+    padding-top: 2%;
+}
+.message-advert{
+    display: flex;
+    padding: 5%;
+    gap: 25px;
+}
+.invitation-massage{
+    padding-top: 8%;
+}
+.invitation-massage h2{
+    color: #000468;
+    font-size: 30px;
+    font-family: arial;
+    text-transform: capitalize;
+}
+.boder-sec{
+    padding: 2%;
+}
+#boder{
+    border: 2px solid #C12A2A;
+    width: 60px;
+    border-radius: 10px;
+}
+.invitation-massage p{
+    padding-top: 2%;
+    font-size: larger;
+    font-family:arial;
+    line-height: 1.5;
+}
+.teaching{
+    padding: 3%;
+    padding-left: 8%;
+  
+}
+.teaching h2{
+    color: #000468;
+    font-size: xx-large;
+    width: 35%;
+}
+.teaching p{
+    width: 70%;
+    font-size: larger;
+    font-family:arial;
+    line-height: 1.5;
+    padding-top: 3%;
+}
+.end-message{
+   padding: 3%;
+   padding-left: 4%;
+}
+.end{
+    padding-left: 8%;
+    padding: 3%;
+    border-radius: 10px;
+    background-image: url(down.jpg);
+    height: 200px;
+    display: flex;
+}
+.end h2{
+    color: white;
+    font-size: xx-large;
+    width: 30%;
+}
+.end p{
+    color: white;
+    width: 60%;
+    font-size: larger;
+    font-family:arial;
+    line-height: 1.5;
+    padding-top: 3%;
+}
+.join{
+    padding-right: 4%;
+    width: 15%;
+    padding-top: 10%;
+}
+.join > a{
+    color: white;
+    border: solid white;
+    border-radius: 20px;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: transparent;
+}
+.footer{
+    background-color: rgb(233, 233, 247);
+    width: 100%;
+    min-height: 200px;
+    max-height: 3000px;
+}
+.footer-outline{
+    display: flex;
+    padding: 30px;
+    gap: 50px;
+}
+.copy-right{
+    width: 20%;
+    padding-top: 30px;
+   
+}
+#deeperlife{
+    color: red;
+    font-size: 13px;
+    padding-top: 40px;
+    font-family: arial;
+    font-weight: bold;
+}
+.get-in-touch{
+    width: 20%;
+    
+}
+#get-in-touch{
+    color:  rgb(219, 91, 91);
+    font-family: arial;
+    font-weight: bold;
+}
+.get-in-touch > *{
+    padding:5px; 
+}
+address{
+    width: 70%;
+}
+.social-media{
+    width: 20%;  
+}
+svg{
+    height: 25px;
+    width: 25px;
+}
+.social-media > p{
+    width: 80%;
+    padding-top: 5%;
+}
+.donate{
+    padding-top: 30px;
+}
+.suscribe{
+    width: 20%;
+}
+.suscribe > h3{
+    color:  rgb(219, 91, 91);
+    font-family: arial;
+    font-weight: bold;
+    padding: 5px;
+}
+.suscribe > p{
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(35, 32, 32);
+    
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:  rgb(219, 91, 91);
+    width: 90px;;
+    border-radius: 5px;
+}
+.e-mail{
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    border: 2px solid  rgb(219, 91, 91);
+    border-radius: 10px;
+}
+input:focus{
+    outline: none;
+}
+.subscrib-botton {
+    padding-top: 20px;
+}
+address{
+    display: flex;
+    gap: 4px;
+}
+#numer{
+    display: flex;
+    gap: 4px;
+}
+#message{
+    display: flex;
+    gap: 4px;
+}
+#address-icon{
+    width: 30px;
+    height:30px;
+}

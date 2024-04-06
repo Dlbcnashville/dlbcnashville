@@ -1,0 +1,391 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.top-banner{
+    background-image: url(top.jpg);
+    height: 450px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top-heading{
+    color: white;
+    text-align: center;
+    padding: 15%;
+}
+.top-heading>h1{
+    font-size: 300%;
+}
+.top-heading>p{
+    font-size: 140%;
+    padding: 1%;
+
+}
+
+.introduction{
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+.GS-image{
+    background-image: url(gs\ image.jpg);
+    width: 48%;
+    height: 682px;
+    border-radius: 10px;
+    padding-left: 30px;
+    background-size: cover;
+}
+.DLC-background{
+    width: 45%;
+    height: 500px;
+    padding-left: 4px;
+}
+#border{
+    border-bottom: 4px solid rgb(219, 91, 91);
+    width: 90px;
+    border-radius: 10px;
+    padding: 2px;
+}
+.history{
+    justify-content: center;
+    align-content: center;
+    line-height: 25px;
+    font-size: 20px;
+    margin-top: 120px;
+    padding-left: 50px;
+}
+h2{
+    color:blue;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: arial;
+    padding-bottom: 20px;
+}
+.charge{
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    /* padding-bottom: 10px; */
+    flex-basis: 100%;
+}
+.first-charge{
+    background-image: url(first-charge.jpg);
+    /* width: 48%; */
+}
+
+.charge-bottom{
+    height: 100%;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    padding: 10px 10px 30px 10px;
+    background-size: cover;
+    max-height: 614px;
+    min-height: 376px;
+    min-width: 250px;
+}
+
+.learn-more{
+    justify-content: end;
+    display: flex;
+}
+label{
+    border-radius:5px ;
+    padding-top: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:  rgb(219, 91, 91);
+    width: 90px;;
+    border-radius: 5px;
+}
+.charge-area{
+    /* padding-left: 10%; */
+    margin-top: 200px;
+}
+.our-believe > label{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 3%;
+}
+.doctrine > label{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 5%;
+}
+.text-area{
+    width: 100%;
+}
+.text-area > label{
+    color: white;
+}
+.second-charge {
+    background-image: url(second-charge.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.our-mission>label{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 3%;
+}
+.doctrine2 > label{
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 5%;
+}
+.text-area2 > label{
+    color: white;
+}
+.image-advert{
+    background-image: url(advert.jpg);
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    padding-top: 10px;
+}
+.invitation{
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+}
+.invitation-heading{
+    padding: 5%;
+    width:45%;
+    padding-bottom: 0%;
+}
+.heading{
+    width: 90%;
+    line-height: 35px;
+}
+.heading > label{
+    color: blue;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 30px;
+}
+.invitation-advert{
+    background-image: url(house.jpg);
+    width: 45%;
+    height: 591px;
+    background-size: cover;
+}
+.invitation-text{
+    padding-top: 10%;
+    width: 95%;
+    padding-bottom: 0%;
+}
+.invitation-text > label{
+    line-height: 25px;
+    font-size: 120%;
+}
+.closing-advert{
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+}
+.first-closing-advert{
+    width: 45%;
+    height: 350px;
+    display: flex;
+    gap: 20px;
+    padding-left: 30px;
+    padding-top: 0px;
+}
+.advert1{
+    background-image: url(closer.jpg);
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+}
+.advert2{
+    background-image: url(far.jpg);
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+}
+.closing-text{
+    width: 40%;
+    padding-top: 30px;
+}
+.closing-text > label{
+    width: 20%;
+    font-size: 120%;
+    line-height: 30px;
+}
+.end{
+    justify-content: flex-start;
+    padding-top: 15%;
+}
+.footer{
+    background-color: rgb(190, 190, 233);
+    width: 100%;
+    min-height: 200px;
+    max-height: 3000px;
+}
+.footer-outline{
+    display: flex;
+    padding: 30px;
+    gap: 50px;
+}
+.copy-right{
+    width: 20%;
+    padding-top: 30px;
+   
+}
+#deeperlife{
+    color: red;
+    font-size: 13px;
+    padding-top: 40px;
+    font-family: arial;
+    font-weight: bold;
+}
+.get-in-touch{
+    width: 20%;
+    
+}
+#get-in-touch{
+    color:  rgb(219, 91, 91);
+    font-family: arial;
+    font-weight: bold;
+}
+.get-in-touch > *{
+    padding:5px; 
+}
+address{
+    width: 70%;
+}
+.social-media{
+    width: 20%;  
+}
+svg{
+    height: 25px;
+    width: 25px;
+}
+.social-media > p{
+    width: 80%;
+    padding-top: 5%;
+}
+.donate{
+    padding-top: 30px;
+}
+.suscribe{
+    width: 20%;
+}
+.suscribe > h3{
+    color:  rgb(219, 91, 91);
+    font-family: arial;
+    font-weight: bold;
+    padding: 5px;
+}
+.suscribe > p{
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(35, 32, 32);
+    
+}
+.e-mail{
+    width: 100%;
+    height: 10px;
+    padding: 10px;
+    border: 2px solid  rgb(219, 91, 91);
+    border-radius: 10px;
+}
+input:focus{
+    outline: none;
+}
+.subscrib-botton {
+    padding-top: 20px;
+}
+address{
+    display: flex;
+    gap: 4px;
+}
+#numer{
+    display: flex;
+    gap: 4px;
+}
+#message{
+    display: flex;
+    gap: 4px;
+}
+#address-icon{
+    width: 30px;
+    height:30px;
+}
+@media (max-width:490px){
+    .top-banner{
+        background-image: url(top.jpg);
+        height: 250px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .introduction{
+        display: block;
+        margin-top: 0px;
+    }
+    .GS-image{
+        background-image: url(gs\ image.jpg);
+        width: 100%;
+        height: 292px;
+        border-radius: 10px;
+        padding-left: 30px;
+        background-size: cover;
+    }
+    .DLC-background{
+    width: 100%;
+}
+.history{
+    font-size: 15px;
+    border: 1px solid red;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.charge{
+    display: block;
+    margin-top: 0px;
+    border: 1px solid red;
+}
+.invitation{
+    display: block;
+}
+.invitation-heading{
+    width: 100%;
+}
+.invitation-advert{
+    width:100%;
+    height: 250px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px;
+}
+.closing-advert{
+    display: block;
+}
+.first-closing-advert{
+    width: 100%;
+}
+.closing-text{
+    width: 100%;
+}
+.footer-outline{
+    display: block;
+}
+.footer-outline>*{
+    width: 100%;
+    padding: 30px;
+}
+}
