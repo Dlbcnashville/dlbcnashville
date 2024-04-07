@@ -6,24 +6,33 @@
     background-image: url(head.jpg);
     width: 100%;
     background-size: cover;
-    height: 500px;
+    /* height: 500px; */
     background-repeat: no-repeat;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
 }
 .im-new{
     color: white;
     text-align: center;
-    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 15%; */
 }
 .im-new h2{
     text-transform: uppercase;
     font-size: xxx-large;
-
 }
 .im-new p{
     width: 45%;
     font-size: larger;
     text-align: center;
-    padding-left: 25%;
+    /* padding-left: 25%; */
     padding-top: 2%;
 }
 .message-advert{
@@ -76,40 +85,46 @@
    padding-left: 4%;
 }
 .end{
-    padding-left: 8%;
+    /* padding-left: 8%; */
     padding: 3%;
     border-radius: 10px;
     background-image: url(down.jpg);
     height: 200px;
     display: flex;
+    background-size: cover;
+    gap: 20px;
+}
+.Spiritual{
+    width: 80%;
 }
 .end h2{
     color: white;
     font-size: xx-large;
-    width: 30%;
+    width: auto%;
 }
 .end p{
     color: white;
-    width: 60%;
+    width: auto;
     font-size: larger;
     font-family:arial;
     line-height: 1.5;
     padding-top: 3%;
 }
 .join{
-    padding-right: 4%;
-    width: 15%;
-    padding-top: 10%;
+    padding-top: 5%;
+    
 }
 .join > a{
     color: white;
     border: solid white;
     border-radius: 20px;
-    padding: 20px;
+    /* padding: 30%; */
     text-decoration: none;
     font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
     background: transparent;
 }
 .footer{
@@ -218,4 +233,58 @@ address{
 #address-icon{
     width: 30px;
     height:30px;
+}
+@media ( max-width:1120px){
+    .message-advert{
+        flex-wrap: wrap;
+    }
+    .teaching h2{
+        width: 100%;
+    }
+    .teaching p{
+        width: 100%;
+    }
+    .end{
+        height: 30%;
+        flex-wrap: wrap;
+    }
+    .parent * p{
+        font-size: 14px;
+    }
+    .parent *h1, h2, h3, h4{
+        font-size: 24px;
+    }
+    /* .main-header{
+        height: 700px;
+    } */
+    /* .im-new{
+        padding-top: 45%;
+    } */
+}
+@media ( max-width:480px){
+    .message-advert{
+        flex-wrap: wrap;
+    }
+    .teaching h2{
+        width: 100%;
+    }
+    .teaching p{
+        width: 100%;
+    }
+    .end{
+        height: 30%;
+        flex-wrap: wrap;
+    }
+    .parent * p{
+        font-size: 14px;
+    }
+    .parent *h1, h2, h3, h4{
+        font-size: 24px;
+    }
+    /* .main-header{
+        height: 700px;
+    }
+    .im-new{
+        padding-top: 45%;
+    } */
 }
