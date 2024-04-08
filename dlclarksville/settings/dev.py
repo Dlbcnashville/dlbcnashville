@@ -22,10 +22,11 @@ DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 
 import cloudinary
           
+
 cloudinary.config( 
-  cloud_name = "dum5thngj", 
-  api_key = "649654183492732", 
-  api_secret = "DnhztD3mYzhHh33lb_rpJY8s7BE" 
+  cloud_name = "ddlhu2ayf", 
+  api_key = "115566937972984", 
+  api_secret = "yacFCzoP_W-q9tvXaeIrex4CzvU" 
 )
 # cloudinary.config( 
 #   cloud_name = os.getenv('CLOUD_NAME'), 

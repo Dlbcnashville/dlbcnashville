@@ -1,3 +1,4 @@
+{% load static menus_tags %}{% get_menu "leftmenu" as leftmenu %}{% get_menu "resources-menu" as resourcesmenu %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
@@ -9,19 +10,18 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">I'm New</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Sermons</a>
-                  </li>
+                  {% for item in leftmenu.menu_items.all %}
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{{item.link}}" title="{{item.title}}" {% if item.open_in_new_tab %} target="_blank" {% endif %}>{{item.title}}</a>
+                    </li>
+                  {% endfor %}
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Blog</a>
                   </li>
                 </ul>
           </div>
           <a class="navbar-brand" href="/">
-            <img src="/statics/images/logo.png" alt="">
+            <img src="/static/images/logo.png" alt="">
           </a>
           <div class="collapse navbar-collapse nav-container" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -30,10 +30,9 @@
                   Resources
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Books & Literature</a></li>
-                  <li><a class="dropdown-item" href="#">Communuty Outreach</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Scholarships</a></li>
+                  {% for item in resourcesmenu.menu_items.all %}
+                    <li><a class="dropdown-item" href="{{item.link}}" title="{{item.title}}" {% if item.open_in_new_tab %} target="_blank" {% endif %}>{{item.title}}</a></li>
+                  {% endfor %}
                 </ul>
               </li>
               <li class="nav-item">

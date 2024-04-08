@@ -11,47 +11,55 @@
 
 <body>
     {% block content %}
-    <div class="main i-am-new">
-        <div class="pix">
-            <div class="dem">
-                <h3>{{page.caption_title|richtext}}</h3>
-                <p id="me">{{page.caption_text|richtext}}
+    <div class="parent">
+        <div class="main-header" style="background-image: {% if page.banner %} {{page.banner.url}} {% else %} url('head.jpg') {% endif %};
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;">
+            {% include "header.html" %}
+            <div class="im-new">
+                <h2>{{page.caption_title|title}}</h2>
+                <p>
+                    {{page.caption_text|richtext}}
                 </p>
             </div>
         </div>
-        <div class="boy new-section-container">
-            <div><img src="/static/images/boy.jpg" alt="small boy praying" /></div>
-            <div class="lam section-text">
-                <h3 class="rap">
-                    {{page.first_section_title|richtext}}
-                </h3>
-                <div id="nop"></div>
-                <div class="hello">
-                    <p>
-                        {{page.first_section_body|richtext}}
-                    </p>
+        <div class="message-advert">
+            <img src="first.jpg" style="width: 100%; height: 40%; box-shadow: 0px 10px 10px 0px; border-radius: 10px;" alt="#">
+            <div class="invitation-massage">
+                 <h2>
+                    {{page.first_section_title|title}}
+                 </h2>
+                <div class="boder-sec">
+                    <div id="boder"></div>
                 </div>
+                 <p>
+                    {{page.first_section_body|richtext}}
+                 </p>
             </div>
         </div>
-        <div class="christ new-section-container">
-            <div><img src="/static/images/christ.jpg" alt="man alone"></div>
-            <div class="section-text">
-                <h2 id="sch">{{page.second_section_title|richtext}}</h2>
-                <p id="late">{{page.second_section_body|richtext}}</p>
-            </div>
+        <div class="teaching">
+            <h2>
+                {{page.second_section_title|title}}
+            </h2>
+            <p>
+                {{page.second_section_body|richtext}}
+            </p>
         </div>
-        <div class="spiritual">
-            <div class="spiritual-text-container">
-                <div id="mens">
-                    <h2>{{page.third_section_title|richtext}}</h2>
-                </div>
-                <div id="many">
-                    <p>{{page.third_section_body|richtext}}</p>
-                </div>
+        <div class="end-message">
+            <div class="end">
+               <div class="Spiritual">
+                  <h2>
+                     {{page.third_section_title|title}}
+                  </h2>
+                  <p>
+                     {{page.third_section_body|richtext}}
+                  </p>
+               </div>
+               <div class="join">
+                  <a href="#"> Join Us </a>
+               </div>
             </div>
-            <a href="{% url 'authentication:signup' %}">
-                <div id="nepa"><p>Join Us</p></div>
-            </a>
         </div>
     </div>
     {% endblock %}

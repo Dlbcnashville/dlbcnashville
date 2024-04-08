@@ -110,13 +110,14 @@ body{
     padding: 0 !important;
 }
 .event-image-container{
-    width: 100%;
+    width: 50% !important;
     max-height: 100%;
     min-width: 300px;
 }
 .event-image-container img{
-    width: 100%;
+    max-width: 100%;
     height: 100%;
+    width: 100%;
 }
 .event-container-desc{
     padding: 15px 15px 15px 30px;
@@ -214,6 +215,10 @@ body{
     background: var(--primary-red);
     padding: 15px 38px;
     font-size: 24px;
+}
+
+.about-section{
+    flex: 1 1 100%;
 }
 
 .about-section h2{
@@ -683,7 +688,7 @@ body{
         color: var(--font-black);
         font-weight: bold;
     }
-    .event-container{
+    .event-card{
         flex-basis: 100%;
         height: fit-content;
         flex-wrap: wrap;
@@ -809,6 +814,7 @@ body{
     }
     .event-image-container{
         min-width: 100%;
+        width: 100%;
     }
 
     .navbar-brand img {

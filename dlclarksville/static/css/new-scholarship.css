@@ -1,0 +1,111 @@
+.outreach_list-page .top-banner{
+    /* height: 450px; */
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 50px;
+    
+}
+/* .top-header{
+    background-image: url(top.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+} */
+.outreach_list-page .top-header-text{
+    color: white;
+    padding: 5%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.outreach_list-page .top-header h2{
+    text-transform: uppercase;
+    font-size: xxx-large;
+}
+.outreach_list-page .top-header p{
+    width: 70%;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.outreach_list-page .invitation-charge{
+    display: flex;
+    gap: 20px;
+    padding: 5%;
+}
+.outreach_list-page .invitation-charge2{
+    display: flex;
+    gap: 20px;
+    padding: 5%;
+    padding-bottom: 10%;
+}
+.outreach_list-page .text-body{
+    background-color: #F6F6F6;
+    border-radius: 0px 0px 15px 15px;
+    padding: 15px;
+    height: fit-content;
+}
+.outreach_list-page .invitation1{
+    max-width: 400px;
+    width: 100%;
+    height: fit-content;
+}
+.outreach_list-page .invitation1 h2{
+    color: var(--primary-blue);
+    margin-top: 30px;
+    font-family: arial;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.outreach_list-page .invitation1 h2 a{
+    text-decoration: none;
+    color: var(--primary-blue);
+}
+.outreach_list-page .invitation1 p{
+    /* padding: 2%; */
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+/* .outreach_list-page #link{
+    padding: 2%;
+    padding-bottom: 25px;
+} */
+
+.outreach_list-page .learn-more-link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color:  var(--primary-red);
+    width: fit-content;
+    border-radius: 5px;
+}
+
+@media (max-width:1000px){
+    .invitation-charge{
+        flex-wrap: wrap;
+    }
+    .invitation1{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width:496px){
+    
+    .invitation1 h2{
+        font-size: 18px;
+    }
+    .invitation1 p{
+        font-size: 14px;
+    }
+    .outreach_list-page .top-header h2{
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+    .outreach_list-page .top-header p{
+        width: 100%;
+        font-size: 14px;
+    }
+}
