@@ -7,9 +7,7 @@
           </button>
           <div class="collapse navbar-collapse nav-container" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">I'm New</a>
-                  </li>
+                  
                   {% for item in leftmenu.menu_items.all %}
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="{{item.link}}" title="{{item.title}}" {% if item.open_in_new_tab %} target="_blank" {% endif %}>{{item.title}}</a>

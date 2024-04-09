@@ -1,0 +1,56 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships</title>
+    {% block extra_styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/scholarship.css' %}" /> 
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="scholarship-header" style="background-image: {% if page.banner %} url('{{page.banner.url}}') {% else %} url('/static/images/scholarshiphead.jpg') {% endif %};
+        background-size: cover;
+        background-repeat: no-repeat;">
+        {% include "header.html" %}
+        <div class="scholarship">
+            <h2>SCHOLARSHIPS</h2>
+            <p>
+                {{page.intro|richtext}}
+            </p>
+        </div>
+    </div>
+    <div class="bible-quote">
+        {% for scholarship in scholarships %}
+        <a href="{% pageurl scholarship %}"><div class="qoute" style="background-image: url('{{scholarship.scholarship_image.url}}');
+            background-size: cover; background-repeat: no-repeat;">
+            <div class="scholarship-card-text">
+                <p>{{scholarship.scholarship_title|title}}</p>
+            </div>
+            
+        </div></a>
+        {% endfor %}
+        
+    </div>
+    <div class="invitation">
+        <img id="images" src="/static/images/scholarshipfirst.jpg" style="width:100%; height:1%;" alt="love">
+        <div class="invitation-text">
+            <h2>
+                {{page.church_invitation_heading|title}}
+            </h2>
+            <p>
+                {{page.church_invitation_body|richtext}}
+            </p>
+        </div>
+    </div>
+    <div class="todays-charge" style="background-image: url('/static/images/scholarshipdown.jpg');
+    background-size: cover; background-repeat: no-repeat;">
+        <h1>"</h1>
+        <p>
+            {{page.academic_charge|richtext}}
+        </p>
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -8,12 +8,26 @@ from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 class ScholarshipIndexPage(Page):
     template = 'scholarship/scholarship_list.html'
     intro = RichTextField(blank=True)
-    banner = CloudinaryField("image", null=True)
+    banner = CloudinaryField("image", null=True, help_text="Select a background banner image")
+    church_invitation_heading = models.CharField(max_length=500, null=True, blank=True)
+    church_invitation_body = RichTextField(blank=True, null=True, help_text="Write a short invitation message")
+    academic_charge = RichTextField(blank=True, null=True, help_text="Write a short inspiring educational message")
 
     content_panels = Page.content_panels + [
         FieldPanel('intro'),
-        FieldPanel('banner')
+        FieldPanel('banner'),
+        FieldPanel('church_invitation_heading'),
+        FieldPanel('church_invitation_body'),
+        FieldPanel('academic_charge')
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super(ScholarshipIndexPage, self).get_context(request, *args, **kwargs)
+
+        scholarships = ScholarshipPage.objects.all()
+        
+        context["scholarships"] = scholarships
+        return context
 
 class ScholarshipPage(Page):
     template = 'scholarship/scholarship_page.html'

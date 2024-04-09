@@ -12,10 +12,9 @@
 <body>
     {% block content %}
     <div class="parent">
-        <div class="main-header" style="background-image: {% if page.banner %} {{page.banner.url}} {% else %} url('head.jpg') {% endif %};
-        width: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;">
+        <div class="main-header" style="background-image: {% if page.banner %} url('{{page.banner.url}}') {% else %} url('/static/images/newhead.jpg') {% endif %};
+            background-size: cover;
+            background-repeat: no-repeat;">
             {% include "header.html" %}
             <div class="im-new">
                 <h2>{{page.caption_title|title}}</h2>
@@ -25,7 +24,7 @@
             </div>
         </div>
         <div class="message-advert">
-            <img src="first.jpg" style="width: 100%; height: 40%; box-shadow: 0px 10px 10px 0px; border-radius: 10px;" alt="#">
+            <img src="/static/images/newfirst.jpg" style="width: 100%; height: 40%; box-shadow: 0px 10px 10px 0px; border-radius: 10px;" alt="#">
             <div class="invitation-massage">
                  <h2>
                     {{page.first_section_title|title}}
@@ -47,7 +46,7 @@
             </p>
         </div>
         <div class="end-message">
-            <div class="end">
+            <div class="end" style="background-image: url('/static/images/summer-leaf-background-free-vector.jpg');">
                <div class="Spiritual">
                   <h2>
                      {{page.third_section_title|title}}
@@ -57,7 +56,7 @@
                   </p>
                </div>
                <div class="join">
-                  <a href="#"> Join Us </a>
+                  <a href="#" class="learn-more-link"> Join Us </a>
                </div>
             </div>
         </div>

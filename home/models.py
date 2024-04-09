@@ -250,7 +250,7 @@ class IamNew(Page):
 
     caption_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
     caption_text = RichTextField(null=True, blank=True)
-    banner = CloudinaryField("image", null=True, blank=True)
+    banner = CloudinaryField("image", null=True, blank=True, help_text="Select a background image banner")
     first_section_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
     first_section_body = RichTextField(null=True, blank=True)
     second_section_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
