@@ -1,0 +1,53 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Books</title>
+        {% block extra_styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/resources.css' %}" /> 
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <div class="main-heading" style="background-image: {% if page.banner %} url('{{page.banner.url}}') {% else %} url('/static/images/bookhead.jpg') {% endif %};
+                background-size: cover;
+                background-repeat: no-repeat;">
+            {% include "header.html" %}
+            <div class="main-heading-topic">
+               <div class="resources">
+                  <h2>Resources</h2>
+                </div>
+                <div class="more-information">
+                   Get to know us better! Discover the heart behind Deeper Life Church
+                </div>
+            </div>
+        </div>
+        <div class="church-magazines">
+            {% for book in posts %}
+            <div class="first-magazine">
+                <img src="{{book.book_cover_image.url}}" alt="{{book.book_title|title}}">
+                <p>
+                    <a href="{{book.book_download_link}}">{{book.book_title|title}}</a>
+                </p>
+            </div>
+            {% endfor %}
+            <div class="first-magazine">
+                <img src="/static/images/bookthird.jpg" alt="open book">
+                <p>
+                    Embracing Change: Navigating Life's Transitions 
+                    with Faith
+                </p>
+            </div>
+            <div class="first-magazine">
+                <img src="/static/images/bookfirst.jpg" alt="open book">
+                <p>
+                    Embracing Change: Navigating Life's Transitions 
+                    with Faith
+                </p>
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>

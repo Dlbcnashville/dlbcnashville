@@ -1,0 +1,77 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.main-heading{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 30px;
+}
+.main-heading-topic{
+    display: flex;
+    gap: 10%;
+    padding: 7%;
+    align-items: center;
+    justify-content: center;
+}
+.resources{
+    color: white;
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+.more-information{
+    color: white;
+    width: 40%;
+    font-size: large;
+    font-family: arial;
+}
+.church-magazines{
+    display: flex;
+    padding: 3.5%;
+    gap: 40px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.first-magazine{
+    padding-top: 2%;
+    max-width: 300px;
+    min-width: 140px;
+    width: 100%;
+}
+.first-magazine img{
+    width:100%;
+    aspect-ratio: 1 / 1.28;
+    border-radius: 10px;
+}
+.first-magazine p{
+    font-size: larger;
+    font-weight: bold;
+    padding-top: 2%;
+}
+.second-church-magazines{
+    display: flex;
+    padding-top: 3%;
+    padding: 3.5%;
+    gap: 40px;
+    border-radius: 10px;
+    padding-top: 0%;
+}
+@media (max-width: 673px){
+    .church-magazines{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .first-magazine p {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .more-information {
+        font-size: 14px;
+    }
+}
+@media (max-width: 496px){
+    .main-heading-topic{
+        flex-wrap: wrap;
+    }
+}

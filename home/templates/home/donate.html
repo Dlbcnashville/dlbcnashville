@@ -11,12 +11,13 @@
 <body>
     {% block content %}
     <div class="main donate-page">
-        <div class="first" style="background: url({% static 'images/wallet.jpg' %}); backgroud-repeat: no-repeat; backgroud-cover: cover;">
+        <div class="first" style="background: url({% static 'images/wallet.jpg' %}); backgroud-repeat: no-repeat !important; backgroud-cover: cover; !important">
+            {% include "header.html" %}
             <div class="don">
-                <a hef="DONATE">DONATE</a>
+                <a hef="{{page.donate_link}}">DONATE</a>
             </div>
         </div>
-        <div class="grapes" style="background: url({% static 'images/grape.jpg' %}); backgroud-repeat: no-repeat; backgroud-cover: cover;">
+        <div class="grapes" style="background: url({% static 'images/grape.jpg' %}); backgroud-repeat: no-repeat !important; backgroud-cover: cover; !important">
             <div class="part">
                 <h1>{{page.caption_title|richtext}}</h1>
                 <p>{{page.caption_text|richtext}}
@@ -39,7 +40,7 @@
                 <img src="/static/images/donate_mail.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h2>Direct Giving by Mail</h2>
-                    <h3>Mail your check directly to DEEPER LIFE BIBLE CHURCH, CLARKSVILLE</h3>
+                    <h3>Mail your check directly to DEEPER LIFE BIBLE CHURCH, NASHVILLE</h3>
                     <p class="card-text">to Address: <b>{{page.mailing_address}}.</b> </p>
                 </div>
             </div>
@@ -48,7 +49,5 @@
     </div>
     {% endblock %}
 </body>
-
-</html>
 
 </html>
