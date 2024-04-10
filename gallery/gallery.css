@@ -61,9 +61,19 @@
 }
 .books{
     display: flex;
-    gap: 20px;
-    padding-right: 5%;
-    padding-top: 3%;
+    gap: 10px;
+    padding-right: 0%;
+    padding-top: 2%;
+}
+.books2{
+    padding-right: 0%;
+    gap: 12px;
+    display: flex;
+}
+.books1{
+    padding-right: 0%;
+    gap: 12px;
+    display: flex;
 }
 .footer{
     background-color: rgb(190, 190, 233);
@@ -171,4 +181,19 @@ address{
 #address-icon{
     width: 30px;
     height:30px;
+}
+@media (max-width:1000px){
+    .main-magazine{
+        flex-wrap: wrap;
+    }
+    .first-main-magazine{
+        width: 100%;
+        padding-bottom: 2%;
+    }
+    .drop-down{
+        flex-wrap: wrap;
+    }
+    .books{
+        flex-wrap: wrap;
+    }
 }
