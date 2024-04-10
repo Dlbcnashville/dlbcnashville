@@ -2,12 +2,19 @@
     padding: 0px;
     margin: 0px;
 }
-.top-header{
+.about-page .top-banner{
+    /* height: 450px; */
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 50px;
+    
+}
+/* .top-header{
     background-image: url(top.jpg);
     width: 100%;
     height: 500px;
     background-size: cover;
-}
+} */
 .top-header-text{
     color: white;
     padding-left: 10%;
@@ -38,16 +45,20 @@
     background-color: #F6F6F6;
     border-radius: 0px 0px 10px 10px;
 }
+.invitation1{
+    max-width: 490px;
+    width: 100%;
+}
 .invitation1 h2{
     color: #16365E;
     padding-top: 2%;
     font-family: arial;
     padding: 2%;
-    font-size: larger;
+    font-size: 24px;
 }
 .invitation1 p{
     padding: 2%;
-    font-size: large;
+    font-size: 16px;
     padding-bottom: 7%;
 }
 #link{
@@ -64,110 +75,14 @@ a{
     color: white;
  
 }
-.footer{
-    background-color: rgb(233, 233, 247);
-    width: 100%;
-    min-height: 200px;
-    max-height: 3000px;
+
+@media (max-width:1000px){
+    .invitation-charge{
+        flex-wrap: wrap;
+    }
 }
-.footer-outline{
-    display: flex;
-    padding: 30px;
-    gap: 50px;
-}
-.copy-right{
-    width: 20%;
-    padding-top: 30px;
-   
-}
-#deeperlife{
-    color: red;
-    font-size: 13px;
-    padding-top: 40px;
-    font-family: arial;
-    font-weight: bold;
-}
-.get-in-touch{
-    width: 20%;
-    
-}
-#get-in-touch{
-    color:  rgb(219, 91, 91);
-    font-family: arial;
-    font-weight: bold;
-}
-.get-in-touch > *{
-    padding:5px; 
-}
-address{
-    width: 70%;
-}
-.social-media{
-    width: 20%;  
-}
-svg{
-    height: 25px;
-    width: 25px;
-}
-.social-media > p{
-    width: 80%;
-    padding-top: 5%;
-}
-.donate{
-    padding-top: 30px;
-}
-.suscribe{
-    width: 20%;
-}
-.suscribe > h3{
-    color:  rgb(219, 91, 91);
-    font-family: arial;
-    font-weight: bold;
-    padding: 5px;
-}
-.suscribe > p{
-    padding: 10px;
-    font-weight: bold;
-    color: rgb(35, 32, 32);
-    
-}
-a{
-    text-decoration: none;
-    color: white;
-    padding: 20px;
-    font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color:  rgb(219, 91, 91);
-    width: 90px;;
-    border-radius: 5px;
-}
-.e-mail{
-    width: 100%;
-    height: 20px;
-    padding: 10px;
-    border: 2px solid  rgb(219, 91, 91);
-    border-radius: 10px;
-}
-input:focus{
-    outline: none;
-}
-.subscrib-botton {
-    padding-top: 20px;
-}
-address{
-    display: flex;
-    gap: 4px;
-}
-#numer{
-    display: flex;
-    gap: 4px;
-}
-#message{
-    display: flex;
-    gap: 4px;
-}
-#address-icon{
-    width: 30px;
-    height:30px;
+@media (max-width:496px){
+    .invitation-charge{
+        flex-wrap: wrap;
+    }
 }

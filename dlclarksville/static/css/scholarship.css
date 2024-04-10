@@ -1,0 +1,219 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.scholarship-header{
+    /* padding-top: 40px; */
+    /* padding-bottom: 60px; */
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 50px;
+}
+.scholarship{
+    width: 65%;
+    color: white;
+    /* padding-top: 15%; */
+    padding-left: 7%;
+    padding-bottom: 10px;
+    margin-top: 50px;
+}
+.scholarship h2{
+    font-size: 100px;
+    padding: 1%;
+    text-transform: uppercase;
+}
+.scholarship p{
+    font-size:20px;
+    font-family: arial;
+    line-height: 1.5;
+    /* padding: 10px; */
+}
+.bible-quote{
+    display: flex;
+    padding: 5%;
+    gap: 20px;
+}
+.bible-quote a{
+    text-decoration: none;
+}
+.qoute{
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:last baseline;
+    max-width: 457px;
+}
+.qoute p{
+    color: white;
+    /* padding-top: 35%;
+    padding-left: 5%; */
+    font-size: 18px;
+    margin-bottom: 0px !important;
+}
+.scholarship-card-text{
+    background: linear-gradient(rgb(138, 138, 138), black);
+    height: fit-content;
+    padding: 10px 20px;
+    width: 100%;
+    opacity: 0.7;
+}
+.qoute1{
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+}
+.qoute1 p{
+    color: white;
+    padding-top: 35%;
+    padding-left: 5%;
+    font-size: large;
+}
+.qoute2{
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+}
+.qoute2 p{
+    color: white;
+    padding-top: 35%;
+    padding-left: 5%;
+    font-size: large;
+}
+.invitation{
+    display: flex;
+    gap: 40px;
+    padding-bottom: 5%;
+}
+.invitation h2{
+    color: #000468;
+    width: 85%;
+    padding-top: 15%;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.invitation p{
+    width: 90%;
+    line-height: 1.5;
+    font-size:larger;
+    padding-top: 10px;
+}
+.todays-charge{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todays-charge h1{
+    color: #C12A2A;
+    font-style: italic;
+    text-align: center;
+    padding-top: 2%;
+    font-size: 100px;
+    font-family: arial;
+}
+.todays-charge p{
+    width: 70%;
+    /* padding-left: 20%; */
+    font-size: x-large;
+    font-family: arial;
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 1px;
+    /* padding-bottom: 10px; */
+}
+
+@media (max-width:1200px){
+    .scholarship {
+        padding-bottom: 20px;
+    }
+    .scholarship h2{
+        font-size: 70px;
+    }
+    .scholarship p{
+        font-size: 15px;
+    }
+}
+@media (max-width:1045px){
+    .invitation{
+        flex-wrap: wrap;
+    }
+    .invitation-text{
+        width: 100%;
+        padding-left: 5%;
+        padding-top:  0%;
+    }
+    .invitation h2{
+        padding-top: 0%;
+    }
+    .invitation p{
+        padding-top: 2%;
+    }
+    .todays-charge{
+        height: 282px;
+    }
+    .todays-charge h1{
+        font-size: 40px;
+    }
+    .todays-charge p{
+        padding-top: 1px;
+        padding-bottom: 3px;
+        /* width: 100%; */
+    }
+    .qoute{
+        width: 100%;
+    }
+    .bible-quote{
+        overflow-x: scroll;
+    }
+    .qoute, .qoute1, .qoute2{
+        min-width: 290px;
+        max-width: 457px;
+    }
+}
+@media (max-width:900px){
+    .todays-charge p{
+        padding-top: 1px;
+        padding-bottom: 3px;
+       font-size: 15px;
+    }
+    .scholarship {
+        width: 100%;
+    }
+    .scholarship p{
+        width: 85%;
+        font-size: 10px;
+    }
+}
+@media (max-width:600px){
+    .todays-charge p{
+        padding-top: 1px;
+        padding-bottom: 3px;
+       font-size: 15px;
+    }
+    .scholarship {
+        width: 100%;
+    }
+    .scholarship p{
+        width: 85%;
+        font-size: 10px;
+    }
+    .scholarship h2{
+        font-size: 30px;
+    }
+    .invitation h2 {
+        width: 95%;
+        font-size: 20px;
+    }
+    .invitation p {
+        width: 95%;
+        font-size: 14px;
+        padding-top: 5px;
+    }
+}

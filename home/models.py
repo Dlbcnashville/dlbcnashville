@@ -9,6 +9,9 @@ from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.forms.panels import FormSubmissionsPanel
 from cloudinary.models import CloudinaryField
+from django.shortcuts import get_object_or_404
+from scholarship.models import ScholarshipPage
+from outreach.models import OutreachPage
 
 class HomePage(Page):
     template = 'home/home_page.html'
@@ -24,7 +27,17 @@ class HomePage(Page):
     about_church_title_3 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_3 = RichTextField(null=True, blank=True)
     about_church_image_3 = CloudinaryField("image", null=True, blank=True)
-
+    donate_main_text = models.CharField(max_length=500, null=True, blank=True, help_text="make text as short as possible")
+    donate_main_subtext = models.CharField(max_length=1000, null=True, blank=True, help_text="make text as short as possible")
+    donate_background_image = CloudinaryField("image", null=True, blank=True, help_text="Select image to use as donate background image")
+    church_name = models.CharField(max_length=500, null=True, blank=True, help_text="Enter the name of the church e.g DLCF Nashville")
+    church_address = models.CharField(max_length=500, null=True, blank=True, help_text="Enter the church address")
+    church_google_map_embed_iframe  = models.URLField(max_length=1000, null=True, blank=True, help_text="Enter the church location google map iframe embed src link")
+    church_location_image = CloudinaryField("image", null=True, blank=True, help_text="Select image of church location")
+    church_description1 = models.CharField(max_length=500, null=True, blank=True, help_text="Enter a very short inspiring message here")
+    church_description2 = models.CharField(max_length=500, null=True, blank=True, help_text="Enter a very short inspiring message here")
+    connect_with_us_sub_text = models.CharField(max_length=500, null=True, blank=True, help_text="Enter a very short inspiring message here")
+    connect_with_us_image = CloudinaryField("image", null=True, blank=True, help_text="Select image for connect with us background image")
     content_panels = Page.content_panels + [
         FieldPanel('hero_section_title'),
         FieldPanel('hero_section_text'),
@@ -37,6 +50,16 @@ class HomePage(Page):
         FieldPanel('about_church_title_3'),
         FieldPanel('about_church_text_3'),
         FieldPanel('about_church_image_3'),
+        FieldPanel('donate_main_text'),
+        FieldPanel('donate_main_subtext'),
+        FieldPanel('donate_background_image'),
+        FieldPanel('church_name'),
+        FieldPanel('church_google_map_embed_iframe'),
+        FieldPanel('church_location_image'),
+        FieldPanel('church_description1'),
+        FieldPanel('church_description2'),
+        FieldPanel('connect_with_us_sub_text'),
+        FieldPanel('connect_with_us_image'),
     ]
 
     def get_context(self, request, *args, **kwargs):
@@ -45,15 +68,20 @@ class HomePage(Page):
         worship_services = WorshipService.objects.all()
         daily_devotions = DailyDevotion.objects.all()
         events = Event.objects.filter(display_on_home_page=True)
-
+        scholarship = get_object_or_404(ScholarshipPage, display_on_home_page=True)
+        outreach = get_object_or_404(OutreachPage, display_on_home_page=True)
         # context["home_page"] = self.home_page
         context["worship_services"] = worship_services
         context["daily_devotions"] = daily_devotions
+        context["events"] = events
+        context["scholarship"] = scholarship
+        context["outreach"] = outreach
         return context
 
 @register_snippet
 class WorshipService(models.Model):
     service_title = models.CharField(max_length=500, null=True, blank=True)
+    service_description = models.CharField(max_length=500, null=True, blank=True)
     WEEK_DAYS = (
         ('Monday', 'Monday'),
         ('Tuesday', 'Tuesday'),
@@ -69,6 +97,7 @@ class WorshipService(models.Model):
 
     panels = [
         FieldPanel('service_title'),
+        FieldPanel('service_description'),
         FieldPanel('service_day'),
         FieldPanel('start_time'),
         FieldPanel('service_image'),
@@ -80,7 +109,8 @@ class WorshipService(models.Model):
 class Event(models.Model):
     event_name = models.CharField(max_length=500, null=True, blank=True)
     short_description = RichTextField(null=True, blank=True)
-    event_date = models.DateField(null=True, blank=True)
+    event_start_date = models.DateField(null=True, blank=True)
+    event_end_date = models.DateField(null=True, blank=True)
     event_start_time =models.TimeField(null=True, blank=True)
     event_end_time =models.TimeField(null=True, blank=True)
     event_venue = models.CharField(max_length=500, null=True, blank=True)
@@ -92,7 +122,8 @@ class Event(models.Model):
     panels = [
         FieldPanel('event_name'),
         FieldPanel('short_description'),
-        FieldPanel('event_date'),
+        FieldPanel('event_start_date'),
+        FieldPanel('event_end_date'),
         FieldPanel('event_start_time'),
         FieldPanel('event_end_time'),
         FieldPanel('event_venue'),
@@ -180,31 +211,51 @@ class About(Page):
     max_count = 1
     template = 'home/About.html'
     who_we_are = RichTextField(null=True, blank=True)
+    who_we_are_image = CloudinaryField("image", null=True, blank=True, help_text="Who we are image")
     our_belief = RichTextField(null=True, blank=True)
-    ministries = RichTextField(null=True, blank=True)
+    our_belief_image = CloudinaryField("image", null=True, blank=True, help_text="Our believe image")
+    # ministries = RichTextField(null=True, blank=True)
+    advert_image = CloudinaryField("image", null=True, blank=True, help_text="You can add a unique advertisement banner image here")
     regional_overseer = RichTextField(null=True, blank=True)
     general_superintendent = RichTextField(null=True, blank=True)
+    GS_image = CloudinaryField("image", null=True, blank=True, help_text="Select image of the General Superintendent")
+    message_from_location_church_heading = models.CharField(max_length=500, null=True, blank=True, help_text="Write a short inspiring heading")
+    message_from_location_church_text = RichTextField(null=True, blank=True, help_text="Write a short inspiring message here")
+    message_from_location_church_text2 = RichTextField(null=True, blank=True, help_text="Write a short inspiring message here")
+    location_church_image1 = CloudinaryField("image", null=True, blank=True, help_text="Location church image 1")
+    location_church_image2 = CloudinaryField("image", null=True, blank=True, help_text="Location church image 2")
+    location_church_image3 = CloudinaryField("image", null=True, blank=True, help_text="Location church image 3")
 
     content_panels = Page.content_panels + [
         FieldPanel('who_we_are'),
+        FieldPanel('who_we_are_image'),
         FieldPanel('our_belief'),
-        FieldPanel('ministries'),
+        FieldPanel('our_belief_image'),
+        # FieldPanel('ministries'),
+        FieldPanel('advert_image'),
         FieldPanel('regional_overseer'),
         FieldPanel('general_superintendent'),
+        FieldPanel('GS_image'),
+        FieldPanel('message_from_location_church_heading'),
+        FieldPanel('message_from_location_church_text'),
+        FieldPanel('message_from_location_church_text2'),
+        FieldPanel('location_church_image1'),
+        FieldPanel('location_church_image2'),
+        FieldPanel('location_church_image3'),
     ]
 
 class IamNew(Page):
     max_count = 1
     template = 'home/new.html'
 
-    caption_title = RichTextField(null=True, blank=True)
+    caption_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
     caption_text = RichTextField(null=True, blank=True)
-    banner = CloudinaryField("image", null=True, blank=True)
-    first_section_title = RichTextField(null=True, blank=True)
+    banner = CloudinaryField("image", null=True, blank=True, help_text="Select a background image banner")
+    first_section_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
     first_section_body = RichTextField(null=True, blank=True)
-    second_section_title = RichTextField(null=True, blank=True)
+    second_section_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
     second_section_body = RichTextField(null=True, blank=True)
-    third_section_title = RichTextField(null=True, blank=True)
+    third_section_title = models.CharField(max_length=1000, null=True, blank=True, help_text="Write a short inspiring heading")
     third_section_body = RichTextField(null=True, blank=True)
 
     content_panels = Page.content_panels + [

@@ -1,4 +1,4 @@
-{% load static wagtailcore_tags %}{% load wagtailuserbar %} {% load static %}{% load wagtailimages_tags %}{% load static menus_tags %}{% get_menu "main" as menu %}
+{% load static wagtailcore_tags %}{% load wagtailuserbar %} {% load static %}{% load wagtailimages_tags %}{% load static menus_tags %}{% get_menu "leftmenu" as leftmenu %}{% get_menu "resources-menu" as resourcesmenu %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +13,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/slick-1.8.1/slick/slick.min.js"></script>
+    
     <link rel="stylesheet" href="/static/css/footer.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/statics/css/style.css">
@@ -144,6 +145,7 @@
     {% endblock %}{% block script %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
     <script src="/static/js/slider.js "></script>
+    
     <script type="text/javascript " src="/static/js/main.js "></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">

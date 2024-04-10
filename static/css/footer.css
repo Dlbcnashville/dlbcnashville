@@ -64,8 +64,8 @@ footer .right {
     color: #283646;
 }
 
-a,
-p {
+footer a,
+footer p {
     color: #77808B;
     font-size: 16px;
     font-family: Roboto;
@@ -226,8 +226,4 @@ footer input[type='submit'] {
 
 footer label {
     margin-top: 10px;
-}
-
-margin-top: 10px;
-
 }

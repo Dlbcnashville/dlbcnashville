@@ -34,6 +34,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 # Application definition
 
 INSTALLED_APPS = [
+    "outreach",
+    "scholarship",
     "notification",
     "menus",
     "authentication",
@@ -121,15 +123,15 @@ WSGI_APPLICATION = "dlclarksville.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
-}
 # DATABASES = {
-#     "default": dj_database_url.config(default='postgresql://postgres:1b1eGe6bebAgD1GFbF6-AFEBFCcbA2A-@roundhouse.proxy.rlwy.net:37661/railway', conn_max_age=1800),
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+#     }
 # }
+DATABASES = {
+    "default": dj_database_url.config(default='postgresql://postgres:MpgSxqSwXuihvGaSopiHgYqxRyIkIwic@roundhouse.proxy.rlwy.net:56226/railway', conn_max_age=1800),
+}
 
 
 

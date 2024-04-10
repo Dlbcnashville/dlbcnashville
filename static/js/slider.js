@@ -2,7 +2,7 @@ $('.slideshow').slick({
     dots: true,
     infinite: true,
     speed: 500,
-    fade: true,
+    rtl: true,
     cssEase: 'linear',
     autoplay: true,
     autoplaySpeed: 3000,
