@@ -1,11 +1,11 @@
 @font-face {
     font-family: Poppins;
-    src: url('/static/font/Poppins-Regular.ttf');
+    src: url("/static/font/Poppins-Regular.093ee89be9ed.ttf");
 }
 
 @font-face {
     font-family: Roboto;
-    src: url('/static/font/static/RobotoSerif/RobotoSerif-Regular.ttf');
+    src: url("/static/font/static/RobotoSerif/RobotoSerif-Regular.2fde5a4a0cef.ttf");
 }
 
 /* .donate-page * {

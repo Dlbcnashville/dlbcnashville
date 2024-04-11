@@ -1,0 +1,89 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}{% load humanize %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        {% block extra_styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/recent.css' %}" />
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+        <div class="top" style="background-image: url('{{page.banner.url}}');">
+            {% include "header.html" %}
+            <div class="heading-img">
+               <div class="first-text">
+                    <h2>
+                      {{latest_post.post_title|title}}
+                    </h2>
+                    <p>
+                       {{latest_post.short_highlight}}
+                    </p>
+               </div>
+               <div class="inquire">
+                <a href="{% pageurl latest_post %}">Read More</a>
+                <div id="time">
+                    <h3>LATEST</h3>
+                    <p>{{latest_post.date_created|timesince}}</p>
+                </div>
+               </div>
+            </div>
+        </div>
+        <div class="recent-post-header">
+            <h3>Recent Post</h3>
+        </div>
+        <div class="program-adverts">
+            {% for post in posts|slice:"1:2" %}
+            <div class="first">
+                <img src="{{post.post_image.url}}" alt="{{post.post_title}}">
+                <div class="bible-teaching">
+                    <h2 id="topic">
+                        {{post.post_title|title}}
+                    </h2>
+                    <p class="article-text">
+                        {{post.short_highlight}}
+                    </p>
+                    <p id="date1">{{post.date_created|date:"d M Y"}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="next-advert">
+                {% for post in posts|slice:"2:4" %}
+                <div class="second-add">
+                    <div class="second" style="background-image: url({{post.post_image.url}}); background-size: cover; background-repeat: no-repeat;"></div>
+                    <div class="text">
+                        <h4>{{post.post_category|title}}</h4>
+                        <p>
+                            {{post.post_title|title}}
+                        </p>
+                        <p id="date">{{post.date_created|date:"d M Y"}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="more-post recent-post-header">
+            <h3>
+                More Post
+            </h3>
+        </div>
+        <div class="last-down-post">
+            <div class="last-adverts">
+                {% for post in posts %}
+                <div class="first-last-advert">
+                    <img src="{{post.post_image.url}}" alt="{{post.post_title}}">
+                    <div class="topic">
+                        <h2>
+                            {{post.post_title|title}}
+                        </h2>
+                        <p id="date">{{post.date_created|date:"d M Y"}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,240 @@
+.top{
+    height: fit-content;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 20px;
+}
+.first-text{
+    /* padding-top: 40px; */
+    padding-left: 5%;
+    margin-top: 10%;
+}
+.first-text>h2{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    width: 50%;
+    text-transform: uppercase;
+}
+.first-text>p{
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    padding-top: 15px;
+}
+.inquire{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+}
+.inquire > a{
+    color: white;
+    /* padding-top: 5%; */
+}
+#time{
+    /* padding-top: 3%; */
+    padding-right: 5%;
+}
+#time>h3{
+    color:#C12A2A;
+    font-size: 32px;
+}
+#time>p{
+    color: white;
+    padding-top: 2%;
+}
+.recent-post-header{
+    padding-top: 5%;
+    padding-left: 5%;
+    margin-bottom: 40px;
+}
+.recent-post-header h3{
+    color: #C12A2A;
+    font-size: 60px;
+    font-weight: bold;
+}
+.program-adverts{
+    display: flex;
+    padding: 3%;
+    overflow-x: scroll;
+}
+.first{
+    flex: 1 1 100%;
+    height: fit-content;
+    border-radius: 15px;
+    min-width: 400px;
+}
+.first img{
+    width: 100%;
+    border-radius: 10px;
+}
+.next-advert{
+    display: flex;
+    padding-left: 4%;
+    padding-top: 0%;
+    flex: 1 1 100%;
+    flex-direction: column;
+    gap: 40px;
+}
+.second-add{
+    display: flex;
+    gap: 40px;
+}
+.second{
+    width: 100%;
+    height: 242px;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px rgba(217, 217, 217, 1);
+    max-width: 370px;
+    min-width: 300px;
+ }
+.text{
+    padding: 10px;
+}
+.text > P{
+    width:100%;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 5%;
+    line-height: 1.2;
+}
+#date {
+    color: var(--primary-red);
+    font-size: 10px;
+    margin-top: 5%;
+}
+.second-add .text h4{
+    font-size: 10px;
+}
+.third-add {
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+}
+.third{
+    width: 95%;
+    height: 170px;
+    border-radius: 10%;
+    box-shadow: 10px 10px 5px rgba(217, 217, 217, 1);
+}
+.second-text{
+    padding-top: 10px;
+}
+.second-text >p{
+    width:100%;
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 5%;
+}
+.bible-teaching{
+   
+}
+#topic{
+    color: black;
+    width: 100%;
+    /* padding-left: 4.5%; */
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 36px;
+}
+.bible-teaching .article-text{
+    width: 100%;
+    padding-top: 15px;
+    font-size: 24px;
+}
+#date1{
+    color: var(--primary-red);
+    font-size: 10px;
+    /* margin-top: 1%; */
+    font-weight: bold;
+}
+.more-post{
+    color: #C12A2A;
+    font-weight: bold;
+    font-size:xx-large;
+    padding-left: 4.5%;
+    padding-top: 2%;
+}
+.last-down-post{
+    display: flex;
+    padding: 4.5%;
+}
+.first-last-advert{
+    flex: 1 1 100%;
+    height: fit-content;
+    max-width: 454px;
+}
+
+.first-last-advert img{
+    border-radius: 10px;
+    height: 294px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.last-adverts{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.topic {
+    width:100%;
+        
+}
+.topic>h2{
+    font-size: 32px;
+    padding-top: 2%;
+    color: black;
+}
+.very-last-down-post {
+    display: flex;
+    padding-top: 1%;
+}
+@media (max-width: 500px) {
+    #topic {
+        font-size: 24px;
+    }
+    .bible-teaching .article-text {
+        font-size: 14px;
+    }
+    .first-text>h2 {
+        font-size: 34px;
+    }
+    .first-text>p {
+        font-size: 14px;
+    }
+    .topic>h2 {
+        font-size: 24px;
+    }
+}
+@media (max-width: 1000px) {
+    #topic {
+        font-size: 24px;
+    }
+    .bible-teaching .article-text {
+        font-size: 14px;
+    }
+    .second-add {
+        flex-wrap: wrap;
+    }
+    .text > P {
+        font-size: 24px;
+    }
+    .next-advert {
+        flex-direction: row;
+    }
+    #date {
+        margin-top: 0px;
+    }
+    .text > P {
+        padding-top: 1%;
+    }
+    .first-text>h2 {
+        width: 90%;
+    }
+    .first-text>p {
+        width: 90%;
+    }
+}

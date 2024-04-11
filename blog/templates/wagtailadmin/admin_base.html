@@ -1,0 +1,10 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load static %}
+
+{% block branding_favicon %}
+    {% comment %} {% if settings.blog.SiteLogo.favicon %}
+    <link rel="shortcut icon" href="{{settings.blog.SiteLogo.favicon.url}}" />
+    {% endif %} {% endcomment %}
+{% endblock %}
+
+{% block branding_title %}Mirrored's Admin{% endblock %}

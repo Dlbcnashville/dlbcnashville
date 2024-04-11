@@ -1,0 +1,73 @@
+<!DOCTYPE html>{% extends 'base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<html lang="en">
+
+<head>
+    {% load wagtailmetadata_tags %}
+    {% meta_tags %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {% comment %} {% image page.post_image fill-300x230 as post_image %} {% endcomment %}
+    <div class="first-screen" style="{% block landingbackground %}{% if page.post_image %} background: url('{{page.post_image.url}}') {% else %}background: url('/static/images/nasa-Q1p7bh3SHj8-unsplash.jpg'){% endif %}; background-size: cover; background-position: 0;{% endblock %}">
+    {% block pagecaption %}
+        <div class="first-section-content">
+            <div class="first-text">
+                <h1 style="color: #fff;">{{page.title|title}}</h1>
+            </div>
+        </div>
+    {% endblock %}
+    {% block cta %}
+    {% endblock %}
+    </div>
+    {% block content %} {% if request.GET.tag %}
+    <h4>Showing pages tagged "{{ request.GET.tag }}"</h4>
+    {% endif %}
+    <div class="how-card-container">
+        {% if blogpages %} {% for blog in blogpages %}
+        <div class="post-card-vertical">
+            {% comment %} {% image blog.post_image fill-300x230 as post_image %} {% endcomment %}
+            <div class="post-image" style="background-image: url({{blog.post_image.url}}); background-size: cover; background-repeat: no-repeat;">
+
+                <a href="{% pageurl blog.post_category %}">
+                    <div class="post-category">
+                        <p>{{blog.post_category.name}}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="post-content">
+                <div class="author">
+                    <div class="author-image"><img src="{{blog.post_author.avatar.url}}" alt=""></div>
+                    <div class="author-name">
+                        <a href="{{blog.post_author.get_absolute_url}}">
+                            <p>{{blog.post_author.user.first_name}} {{blog.post_author.user.last_name}}</p>
+                        </a>
+                    </div>
+                    <div class="post-date">
+                        <p>{{blog.date_created|date:"d M Y"}}</p>
+                    </div>
+                </div>
+                <div class="post-title">
+                    <a href="{% pageurl blog %}">
+                        <h2>{{blog.post_title}}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br />
+        <small>Revised: {{ blog.latest_revision_created_at }}</small><br /> {% endfor %} {% else %}
+        <div>
+            <p>No post available</p>
+        </div>{% endif %}
+    </div>
+    {% endblock content %}
+
+    {% block mission %}
+    {% endblock mission %}
+
+    {% block request %}
+    {% endblock request %}
+</body>
+
+</html>
