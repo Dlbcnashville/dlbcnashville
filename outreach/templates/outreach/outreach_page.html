@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %} {% load humanize %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block og_tag %}
+    <meta property="title" content="Outreach: {{page.outreach_title}}" />
+    <title>{{page.post_title}}</title>
+    <meta property="og:title" content="Outreach: {{page.outreach_title|title}}" />
+    <meta property="og:description" content="{{page.outreach_body|richtext|truncatewords:40}}" />
+    <meta property="og:image" content="{{page.outreach_image.url}}" /> {% endblock og_tag %}
+    {% block extra_styles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mini.css' %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <div class="blog-page-container" style="background-image: {% if page.banner %} url('{{page.banner.url}}'); {% else %}url('/static/images/outreach_top.jpg'); {% endif %}">
+        {% include "header.html" %}
+    </div>
+    <div class="body">
+        <div class="white">
+            <div class="text-side">
+                <div class="text-topic">
+                    <h2>
+                        {{page.outreach_title|title}}
+                    </h2>
+                </div>
+                <div class="image">
+                    <img src="{{page.outreach_image.url}}" style="width: 100%; height: 75%; border-radius: 10px; background-size: cover;" alt="{{page.post_title}}">
+                </div>
+                <div class="charge">
+                    {{page.outreach_body|richtext}}
+                </div>
+            </div>
+        </div> 
+    </div>
+    {% endblock %}
+</body>
+</html>

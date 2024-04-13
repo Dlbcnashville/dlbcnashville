@@ -178,7 +178,7 @@ class BlogPage(PostInfo, Page):
         else:
             return related_content
         
-        context["related_content"] = related_content
+        context["related_content"] = set(related_content)
         return context
     
     def get(self, request, *args, **kwargs):

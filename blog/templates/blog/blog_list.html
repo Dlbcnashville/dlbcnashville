@@ -10,7 +10,7 @@
     </head>
     <body>
         {% block content %}
-        <div class="top" style="background-image: url('{{page.banner.url}}');">
+        <div class="top" style="background-image: {% if page.banner %} url('{{page.banner.url}}'); {% else %}url('/static/images/headin.jpg'); {% endif %}">
             {% include "header.html" %}
             <div class="heading-img">
                <div class="first-text">
@@ -38,9 +38,11 @@
             <div class="first">
                 <img src="{{post.post_image.url}}" alt="{{post.post_title}}">
                 <div class="bible-teaching">
-                    <h2 id="topic">
-                        {{post.post_title|title}}
-                    </h2>
+                    <a href="{% pageurl post %}">
+                        <h2 id="topic">
+                            {{post.post_title|title}}
+                        </h2>
+                    </a>
                     <p class="article-text">
                         {{post.short_highlight}}
                     </p>
@@ -54,16 +56,17 @@
                     <div class="second" style="background-image: url({{post.post_image.url}}); background-size: cover; background-repeat: no-repeat;"></div>
                     <div class="text">
                         <h4>{{post.post_category|title}}</h4>
-                        <p>
-                            {{post.post_title|title}}
-                        </p>
+                        <a href="{% pageurl post %}">
+                            <p>
+                                {{post.post_title|title}}
+                            </p>
+                        </a>
                         <p id="date">{{post.date_created|date:"d M Y"}}</p>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-        
         <div class="more-post recent-post-header">
             <h3>
                 More Post
@@ -75,9 +78,11 @@
                 <div class="first-last-advert">
                     <img src="{{post.post_image.url}}" alt="{{post.post_title}}">
                     <div class="topic">
-                        <h2>
-                            {{post.post_title|title}}
-                        </h2>
+                        <a href="{% pageurl post %}">
+                            <h2>
+                                {{post.post_title|title}}
+                            </h2>
+                        </a>
                         <p id="date">{{post.date_created|date:"d M Y"}}</p>
                     </div>
                 </div>
