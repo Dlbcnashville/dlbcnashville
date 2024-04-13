@@ -313,7 +313,7 @@ class SiteLogo(BaseSiteSetting):
 @register_setting
 class ImportantPages(BaseSiteSetting):
     # Fetch these pages when looking up ImportantPages for or a site
-    select_related = ["about", "donate", "home"]
+    select_related = ["about", "donate", "home", "scholarship", "outreach"]
 
     about = models.ForeignKey(
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
@@ -321,14 +321,17 @@ class ImportantPages(BaseSiteSetting):
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
     home = models.ForeignKey(
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
-    # course_index = models.ForeignKey(
-    #     'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    scholarship = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    outreach = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
 
     panels = [
         PageChooserPanel('about', ['home.About']),
         PageChooserPanel('donate', ['home.Donate']),
         PageChooserPanel('home', ['home.HomePage']),
-        # PageChooserPanel('course_index', ['course.CourseIndexPage']),
+        PageChooserPanel('scholarship', ['scholarship.ScholarshipIndexPage']),
+        PageChooserPanel('outreach', ['outreach.OutreachIndexPage']),
     ]
 
 class ContactFormField(AbstractFormField):

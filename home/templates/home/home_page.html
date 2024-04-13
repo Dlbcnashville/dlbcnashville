@@ -60,14 +60,14 @@
       <div class="about-main">
         <div class="about-header">
           <h1>ABOUT US</h1>
-          <button class="btn learn-more">LEARN MORE</button>
+          <a class="btn learn-more" role="button" href="{{ settings.home.ImportantPages.page_url.about }}">LEARN MORE</a>
         </div>
         <div class="about-us-body-container">
           <div class="about-section about-section-1">
             <div>
               <h2>{{page.about_church_title_1}}</h2>
               <p>{{page.about_church_text_1|richtext}}</p>
-              <a href="#" class="learn-more-link">Learn More</a>
+              <a href="{{ settings.home.ImportantPages.page_url.about }}" class="learn-more-link">Learn More</a>
             </div>
             <div class="about-image about-image-1" style="background-image: url('{{page.about_church_image_1.url}}'); background-size: cover; background-repeat: no-repeat;"></div>
           </div>
@@ -75,13 +75,13 @@
             <div class="about-image about-image-2" style="background-image: url('{{page.about_church_image_2.url}}');background-size: cover; background-repeat: no-repeat;"></div>
             <h2>{{page.about_church_title_2}}</h2>
             <p>{{page.about_church_text_2|richtext}}</p>
-            <a href="#" class="learn-more-link">Learn More</a>
+            <a href="{{ settings.home.ImportantPages.page_url.about }}" class="learn-more-link">Learn More</a>
           </div>
           <div class="about-section about-section-1">
             <div>
               <h2>{{page.about_church_title_3}}</h2>
               <p>{{page.about_church_text_3|richtext}}</p>
-              <a href="#" class="learn-more-link">Learn More</a>
+              <a href="{{ settings.home.ImportantPages.page_url.about }}" class="learn-more-link">Learn More</a>
             </div>
             <div class="about-image about-image-1" style="background-image: url({{page.about_church_image_3.url}}); background-size: cover; background-repeat: no-repeat;"></div>
           </div>
@@ -146,12 +146,12 @@
           <h1>scholarship programmes</h1>
           <p>Inspiring Messages Just for You</p>
         </div>
-        <button class="btn learn-more">See All</button>
+        <a class="btn learn-more" href="{{ settings.home.ImportantPages.page_url.scholarship }}">See All</a>
       </div>
       <div class="scholarship-main-text">
         <h2>{{scholarship.scholarship_title}}</h2>
         <p>{{scholarship.short_description}}</p>
-        <button class="btn donate-btn">Participate</button>
+        <a class="btn donate-btn" href="{% pageurl scholarship %}">Participate</a>
       </div>
     </div>
     <div class="outreach-section">
@@ -160,7 +160,7 @@
           <h1>Charity/Community outreach</h1>
           <p>Inspiring Messages Just for You</p>
         </div>
-        <button class="btn learn-more">See All</button>
+        <a class="btn learn-more" role="button" href="{{ settings.home.ImportantPages.page_url.outreach }}">See All</a>
       </div>
       <div class="outreach-content-main">
         <div class="outreach-image">
@@ -169,7 +169,7 @@
         <div class="outreach-text">
           <h2>{{outreach.outreach_title}}</h2>
           <p>{{outreach.short_description}}</p>
-          <button class="btn donate-btn">Participate</button>
+          <a class="btn donate-btn" href="{% pageurl outreach %}">Participate</a>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@
       </div>
       <div class="donate-sub-text">
         <p>Join our community in sowing seeds of faith and nurturing growth in hearts and lives worldwide.</p>
-        <button class="btn donate-btn">Donate</button>
+        <a class="btn donate-btn" role="button" href="{{ settings.home.ImportantPages.page_url.donate }}">Donate</a>
       </div>
     </div>
     <div class="locate-us container-fluid">
