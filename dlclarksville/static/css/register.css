@@ -1,7 +1,4 @@
-.registration-page * {
-    margin: 0;
-    padding: 0;
-}
+
 
 .registration-page {
     display: flex;
@@ -17,7 +14,6 @@
 }
 
 .registration-page .new {
-    height: 448px;
     width: 100%;
     background-repeat: no-repeat;
     margin-left: 20px;
@@ -26,6 +22,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 40px;
 }
 
 .registration-page .new p {
@@ -51,7 +48,7 @@
     margin-top: 60px;
 }
 
-.registration-page .com {
+.contact-us-container {
     background-color: rgba(255, 255, 255, 1);
     /* position: absolute; */
     height: fit-content;
@@ -67,7 +64,7 @@
     width: 100%;
 }
 
-.registration-page #cir {
+.contact-us-container #cir {
     height: 80px;
     width: 80px;
     background-color: rgba(0, 4, 104, 1);
@@ -78,7 +75,7 @@
     position: relative;
 }
 
-.registration-page #line {
+.contact-us-container #line {
     width: 300px;
     border: 2px solid rgba(0, 4, 104, 1);
     display: inline-block;
@@ -86,7 +83,7 @@
     position: absolute;
 }
 
-.registration-page #cle {
+.contact-us-container #cle {
     height: 80px;
     width: 80px;
     background-color: rgba(0, 4, 104, 1);
@@ -96,21 +93,21 @@
     display: inline-block;
 }
 
-.registration-page #pen {
+.contact-us-container #pen {
     margin-left: 200px;
     color: rgba(0, 4, 104, 1);
     font-weight: bold;
     display: inline-block;
 }
 
-.registration-page #can {
+.contact-us-container #can {
     margin-left: 300px;
     color: rgba(0, 4, 104, 1);
     font-weight: bold;
     display: inline-block;
 }
 
-.registration-page .won {
+.contact-us-container .won {
     color: rgba(0, 4, 104, 1);
     font-family: arial;
     width: 100%;
@@ -119,11 +116,11 @@
     max-width: 500px;
 }
 
-.registration-page .won p {
+.contact-us-container .won p {
     margin-top: 20px;
 }
 
-.registration-page .won h2 {
+.contact-us-container .won h2 {
     color: #000468;
     font-family: Poppins;
     font-size: 34px;
@@ -134,59 +131,59 @@
     max-width: 421px;
 }
 
-.registration-page #name {
+.contact-us-container #name {
     width: 277px;
     height: 30px;
     padding-left: 20px;
     background: var(--fsint, #FAFAFF);
 }
 
-.registration-page #fill {
+.contact-us-container #fill {
     height: 100px;
     width: 180px;
 }
 
-.registration-page #sex {
+.contact-us-container #sex {
     width: 80px;
     height: 60px;
     padding: 20px;
 }
 
-.registration-page .let {
+.contact-us-container .let {
     padding: 20px;
 }
 
-.registration-page .form-wrapper {
+.contact-us-container .form-wrapper {
     display: flex;
     align-items: start;
 }
 
-.registration-page #call {
+.contact-us-container #call {
     margin-top: 4px;
     color: rgba(0, 4, 104, 1);
     margin-left: 20px;
 }
 
-.registration-page #form {
+.contact-us-container #form {
     width: 80px;
     height: 30px;
     background: var(--fsint, #FAFAFF);
 }
 
-.registration-page #yours {
+.contact-us-container #yours {
     width: 150px;
     height: 30px;
     padding-left: 20px;
     display: inline-block;
 }
 
-.registration-page .den {
+.contact-us-container .den {
     width: 400px;
     height: 20px;
     margin-top: 20px;
 }
 
-.registration-page .radio input[type='radio'] {
+contact-us-container .radio input[type='radio'] {
     appearance: none;
     width: 20px;
     height: 20px;
@@ -196,7 +193,7 @@
     transition: box-shadow 0.3s ease;
 }
 
-.registration-page .radio input[type='radio']:before {
+.contact-us-container .radio input[type='radio']:before {
     content: '';
     display: block;
     width: 60%;
@@ -205,15 +202,15 @@
     border-radius: 5px;
 }
 
-.registration-page .radio input[type='radio']:checked:before {
+.contact-us-container .radio input[type='radio']:checked:before {
     background: var(--ACCENT-LITE, #7479FF);
 }
 
-.registration-page #next {
+.contact-us-container #next {
     /* height: 40px; */
     width: 100px;
     color: white;
-    background-color: var(--ACCENT-LITE, #7479FF);
+    background-color: var(--primary-red);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -222,11 +219,11 @@
     padding: 15px 12px;
 }
 
-.registration-page #a-next {
+.contact-us-container #a-next {
     text-decoration: none;
 }
 
-form {
+.contact-us-container form {
     width: 100%;
 }
 
@@ -310,6 +307,10 @@ textarea {
     border: 2px solid #e0e0e0;
     background: #e0e0e0;
     resize: none;
+}
+
+.hero-section{
+    height: 250px;
 }
 
 @media screen and (max-width: 500px) {

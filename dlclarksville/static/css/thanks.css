@@ -41,3 +41,18 @@
     margin-top: 65px;
     position: absolute;
 }
+/* .submission-successful-bar{
+    background-color: var(--primary-red);
+    color: white;
+} */
+.successful-home{
+    background-color: var(--primary-red);
+    padding: 10px 32px;
+    border: none;
+}
+.hero-section{
+    height: 250px;
+}
+.display-sign-container{
+    margin-top: 40px;
+}

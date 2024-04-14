@@ -12,7 +12,13 @@
 <body>
     {% block content %}
     <div class="main registration-page login-page">
-        <div class="com">
+        <div class="new" style="background: url({% static 'images/aboutim3.jpg' %}); background-repeat: no-repeat; background-size: cover;">
+            
+            {% include "header.html" %}
+            <h1>Login</h1>
+            <p>Login to access you dashboard</p>
+        </div>
+        <div class="com contact-us-container">
             <div class="won">
                 <h2>
                     Sign In

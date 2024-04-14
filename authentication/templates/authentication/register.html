@@ -12,11 +12,12 @@
 <body>
     {% block content %}
     <div class="main registration-page">
-        <div class="new" style="background: url({% static 'images/regis.jpg' %}); backgroud-repeat: no-repeat; backgroud-cover: cover;">
+        <div class="new" style="background: url({% static 'images/regis.jpg' %}); background-repeat: no-repeat; background-size: cover;">
+            {% include "header.html" %}
             <h1>Register with us</h1>
             <p>Step into a Sanctuary of Faith, Love, and Spiritual Growth</p>
         </div>
-        <div class="com">
+        <div class="com contact-us-container">
             <div class="won">
                 <h2>
                     Let us know a little more about you

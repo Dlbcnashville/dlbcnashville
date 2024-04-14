@@ -5,19 +5,34 @@
     background-size: cover;
     padding-bottom: 20px;
 }
+.program-adverts a{
+    text-decoration: none;
+    color: none;
+    font-size: auto;
+}
+.more-post a{
+    text-decoration: none;
+    color: none;
+    font-size: auto;
+}
+.last-down-post a{
+    text-decoration: none;
+    color: none;
+    font-size: auto;
+}
 .first-text{
     /* padding-top: 40px; */
     padding-left: 5%;
     margin-top: 10%;
 }
-.first-text>h2{
+.first-text > h2{
     color: white;
     font-size: 40px;
     font-weight: bold;
     width: 50%;
     text-transform: uppercase;
 }
-.first-text>p{
+.first-text > p{
     color: white;
     font-size: 20px;
     width: 50%;
@@ -92,12 +107,13 @@
 .text{
     padding: 10px;
 }
-.text > P{
+.text h2{
     width:100%;
     font-weight: bold;
     font-size: 30px;
     padding-top: 5%;
     line-height: 1.2;
+    color: black;
 }
 #date {
     color: var(--primary-red);
@@ -183,10 +199,11 @@
     width:100%;
         
 }
-.topic>h2{
+.topic h2{
     font-size: 32px;
     padding-top: 2%;
     color: black;
+    font-weight: bold;
 }
 .very-last-down-post {
     display: flex;

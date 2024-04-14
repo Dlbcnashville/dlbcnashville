@@ -20,13 +20,13 @@ class HomePage(Page):
     hero_section_text = RichTextField(null=True, blank=True)
     about_church_title_1 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_1 = RichTextField(null=True, blank=True)
-    about_church_image_1 = CloudinaryField("image", null=True, blank=True)
+    about_church_image_1 = CloudinaryField("image", null=True, blank=True, help_text="Select the first about us image")
     about_church_title_2 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_2 = RichTextField(null=True, blank=True)
-    about_church_image_2 = CloudinaryField("image", null=True, blank=True)
+    about_church_image_2 = CloudinaryField("image", null=True, blank=True, help_text="Select the second about us image")
     about_church_title_3 = models.CharField(max_length=500, null=True, blank=True)
     about_church_text_3 = RichTextField(null=True, blank=True)
-    about_church_image_3 = CloudinaryField("image", null=True, blank=True)
+    about_church_image_3 = CloudinaryField("image", null=True, blank=True, help_text="Select the third about us image")
     donate_main_text = models.CharField(max_length=500, null=True, blank=True, help_text="make text as short as possible")
     donate_main_subtext = models.CharField(max_length=1000, null=True, blank=True, help_text="make text as short as possible")
     donate_background_image = CloudinaryField("image", null=True, blank=True, help_text="Select image to use as donate background image")
@@ -313,7 +313,7 @@ class SiteLogo(BaseSiteSetting):
 @register_setting
 class ImportantPages(BaseSiteSetting):
     # Fetch these pages when looking up ImportantPages for or a site
-    select_related = ["about", "donate", "home", "scholarship", "outreach"]
+    select_related = ["about", "donate", "home", "scholarship", "outreach", "contact"]
 
     about = models.ForeignKey(
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
@@ -325,6 +325,8 @@ class ImportantPages(BaseSiteSetting):
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
     outreach = models.ForeignKey(
         'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
+    contact = models.ForeignKey(
+        'wagtailcore.Page', null=True, on_delete=models.SET_NULL, related_name='+')
 
     panels = [
         PageChooserPanel('about', ['home.About']),
@@ -332,6 +334,7 @@ class ImportantPages(BaseSiteSetting):
         PageChooserPanel('home', ['home.HomePage']),
         PageChooserPanel('scholarship', ['scholarship.ScholarshipIndexPage']),
         PageChooserPanel('outreach', ['outreach.OutreachIndexPage']),
+        PageChooserPanel('contact', ['home.ContactFormPage']),
     ]
 
 class ContactFormField(AbstractFormField):

@@ -10,7 +10,7 @@
 
 <body>
     {% block content %}
-    <div class="container-fluid hero-section" style="background-image: url('/static/images/landingbg.png'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid hero-section" style="background-image: url('/static/images/431243036_928578379050327_5003254198322004998_n.webp'); background-size: cover; background-repeat: no-repeat;">
         {% include "header.html" %}
         <div class="hero-section-main-text">
           {{page.hero_section_title|title}}
@@ -122,7 +122,7 @@
           <h1>GCK DAILY</h1>
           <p>Inspiring Messages Just for You</p>
         </div>
-        <button class="btn learn-more">LEARN MORE</button>
+        <a class="btn learn-more" role="button" href="https://gckhq.org/">LEARN MORE</a>
       </div>
       <div class="gck-devotional-container">
         <div class="gck-daily">
@@ -230,7 +230,7 @@
       </div>
       <div class="donate-sub-text">
         <p>{{page.connect_with_us_sub_text}}</p>
-        <button class="btn donate-btn">Reach out</button>
+        <a class="btn donate-btn" role="button" href="{{ settings.home.ImportantPages.page_url.contact }}">Reach out</a>
       </div>
     </div>
 
