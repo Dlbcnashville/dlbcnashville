@@ -19,7 +19,10 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
-
+.container-fluid{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 .navbar-brand {
     margin-right: 1rem;
     margin-left: 1rem;
@@ -70,6 +73,8 @@ body{
 .navbar .container-fluid{
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
 }
 .hero-section{
     height: fit-content;
@@ -201,7 +206,7 @@ body{
     display: flex;
 }
 .about-main{
-    padding: 80px 0px 0 0;
+    padding: 80px 20px 0 20px;
     z-index: 10;
 }
 .palm-image{
@@ -434,7 +439,7 @@ body{
 .locate-us{
     display: flex;
     gap: 100px;
-    padding: 80px 40px;
+    padding: 80px 40px !important;
 }
 .locate-us .map-header h3{
     font-size: 20px;
@@ -573,6 +578,7 @@ body{
     font-size: 16px;
     margin-bottom: 20px;
 }
+
 
 @media (max-width: 1400px) {
     .hero-section-main-text{
@@ -805,11 +811,22 @@ body{
     .outreach-content-main .outreach-text{
         width: 100%;
     }
-    .slick-next {
-        right: 20px !important;
+    .slick-arrow {
+        margin-top: -100px;
+        opacity: .75;
+        color: var(--primary-red);
     }
-    .slick-prev {
-        left: 20px !important;
+    .gck-daily-and-devotionals {
+        padding: 20px;
+    }
+    .outreach-section {
+        padding: 20px 20px;
+    }
+    .about-main{
+        padding: 40px 20px 0 20px;
+    }
+    .locate-us{
+        padding: 40px 20px !important;
     }
 }
 
