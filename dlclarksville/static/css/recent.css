@@ -52,8 +52,10 @@
     padding-right: 5%;
 }
 #time>h3{
-    color:#C12A2A;
+    color:#FF0000;
     font-size: 32px;
+    font-weight: bolder;
+    margin-bottom: 0px !important;
 }
 #time>p{
     color: white;
@@ -73,6 +75,7 @@
     display: flex;
     padding: 3%;
     overflow-x: scroll;
+    margin-bottom: 40px;
 }
 .first{
     flex: 1 1 100%;
@@ -224,6 +227,21 @@
     }
     .topic>h2 {
         font-size: 24px;
+    }
+    .recent-post-header h3 {
+        font-size: 34px;
+    }
+    .text h2 {
+        font-size: 24px;
+    }
+    .topic h2 {
+        font-size: 24px;
+    }
+    .first-text > p {
+        font-size: 14px;
+    }
+    #time>h3{
+        font-size: 18px;
     }
 }
 @media (max-width: 1000px) {

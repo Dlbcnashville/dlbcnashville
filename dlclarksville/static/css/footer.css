@@ -15,6 +15,7 @@ footer .bottom {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 30px;
+    gap: 40px;
 }
 
 @font-face {
@@ -237,4 +238,8 @@ footer label {
 }
 .footer-container svg{
     fill: var(--primary-red);
+}
+
+footer address {
+    margin-bottom: 0px;
 }

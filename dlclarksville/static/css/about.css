@@ -47,7 +47,7 @@
     padding-left: 4px;
 }
 #border{
-    border-bottom: 4px solid rgb(219, 91, 91);
+    border-bottom: 4px solid var(--primary-red);
     width: 90px;
     border-radius: 10px;
     padding: 2px;
@@ -61,7 +61,7 @@
     padding-left: 50px;
 }
 .about-page h2{
-    color:blue;
+    color: var(--primary-blue);
     font-weight: bold;
     font-size: 40px;
     line-height: 40px;
@@ -110,7 +110,7 @@
     margin-top: 200px;
 }
 .our-believe > label{
-    color: red;
+    color: #FF1818;
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 3%;
@@ -142,7 +142,7 @@
     background-repeat: no-repeat;
 }
 .our-mission>label{
-    color: red;
+    color: #FF1818;
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 3%;
@@ -177,7 +177,7 @@
     line-height: 35px;
 }
 .heading > label{
-    color: blue;
+    color: var(--primary-blue);
     font-family: arial;
     font-weight: bold;
     font-size: 30px;
@@ -277,7 +277,7 @@
     }
 }
 
-@media (max-width:490px){
+@media (max-width:496px){
     .top-banner{
         height: 250px;
         width: 100%;
@@ -343,5 +343,8 @@
     }
     .location-church-about-container {
         padding: 0 20px 30px 20px;
+    }
+    .about-page .top-heading>p {
+        font-size: 14px;
     }
 }

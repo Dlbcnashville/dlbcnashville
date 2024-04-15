@@ -112,6 +112,10 @@ body{
 }
 
 /* EVENT */
+.event-container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 .event-card{
     display: flex;
     flex-basis: 100%;
@@ -801,6 +805,12 @@ body{
     .outreach-content-main .outreach-text{
         width: 100%;
     }
+    .slick-next {
+        right: 20px !important;
+    }
+    .slick-prev {
+        left: 20px !important;
+    }
 }
 
 
@@ -835,8 +845,10 @@ body{
         font-size: 24px;
     }
     .about-header .learn-more{
-        padding: 15px 20px;
-        font-size: 14px;
+        padding: 10px 12px;
+        font-size: 12px;
+        text-wrap: nowrap;
+        word-break: keep-all;
     }
     .about-section .about-image{
         height: 321px;
@@ -853,8 +865,12 @@ body{
     .about-us{
         padding: 20px 20px;
     }
+    .palm-image{
+        display: none;
+    }
     .palm-image img{
-        margin-left: -390px;
+        /* margin-left: -390px; */
+        display: none;
     }
     .service-day-card .date .month{
         font-size: 34px;
