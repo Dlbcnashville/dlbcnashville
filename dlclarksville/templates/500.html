@@ -1,13 +1,16 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8" />
-        <title>Internal server error</title>
+        {% block title %}Internal server error{% endblock %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
+        {% block content %}
         <h1>Internal server error</h1>
 
         <h2>Sorry, there seems to be an error. Please try again soon.</h2>
+        {% endblock %}
     </body>
 </html>
