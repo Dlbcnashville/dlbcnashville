@@ -16,6 +16,7 @@ from outreach.models import OutreachPage
 class HomePage(Page):
     template = 'home/home_page.html'
     max_count = 1
+    banner = CloudinaryField("image", null=True, blank=True, help_text="Select the background image for the hero section")
     hero_section_title = models.CharField(max_length=500, null=True)
     hero_section_text = RichTextField(null=True, blank=True)
     about_church_title_1 = models.CharField(max_length=500, null=True, blank=True)
@@ -39,6 +40,7 @@ class HomePage(Page):
     connect_with_us_sub_text = models.CharField(max_length=500, null=True, blank=True, help_text="Enter a very short inspiring message here")
     connect_with_us_image = CloudinaryField("image", null=True, blank=True, help_text="Select image for connect with us background image")
     content_panels = Page.content_panels + [
+        FieldPanel('banner'),
         FieldPanel('hero_section_title'),
         FieldPanel('hero_section_text'),
         FieldPanel('about_church_title_1'),

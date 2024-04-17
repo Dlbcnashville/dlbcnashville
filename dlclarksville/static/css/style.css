@@ -814,9 +814,7 @@ body{
         width: 100%;
     }
     .slick-arrow {
-        margin-top: -100px;
-        opacity: .75;
-        color: var(--primary-red);
+        display: none !important;
     }
     .gck-daily-and-devotionals {
         padding: 20px;
@@ -829,6 +827,9 @@ body{
     }
     .locate-us{
         padding: 40px 20px !important;
+    }
+    .slick-dots {
+        display: none !important;
     }
 }
 

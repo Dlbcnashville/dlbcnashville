@@ -10,7 +10,7 @@
 
 <body>
     {% block content %}
-    <div class="container-fluid hero-section" style="background-image: url('/static/images/431243036_928578379050327_5003254198322004998_n.webp'); background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid hero-section" style="background-image: {% if page.banner %} url('{{page.banner.url}}'); {% else %}url('/static/images/431243036_928578379050327_5003254198322004998_n.webp'); {% endif %} background-size: cover; background-repeat: no-repeat;">
         {% include "header.html" %}
         <div class="hero-section-main-text">
           {{page.hero_section_title|title}}
