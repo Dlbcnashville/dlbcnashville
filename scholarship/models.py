@@ -24,7 +24,7 @@ class ScholarshipIndexPage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super(ScholarshipIndexPage, self).get_context(request, *args, **kwargs)
 
-        scholarships = ScholarshipPage.objects.all()
+        scholarships = ScholarshipPage.objects.all().order_by('-date')
         
         context["scholarships"] = scholarships
         return context
@@ -36,6 +36,7 @@ class ScholarshipPage(Page):
     display_on_home_page = models.BooleanField(default=False)
     scholarship_image = CloudinaryField("image", null=True, blank=True)
     scholarship_body = RichTextField(null=True)
+    date_created = models.DateTimeField(auto_now_add=True)
 
 
     content_panels = Page.content_panels + [
@@ -53,3 +54,7 @@ class ScholarshipPage(Page):
         if self.display_on_home_page:
             ScholarshipPage.objects.all().update(**{'display_on_home_page': False})
         super(ScholarshipPage, self).save(*args, **kwargs)
+
+
+    class Meta:
+        ordering = ["-date_created"]

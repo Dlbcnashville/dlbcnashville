@@ -4,7 +4,7 @@ from wagtail.models import Page
 from django.shortcuts import render
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 from wagtail.admin.panels import FieldPanel, InlinePanel, FieldRowPanel, MultiFieldPanel, PageChooserPanel
-from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField, AbstractFormSubmission
 from wagtail.snippets.models import register_snippet
 from modelcluster.fields import ParentalKey
 from wagtail.contrib.forms.panels import FormSubmissionsPanel
@@ -12,6 +12,8 @@ from cloudinary.models import CloudinaryField
 from django.shortcuts import get_object_or_404
 from scholarship.models import ScholarshipPage
 from outreach.models import OutreachPage
+from django.urls import reverse
+from wagtail.admin.forms import WagtailAdminModelForm, WagtailAdminPageForm
 
 class HomePage(Page):
     template = 'home/home_page.html'
@@ -72,7 +74,9 @@ class HomePage(Page):
         events = Event.objects.filter(display_on_home_page=True)
         scholarship = get_object_or_404(ScholarshipPage, display_on_home_page=True)
         outreach = get_object_or_404(OutreachPage, display_on_home_page=True)
-        # context["home_page"] = self.home_page
+        event_registration_form = get_object_or_404(EventRegistrationFormPage)
+
+        context["event_registration_form"] = event_registration_form
         context["worship_services"] = worship_services
         context["daily_devotions"] = daily_devotions
         context["events"] = events
@@ -133,10 +137,65 @@ class Event(models.Model):
         FieldPanel('display_on_home_page'),
         FieldPanel('can_register'),
         FieldPanel('external_registration'),
-        FieldPanel('external_registration'),
+        FieldPanel('external_registration_link'),
     ]
     def __str__(self):
         return self.event_name
+    
+
+class EventRegistration(models.Model):
+    first_name = models.CharField(max_length=1000, null=True)
+    last_name = models.CharField(max_length=1000, null=True)
+    # phone = models.CharField(max_length=1000, null=True)
+    email = models.EmailField(null=True)
+    event = models.ForeignKey(Event, on_delete=models.SET_NULL, null=True)
+
+    def get_absolute_url(self):
+        return reverse('home:event-detail', kwargs={'pk': self.id})
+
+class EventRegistrationFormPage(AbstractEmailForm):
+    intro = RichTextField(blank=True)
+    thankyou_page_title = models.CharField(
+        max_length=255, help_text="Title text to use for the 'thank you' page")
+
+    # Note that there's nothing here for specifying the actual form fields -
+    # those are still defined in forms.py. There's no benefit to making these
+    # editable within the Wagtail admin, since you'd need to make changes to
+    # the code to make them work anyway.
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FormSubmissionsPanel(),
+        FieldPanel('intro', classname="full"),
+        FieldPanel('thankyou_page_title'),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel('subject'),
+        ], "Email"),
+    ]
+
+
+    def serve(self, request):
+        from .form import EventForm
+
+        if request.method == 'POST':
+            form = EventForm(request.POST)
+            if form.is_valid():
+                event = form.save()
+                return render(request, 'home/event_form_landing.html', {
+                    'page': self,
+                    'event': event,
+                })
+        else:
+            form = EventForm()
+
+        return render(request, 'home/event_form.html', {
+            'page': self,
+            'form': form,
+        })
+
 @register_snippet
 class DailyDevotion(models.Model):
     devotion_type = models.CharField(max_length=500, null=True, blank=True)
@@ -227,13 +286,13 @@ class About(Page):
     location_church_image1 = CloudinaryField("image", null=True, blank=True, help_text="Location church image 1")
     location_church_image2 = CloudinaryField("image", null=True, blank=True, help_text="Location church image 2")
     location_church_image3 = CloudinaryField("image", null=True, blank=True, help_text="Location church image 3")
+    learn_more = models.URLField(null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('who_we_are'),
         FieldPanel('who_we_are_image'),
         FieldPanel('our_belief'),
         FieldPanel('our_belief_image'),
-        # FieldPanel('ministries'),
         FieldPanel('advert_image'),
         FieldPanel('regional_overseer'),
         FieldPanel('general_superintendent'),
@@ -244,6 +303,7 @@ class About(Page):
         FieldPanel('location_church_image1'),
         FieldPanel('location_church_image2'),
         FieldPanel('location_church_image3'),
+        FieldPanel('learn_more'),
     ]
 
 class IamNew(Page):

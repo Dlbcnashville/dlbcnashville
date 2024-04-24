@@ -34,7 +34,7 @@
     <div class="charge">
         <div class="first-charge charge-bottom" style="background-image: {% if page.who_we_are_image %} url('{{page.who_we_are_image.url}}') {% else %} url('/static/images/first-charge.jpg') {% endif %}; background-size: cover; backgound-repeat: no-repeat;">
             <div class="learn-more">
-                <label><a href="#" class="learn-more-link">LEARN MORE</a></label>
+                <label><a href="{{page.learn_more}}" class="learn-more-link">LEARN MORE</a></label>
             </div>
             <div class="charge-area">
                 <div class="our-believe">
@@ -52,7 +52,7 @@
         </div>
         <div class="second-charge charge-bottom" style="background-image: {% if page.our_belief_image %} url('{{page.our_belief_image.url}}') {% else %} url('/static/images/second-charge.jpg') {% endif %}; background-size: cover; backgound-repeat: no-repeat;">
             <div class="learn-more">
-                <label><a href="#" class="learn-more-link">LEARN MORE</a></label>
+                <label><a href="{{page.learn_more}}" class="learn-more-link">LEARN MORE</a></label>
             </div>
             <div class="charge-area">
                 <div class="our-mission">
@@ -97,14 +97,12 @@
                     {{page.message_from_location_church_text2|richtext}}
                 </label>
                 <div class="learn-more end">
-                    <label><a href="#" class="learn-more-link">LEARN MORE</a></label>
+                    <label><a href="{{page.learn_more}}" class="learn-more-link">LEARN MORE</a></label>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %} {% block extra_script %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-{% endblock %}
+{% endblock %} 
 
 </html>

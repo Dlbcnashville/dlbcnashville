@@ -16,6 +16,7 @@ urlpatterns = [
     path("course/", include('course.urls', namespace = 'course')),
     path("member/", include('authentication.urls', namespace = 'authentication')),
     path("notification/", include('notification.urls', namespace = 'notifications')),
+    path("", include('home.urls', namespace = 'home')),
 ]
 
 

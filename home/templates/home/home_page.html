@@ -41,7 +41,11 @@
                 <p>{{event.event_start_time}} - {{event.event_end_time}}</p>
                 </div>
                 <div class="event-cta event-info-key pad-left pad-right">
-                <button class="btn register">Register</button>
+                {% if event.can_register %}
+                <a class="btn register" href="{% if event.external_registration %}{{event.external_registration_link}}{% else %}{% url 'home:register-event' %} {% endif %}">Register</a>
+                {% else %}
+                <div></div>
+                {% endif %}
                 </div>
             </div>
             <div class="event-location">

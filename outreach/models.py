@@ -27,6 +27,7 @@ class OutreachPage(Page):
     outreach_title = models.CharField(max_length=500, null=True, blank=True)
     short_description = models.CharField(max_length=1000, null=True, blank=True, help_text="Enter a text less than 250 words")
     display_on_home_page = models.BooleanField(default=False)
+    date_created = models.DateTimeField(auto_now_add=True)
     outreach_image = CloudinaryField("image", null=True, blank=True)
     outreach_body = RichTextField(null=True)
 
@@ -46,3 +47,6 @@ class OutreachPage(Page):
         if self.display_on_home_page:
             OutreachPage.objects.all().update(**{'display_on_home_page': False})
         super(OutreachPage, self).save(*args, **kwargs)
+
+    class Meta:
+        ordering = ["-date_created"]

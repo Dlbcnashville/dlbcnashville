@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% load wagtailcore_tags %}{% load static %}{% load wagtailimages_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="veiwpoint" content="width=device-widt, initial-scale=1.0"> {% block extra_styles%}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/event.css' %}">
+    {% endblock %}
+</head>
+
+{% block content %}
+<div class="main registration-page">
+    <div class="new" style="background: url({% static 'images/regis.jpg' %}); background-repeat: no-repeat; background-size: cover;">
+        {% include "header.html" %}
+        <h1>Event Registration</h1>
+        <p>Register to participate in our events</p>
+    </div>
+    <div class="com contact-us-container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-wrapper">
+            {{form}}
+            </div>
+            <input class="subscribe-btn" type="submit" value="Register">
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+</html>
