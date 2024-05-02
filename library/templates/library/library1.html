@@ -1,0 +1,87 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>{{object.book_name.title}}</title>
+    {% endblock title %}
+    {% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/library1.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <div class="body-container">
+        {% block content %}
+        <div class="main">
+            <div class="titles">
+            <h2>TITLE: {{object.title}} </h2> 
+            <table>
+                <!-- <tr id="none">
+                    <td class="table-content-head">SUMMARY:</td>
+                    <td>
+                        Embark on a Journey of Christ-Centered Living,
+                        Diversity, and Spiritual Growth. Join us in Worship, 
+                        Learn, and Impact Lives Together. ...?
+                    </td>
+                </tr> -->
+                <tr>
+                    <td class="table-content-head">AUTHOR:</td>
+                    <td>{{object.author}}</td>
+                </tr>
+                <tr>
+                    <td class="table-content-head">ISBN:</td>
+                    <td>{{object.isbn}}</td>
+                </tr>
+                <!-- <tr>
+                    <td class="table-content-head">LANGUAGE:</td>
+                    <td>English</td>
+                </tr> -->
+                <tr>
+                    <td class="table-content-head">CATEGORY:</td>
+                    <td>{{object.genre.all|join:", "}}</td>
+                </tr>
+            </table>
+            <div class="request">
+                <a href="#">Request</a>
+            </div>
+            </div>
+            <div class="copies">
+                <h3>COPIES</h3>
+                <table>
+                    {% for copy in object.librarybookinstance_set.all %}
+                    <tr class="copy-card">
+                        <td class="book-title-no">
+                            {{object.title}} #1
+                        </td>
+                        <td id="pink"><p class="book-status {% if copy.status == 'a' %}status-available{% elif copy.status == 'o' %}status-borrowed{% else %}status-maintenance {% endif %}">{{ copy.get_status_display }}</p></td>
+                        <td class="book-copy-more">
+                            <svg class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                {% if copy.status != 'a' %}
+                                <li>
+                                    <div>
+                                        <h6>Due Date:</h6>
+                                        <p class="red">{{copy.due_back}}</p>
+                                    </div>
+                                </li>
+                                {% endif %}
+                                <li>
+                                    <li>
+                                        <div class="text-muted">
+                                            <h6>Serial Number:</h6>
+                                            <p>{{copy.book_id}}</p>
+                                        </div>
+                                    </li>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

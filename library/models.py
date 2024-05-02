@@ -8,6 +8,8 @@ from wagtail.snippets.models import register_snippet
 from wagtail.admin.panels import FieldPanel, InlinePanel, FieldRowPanel, MultiFieldPanel, PageChooserPanel
 import uuid # Required for unique book instances
 from wagtail.models import Page
+from authentication.models import User
+from datetime import date
 
 # Create your models here.
 @register_snippet
@@ -64,10 +66,13 @@ class LibraryBook(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('library:library-book', args=[str(self.id)])
 
 
-
-class LibraryBookInstance(Page):
+@register_snippet
+class LibraryBookInstance(models.Model):
 
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
     book_id = models.UUIDField(primary_key=True, default=uuid.uuid4,
@@ -90,13 +95,15 @@ class LibraryBookInstance(Page):
         default='m',
         help_text='Book availability',
     )
+    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
-    content_panels = Page.content_panels + [
+    panels = [
         FieldPanel('book_id'),
         FieldPanel('book_name'),
         # FieldPanel('imprint'),
-        FieldPanel('due_back'),
         FieldPanel('status'),
+        FieldPanel('borrower'),
+        FieldPanel('due_back'),
     ]
 
     class Meta:
@@ -104,7 +111,12 @@ class LibraryBookInstance(Page):
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.book_id} ({self.book.title})'
+        return f'{self.book_id} ({self.book_name.title}, {self.status}, {self.borrower}, {self.due_back})'
+    
+    @property
+    def is_overdue(self):
+        """Determines if the book is overdue based on due date and current date."""
+        return bool(self.due_back and date.today() > self.due_back)
 
 @register_snippet
 class BookAuthor(models.Model):
@@ -117,6 +129,9 @@ class BookAuthor(models.Model):
     class Meta:
         ordering = ['last_name', 'first_name']
 
+    def get_absolute_url(self):
+        return reverse('library:author-detail', args=[str(self.id)])
+
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.last_name}, {self.first_name}'
+        return f'{self.first_name} {self.last_name}'

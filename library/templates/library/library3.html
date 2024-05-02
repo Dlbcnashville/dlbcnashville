@@ -1,0 +1,101 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Library</title>{% endblock title %}
+    {% block extra_styles %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/library3.css' %}">
+    {% endblock %}
+</head>
+<body>
+    <div class="body-container">
+        {% block content %}
+        <div class="main">
+            <div class="loading">
+                <div class="load1 load">
+                    <h3>500+ </h3>
+                    <p>Available</p>
+                </div>
+                <div class="load2 load">
+                    <h3>-50 </h3>
+                    <p>Borrowed</p>
+                </div>
+                <div class="load3 load">
+                    <h3>45 </h3>
+                    <p>Issued on Return</p>
+                </div>
+            </div>
+            <div class="nav-tab-menu">
+                <a class="btn book-tab-btn" role="button" href="{% url 'library:library-authors' %}">Authors</a>
+                <a class="btn book-tab-btn" role="button" href="{% url 'library:my-borrowed' %}">My Books</a>
+                {% for group in user.groups.all %}
+                {% if group.name == 'Librarian' %}
+                <a class="btn book-tab-btn" role="button" href="{% url 'library:all-copies' %}">Book Copies</a>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="title">
+                <h3>Book List</h3>
+                <!-- <p>See All</p> -->
+            </div>
+            <div class="book list">
+                <input id="book-search" class="form-control" type="text" placeholder="Author, Book title">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="hide">S/N</th>
+                            <th>Author</th>
+                            <th>Title</th>
+                            <th class="hide">Copies</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-body">
+                        {% for book in object_list %}
+                        <tr>
+                            <td  class="hide">{{forloop.counter}}</td>
+                            <td>{{book.author}}</td>
+                            <td><a href="{% url 'library:library-book' book.id %}">{{book.title}}</a></td>
+                            <td  class="hide">4</td>
+                            <td class="color"><p>Request</p></td>
+                        </tr>
+                        
+                        {% empty %}
+                        <li>No books in library yet.</li>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    {% if is_paginated %}
+                    <div class="pagination">
+                        <span class="page-links">
+                            {% if page_obj.has_previous %}
+                                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                            {% endif %}
+                            <span class="page-current">
+                                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                            </span>
+                            {% if page_obj.has_next %}
+                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                    {% endif %}
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $("#book-search").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#book-body tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
+        {% endblock %}
+    </div>
+</body>
+</html>

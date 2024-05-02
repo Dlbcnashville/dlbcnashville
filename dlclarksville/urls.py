@@ -17,6 +17,7 @@ urlpatterns = [
     path("member/", include('authentication.urls', namespace = 'authentication')),
     path("notification/", include('notification.urls', namespace = 'notifications')),
     path("", include('home.urls', namespace = 'home')),
+    path("library/", include('library.urls', namespace = 'library')),
 ]
 
 

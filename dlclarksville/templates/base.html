@@ -3,9 +3,13 @@
 <html lang="en">
 
 <head>
+    {% block site_utils %}
+    <link rel="shortcut icon" href="/static/images/dlbc.png" type="image/x-icon">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">{% block site_utils %}
-    <link rel="shortcut icon" href="/static/images/dlbc.png" type="image/x-icon"> {% endblock %} {% block title %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Church, Deeper Life, Spiritual, Truth, Worship, Christianity, God, Jesus, Nashville, USA">
+    <meta name="description" content="Deeper Life Bible Church, Nashsville, United States of America">
+     {% endblock %} {% block title %}
     <title>DLBC Nashsville</title>{% endblock %} {% block styles %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/static/js/slick-1.8.1/slick/slick.css" />

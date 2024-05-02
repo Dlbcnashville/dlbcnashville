@@ -3,39 +3,57 @@
     margin: 0%;
 }
 .main{
-    padding: 5%;
+    padding: 0 5%;
     padding-right:8% ;
 }
 .loading{
     display: flex;
     justify-content: center;
     justify-content: space-around;
-    padding: 5%;
+    padding: 0px 2% 2% 2%;
 }
 .load{
-    height: 200px;
-    width: 200px;
-    justify-content: center;
+    height: 120px;
+    width: 150px;
+    
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
+    padding: 20px;
+    background-color: #7479FF;
+    text-align: center;
 }
-.load1{
+/* .load1{
     background-color: aquamarine;
-}
+} */
 .load h3{
-    font-size: 50px;
+    font-size: 30px;
+    font-weight: 700;
 }
-.load2{
+.load *{
+    color: #ffffff;
+}
+/* .load2{
     background-color: rgb(114, 180, 158);
 }
 .load3{
     background-color: rgb(163, 177, 172);
+} */
+.main .title h3{
+    font-size: 32px;
+    font-weight: 600;
+}
+.main .title p{
+    font-size: 24px;
+    font-weight: 600;
 }
 .title{
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 table{
     width: 100%;
@@ -44,10 +62,10 @@ th{
     text-align: left;
 }
 .hide{
-    padding-left: 5%;
+    padding-left: 0px;
 }
 .color p{
-    background-color: aquamarine;
+    background-color: #C6E0FF;
     width: fit-content;
     padding-left: 5%;
     padding-right: 5%;
@@ -63,6 +81,19 @@ table{
 }
 td{
     padding-top: 3%;
+}
+.nav-tab-menu{
+    display: flex;
+    gap: 35px;
+}
+.nav-tab-menu .btn{
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    padding: 6px 10px;
+    font-weight: 700;
+}
+#book-search{
+    margin-bottom: 20px;
 }
 @media (max-width:1000px){
     .load{

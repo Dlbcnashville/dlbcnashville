@@ -1,0 +1,128 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.main{
+    padding: 5%;
+    display: flex;
+    gap:20px;
+    padding-top: 0px;
+}
+.titles{
+    padding-left: 5%;
+    width: 50%;
+}
+
+#none{
+    border-bottom: none;
+    background-color:#F9F9F9;
+    border-radius: 10px;
+    padding: 5%;
+}
+
+h2{
+    color: rgba(47, 47, 47, 1);
+    font-size: 32px;
+    font-family: arial;
+    font-weight: 900;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+tr {
+    border-bottom: 1px solid #ddd;
+}
+td{
+    padding: 20px;
+    vertical-align: middle;
+}
+.table-content-head{
+    font-weight: 700;
+}
+.copies{
+    font-family: arial;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    width: fit-content;
+    padding-top: 0px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.copies h3{
+    font-size: 32px;
+    font-weight: 900;
+    color: rgba(47, 47, 47, 1);
+}
+.copy-card{
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #F9F9F9;
+}
+.book-title-no{
+    font-size: 14px;
+}
+.book-status{
+    font-size: 12px;
+    padding: 3px 5px;
+    margin-bottom: 0px;
+}
+.status-borrowed{
+    background-color: #FFE8E8;
+    color: #C12A2A;
+}
+.status-available{
+    background-color: #ECFFEB;
+    color: #05FE00;
+}
+.status-maintenance{
+    background-color: #fffdeb;
+    color: #feba00;
+}
+.book-copy-more{
+    cursor: pointer;
+}
+.dropdown-menu{
+    padding: 15px;
+}
+.dropdown-menu h6{
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+}
+.dropdown-menu p{
+    font-size: 12px;
+}
+.red{
+    color: #C12A2A;
+}
+a{
+    text-decoration: none;
+    color: black;
+   
+}
+.request{
+    background-color: #C6E0FF;
+    float: right;
+    padding-top: 10%;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+@media ( max-width: 1000px){
+    .main{
+        display: block;
+    }
+    .titles {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .copies {
+        width: 100%;
+        margin-top: 40px;
+        padding-left: 0px;
+    }
+}

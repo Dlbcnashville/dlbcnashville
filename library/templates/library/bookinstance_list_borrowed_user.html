@@ -1,0 +1,47 @@
+{% extends 'courses/base.html' %} {% load wagtailcore_tags %} {% load static %} {% load wagtailimages_tags %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>My Books: {{user.username}}</title>
+    {% endblock title %}
+    {% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/library1.css' %}">
+    {% endblock %}
+</head>
+<div class="body-container">
+{% block content %}
+<div class="main">
+    <h2>My Borrowed Books</h2>
+
+    {% if librarybookinstance_list %}
+    <ul>
+
+      {% for bookinst in librarybookinstance_list %}
+      <li class="{% if bookinst.is_overdue %}status-borrowed{% endif %}">
+        <a href="{% url 'library:library-book' bookinst.book_name.pk %}">{{ bookinst.book_name.title }}</a> ({{ bookinst.due_back }})
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no books borrowed.</p>
+    {% endif %}
+    {% if is_paginated %}
+    <div class="pagination">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="page-current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+            {% if page_obj.has_next %}
+                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+</div>
