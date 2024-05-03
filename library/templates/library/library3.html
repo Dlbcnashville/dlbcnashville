@@ -15,16 +15,16 @@
         <div class="main">
             <div class="loading">
                 <div class="load1 load">
-                    <h3>500+ </h3>
+                    <h3>{{available_copies}} </h3>
                     <p>Available</p>
                 </div>
                 <div class="load2 load">
-                    <h3>-50 </h3>
+                    <h3>{{onloan_copies}}</h3>
                     <p>Borrowed</p>
                 </div>
                 <div class="load3 load">
-                    <h3>45 </h3>
-                    <p>Issued on Return</p>
+                    <h3>{{number_of_book_copies}}</h3>
+                    <p>Total Book Copies</p>
                 </div>
             </div>
             <div class="nav-tab-menu">
@@ -48,7 +48,7 @@
                             <th class="hide">S/N</th>
                             <th>Author</th>
                             <th>Title</th>
-                            <th class="hide">Copies</th>
+                            <!-- <th class="hide">Copies</th> -->
                         </tr>
                     </thead>
                     <tbody id="book-body">
@@ -57,8 +57,8 @@
                             <td  class="hide">{{forloop.counter}}</td>
                             <td>{{book.author}}</td>
                             <td><a href="{% url 'library:library-book' book.id %}">{{book.title}}</a></td>
-                            <td  class="hide">4</td>
-                            <td class="color"><p>Request</p></td>
+                            <!-- <td  class="hide">4</td> -->
+                            <!-- <td class="color"><p>Request</p></td> -->
                         </tr>
                         
                         {% empty %}

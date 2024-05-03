@@ -44,14 +44,14 @@ body{
 
 }
 .join-us-btn{
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
     background-color: var(--primary-red);
     color: white !important;
 }
 .login-btn{
-    padding-left: 40px !important;
-    padding-right: 40px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
     background-color: white;
     color: var(--primary-red) !important;
     font-weight: bolder;
@@ -124,6 +124,7 @@ body{
 .event-container{
     padding-left: 0px !important;
     padding-right: 0px !important;
+    margin-top: 40px;
 }
 .event-card{
     display: flex;

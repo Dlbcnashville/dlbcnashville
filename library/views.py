@@ -16,7 +16,15 @@ class LibraryBookList(LoginRequiredMixin, ListView):
         # Call the base implementation first to get the context
         context = super(LibraryBookList, self).get_context_data(**kwargs)
         # Create any data and add it to the context
-        context['some_data'] = 'This is just some data'
+        number_of_book_copies = LibraryBookInstance.objects.all().count()
+        number_of_books = LibraryBook.objects.all().count()
+        onloan_copies =  LibraryBookInstance.objects.filter(status__exact='o').count()
+        maintenance_copies = LibraryBookInstance.objects.filter(status__exact='m').count()
+        available_copies = LibraryBookInstance.objects.filter(status__exact='a').count()
+        context['number_of_book_copies'] = number_of_book_copies
+        context['number_of_books'] = number_of_books
+        context['available_copies'] = available_copies
+        context['onloan_copies'] = onloan_copies
         return context
     
 class LibraryBookDetailView(LoginRequiredMixin, DetailView):

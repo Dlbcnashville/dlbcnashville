@@ -92,7 +92,7 @@ class LibraryBookInstance(models.Model):
         max_length=1,
         choices=LOAN_STATUS,
         blank=True,
-        default='m',
+        default='a',
         help_text='Book availability',
     )
     borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
