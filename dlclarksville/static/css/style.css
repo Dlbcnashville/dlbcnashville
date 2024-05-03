@@ -57,6 +57,10 @@ body{
     font-weight: bolder;
     text-transform: uppercase;
 }
+.login-btn-diff{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
 .navbar-nav{
     display: flex;
     gap: 20px;

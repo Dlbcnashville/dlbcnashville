@@ -39,7 +39,7 @@
               {% if user.is_authenticated %}
               <a href="{% url 'authentication:logout' %}" class="nav-link active btn login-btn" aria-current="page" role="button">Logout</a> 
               {% else %}
-              <a href="{% url 'authentication:login' %}" class="nav-link active btn login-btn" aria-current="page" role="button">Login</a>
+              <a href="{% url 'authentication:login' %}" class="nav-link active btn login-btn login-btn-diff" aria-current="page" role="button">Login</a>
               {% endif %}
             </ul>
           </div>

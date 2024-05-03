@@ -31,12 +31,6 @@ cloudinary.config(
 EMAIL_HOST = 'smtp.elasticemail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 2525
-# EMAIL_HOST_USER = 'clarksvillelbc@gmail.com'
-# EMAIL_HOST_PASSWORD = '4DC6317573C5B115FB1FFE24C96AF91CBA4A'
-# DEFAULT_FROM_EMAIL = 'clarksvillesdlbc@gmail.com'
-# EMAIL_HOST_USER = ""
-# EMAIL_HOST_PASSWORD = ""
-# DEFAULT_FROM_EMAIL = ""
 EMAIL_HOST_USER = 'info@dlbcnashville.org'
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = 'info@dlbcnashville.org'

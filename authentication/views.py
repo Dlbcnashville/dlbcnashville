@@ -110,7 +110,7 @@ class UserRegisterView(View):
                 'protocol': 'https',
             }
             )
-            from_email = 'clarksvilledlbc@gmail.com'
+            from_email = 'info@dlbcnashville.org'
             to_email = register_form.cleaned_data.get('email')
             email = EmailMessage(
                 mail_subject, message, from_email, to=[to_email]
