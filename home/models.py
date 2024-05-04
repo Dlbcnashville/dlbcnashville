@@ -338,17 +338,20 @@ class Donate(Page):
     caption_title = RichTextField(null=True, blank=True)
     caption_text = RichTextField(null=True, blank=True)
     donate_link = models.URLField(null=True, blank=True)
-    cashapp_tag = models.CharField(max_length=500, null=True, blank=True)
-    cashapp_number = models.CharField(max_length=500, null=True, blank=True)
+    donate_account_name = models.CharField(max_length=500, null=True, blank=True)
+    donate_account_tag = models.CharField(max_length=500, null=True, blank=True)
+    donate_account_number = models.CharField(max_length=500, null=True, blank=True)
+    donate_account_image = CloudinaryField("image", null=True, blank=True, help_text="Upload an image for the donate account")
     mailing_address = models.CharField(max_length=500, null=True, blank=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('caption_title'),
         FieldPanel('caption_text'),
         FieldPanel('donate_link'),
-        FieldPanel('cashapp_tag'),
-        FieldPanel('cashapp_number'),
-        FieldPanel('mailing_address'),
+        FieldPanel('donate_account_name'),
+        FieldPanel('donate_account_tag'),
+        FieldPanel('donate_account_number'),
+        FieldPanel('donate_account_image'),
     ]
 
 @register_setting

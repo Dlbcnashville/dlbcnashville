@@ -14,7 +14,7 @@
         <div class="first" style="background: url({% static 'images/wallet.jpg' %}); backgroud-repeat: no-repeat !important; backgroud-cover: cover; !important">
             {% include "header.html" %}
             <div class="don">
-                <a hef="{{page.donate_link}}">DONATE</a>
+                <p hef="#">DONATE</p>
             </div>
         </div>
         <div class="grapes" style="background: url({% static 'images/grape.jpg' %}); backgroud-repeat: no-repeat !important; backgroud-cover: cover; !important">
@@ -22,18 +22,18 @@
                 <h1>{{page.caption_title|richtext}}</h1>
                 <p>{{page.caption_text|richtext}}
                 </p>
-                <a href="{{page.donate_link}}" target="_blank" class="give-anchor">
+                <!-- <a href="#" target="_blank" class="give-anchor">
                     <div class="give">DONATE</div>
-                </a>
+                </a> -->
             </div>
         </div>
         <div class="other-donations-platforms">
             <div class="card">
-                <img src="/static/images/cashapp_jpg.jpg" class="card-img-top" alt="...">
+                <img src="{{page.donate_account_image.url}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h2>Have a Cash App?</h2>
+                    <h2>Have a {{page.donate_account_name}} Account?</h2>
                     <h3>You can send your donations</h3>
-                    <p class="card-text">Tithes and Offering via Cash App. Our CashApp tag is <b>{{page.cashapp_tag}}</b>.</p>
+                    <p class="card-text">Tithes and Offering via {{page.donate_account_name}}. Our {{page.donate_account_name}} info is; <br> <b>{{page.donate_account_tag}}</b> <br><b>{{page.donate_account_tag}}</b>.</p>
                 </div>
             </div>
             <div class="card">
