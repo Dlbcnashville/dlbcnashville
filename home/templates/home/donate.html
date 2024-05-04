@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <h2>Have a {{page.donate_account_name}} Account?</h2>
                     <h3>You can send your donations</h3>
-                    <p class="card-text">Tithes and Offering via {{page.donate_account_name}}. Our {{page.donate_account_name}} info is; <br> <b>{{page.donate_account_tag}}</b> <br><b>{{page.donate_account_tag}}</b>.</p>
+                    <p class="card-text">Tithes and Offering via {{page.donate_account_name}}. Our {{page.donate_account_name}} info is; <br> <b>{% if page.donate_account_tag %}{{page.donate_account_tag}}{% endif %}</b> <br><b>{% if page.donate_account_number %}{{page.donate_account_number}}{% endif %}</b>.</p>
                 </div>
             </div>
             <div class="card">
